@@ -5,7 +5,7 @@ from typing import List, Dict, Any, Optional
 from dotenv import load_dotenv
 from qdrant_client import QdrantClient
 from qdrant_client.http import models
-from openai import OpenAI
+from sentence_transformers import SentenceTransformer
 
 # Load environment variables
 load_dotenv()
@@ -16,18 +16,15 @@ class Config:
     def __init__(self):
         self.QDRANT_URL: str = os.getenv("QDRANT_URL", "")
         self.QDRANT_API_KEY: str = os.getenv("QDRANT_API_KEY", "")
-        self.COLLECTION_NAME: str = os.getenv("QDRANT_COLLECTION_NAME", "questions_dataset")
-        self.OPENAI_API_KEY: str = os.getenv("OPENAI_API_KEY", "")
-        self.EMBEDDING_MODEL: str = os.getenv("EMBEDDING_MODEL", "text-embedding-3-large")
-        self.VECTOR_SIZE: int = 3072  # Dimension for text-embedding-3-large
+        self.COLLECTION_NAME: str = os.getenv("QDRANT_COLLECTION_NAME", "questions")
+        self.EMBEDDING_MODEL: str = "all-MiniLM-L6-v2"  # Local sentence-transformer model
+        self.VECTOR_SIZE: int = 384  # Dimension for all-MiniLM-L6-v2
 
     def validate(self):
         if not self.QDRANT_URL:
             raise ValueError("QDRANT_URL is not set in environment variables.")
         if not self.QDRANT_API_KEY:
             raise ValueError("QDRANT_API_KEY is not set in environment variables.")
-        if not self.OPENAI_API_KEY:
-            raise ValueError("OPENAI_API_KEY is not set in environment variables.")
 
 class VectorDBManager:
     """Manages interactions with the Qdrant Vector Database."""
@@ -71,12 +68,41 @@ class VectorDBManager:
         print("Upsert complete.")
 
 class DataProcessor:
-    """Handles data loading and processing."""
+    """Handles data loading and processing with local embeddings."""
     
-    def __init__(self, api_key: str, model_name: str):
-        print(f"Initializing OpenAI client with model: {model_name}...")
-        self.client = OpenAI(api_key=api_key)
+    def __init__(self, model_name: str):
+        print(f"Loading local embedding model: {model_name}...")
+        self.model = SentenceTransformer(model_name)
         self.model_name = model_name
+        print(f"✅ Model loaded successfully!")
+    
+    @staticmethod
+    def extract_subject_from_id(question_id: str) -> str:
+        """Extracts subject name from question_id prefix.
+        
+        Args:
+            question_id: Question ID in format 'SUBJECT_TOPIC_YEAR_NUM'
+            
+        Returns:
+            Full subject name (e.g., 'Biology', 'Physics', 'Chemistry')
+        """
+        if not question_id:
+            return ""
+        
+        # Extract prefix before first underscore
+        prefix = question_id.split('_')[0].upper()
+        
+        # Map prefix to full subject name
+        subject_mapping = {
+            'BIO': 'Biology',
+            'PHY': 'Physics',
+            'CHE': 'Chemistry',
+            'CHEM': 'Chemistry',
+            'MAT': 'Mathematics',
+            'MATH': 'Mathematics'
+        }
+        
+        return subject_mapping.get(prefix, "")
 
     def load_data(self, file_path: str) -> List[Dict[str, Any]]:
         """Loads JSON data from a file."""
@@ -87,9 +113,9 @@ class DataProcessor:
             return json.load(f)
 
     def get_embedding(self, text: str) -> List[float]:
-        """Generates embedding using OpenAI API."""
-        text = text.replace("\n", " ")
-        return self.client.embeddings.create(input=[text], model=self.model_name).data[0].embedding
+        """Generates embedding using local sentence-transformers model."""
+        embedding = self.model.encode(text, convert_to_numpy=True)
+        return embedding.tolist()
 
     def process_item(self, item: Dict[str, Any]) -> models.PointStruct:
         """Processes a single data item into a Qdrant PointStruct."""
@@ -106,10 +132,14 @@ class DataProcessor:
         # Generate embedding
         embedding = self.get_embedding(text_to_embed)
         
+        # Extract subject from question_id
+        question_id = item.get('question_id', '')
+        subject = self.extract_subject_from_id(question_id)
+        
         # Prepare metadata
         payload = {
-            "question_id": item.get('question_id'),
-            "subject": item.get('subject', ''),
+            "question_id": question_id,
+            "subject": subject,
             "topic": item.get('topic'),
             "sub_topic": item.get('sub_topic'),
             "year": item.get('year'),
@@ -124,8 +154,9 @@ class DataProcessor:
             "question_text": item.get('question_text')
         }
         
-        # Use question_id directly as point_id
-        point_id = str(item.get('question_id'))
+        # Generate UUID from question_id for consistent point IDs
+        import uuid
+        point_id = str(uuid.uuid5(uuid.NAMESPACE_DNS, question_id))
         
         return models.PointStruct(
             id=point_id,
@@ -149,13 +180,13 @@ def main():
 
     # Initialize Components
     db_manager = VectorDBManager(config)
-    processor = DataProcessor(config.OPENAI_API_KEY, config.EMBEDDING_MODEL)
+    processor = DataProcessor(config.EMBEDDING_MODEL)
 
     # Execution Flow
     try:
         db_manager.ensure_collection_exists()
         
-        data = processor.load_data('data.json')
+        data = processor.load_data('data/data.json')
         points = processor.prepare_points(data)
         
         db_manager.upsert_points(points)
