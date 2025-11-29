@@ -1,0 +1,2450 @@
+[
+    {
+        "question_id": "BIO_PH_2025_01",
+        "topic": "Photosynthesis",
+        "sub_topic": "Leaf pigments",
+        "difficulty": 2,
+        "exam_type": "neet",
+        "year": 2025,
+        "question_text": "Match List-I with List-II.\nList-I: (A) Chlorophyll a, (B) Chlorophyll b, (C) Xanthophylls, (D) Carotenoids\nList-II: (I) Yellow-green, (II) Yellow, (III) Blue-green, (IV) Yellow to Yellow-orange\nChoose the option with all correct matches.",
+        "options": [
+            "A. A-I, B-II, C-IV, D-III",
+            "B. A-I, B-IV, C-III, D-II",
+            "C. A-III, B-IV, C-II, D-I",
+            "D. A-III, B-I, C-II, D-IV"
+        ],
+        "explanation": "Chromatographic separation of leaf pigments shows four main pigments. Chlorophyll a appears blue-green, chlorophyll b yellow-green, xanthophylls yellow, and carotenoids yellow to yellow-orange. Thus the correct matching is A-III, B-I, C-II, D-IV.",
+        "prerequisites": "Plant pigment types and colours",
+        "time_estimate": "2"
+    },
+    {
+        "question_id": "BIO_PH_2025_02",
+        "topic": "Photosynthesis",
+        "sub_topic": "Calvin cycle enzyme (RuBisCO)",
+        "difficulty": 2,
+        "exam_type": "neet",
+        "year": 2025,
+        "question_text": "Which of the following statements about RuBisCO is true?",
+        "options": [
+            "A. It is an enzyme involved in the photolysis of water",
+            "B. It catalyzes the carboxylation of RuBP",
+            "C. It is active only in the dark",
+            "D. It has higher affinity for oxygen than carbon dioxide"
+        ],
+        "explanation": "Carboxylation is the most crucial step of the Calvin cycle where CO2 is utilised for carboxylation of RuBP. This reaction is catalysed by RuBP carboxylase (RuBisCO). RuBisCO actually has higher affinity for CO2 than for O2 under normal conditions.",
+        "prerequisites": "Role of RuBisCO in Calvin cycle",
+        "time_estimate": "2"
+    },
+    {
+        "question_id": "BIO_PH_2024_03",
+        "topic": "Photosynthesis",
+        "sub_topic": "Light reaction requirements",
+        "difficulty": 1,
+        "exam_type": "neet",
+        "year": 2024,
+        "question_text": "Which of the following are required for the light reaction of photosynthesis?",
+        "options": [
+            "A. A, C, D and E only",
+            "B. C, D and E only",
+            "C. A and B only",
+            "D. A, C and E only"
+        ],
+        "explanation": "Light reaction needs water, chlorophyll and light. CO2 is not required; O2 is released as a product.",
+        "prerequisites": "Light vs dark reactions",
+        "time_estimate": "1"
+    },
+    {
+        "question_id": "BIO_PH_2024_04",
+        "topic": "Photosynthesis",
+        "sub_topic": "Products of light reaction",
+        "difficulty": 1,
+        "exam_type": "neet",
+        "year": 2024,
+        "question_text": "Which one of the following products diffuses out of the chloroplast during photosynthesis?",
+        "options": [
+            "A. ADP",
+            "B. NADPH",
+            "C. O2",
+            "D. ATP"
+        ],
+        "explanation": "ATP and NADPH remain in the chloroplast for the Calvin cycle, whereas O2 diffuses out.",
+        "prerequisites": "Products of light reaction",
+        "time_estimate": "1"
+    },
+    {
+        "question_id": "BIO_PH_2024_05",
+        "topic": "Photosynthesis",
+        "sub_topic": "Calvin cycle stages",
+        "difficulty": 3,
+        "exam_type": "neet",
+        "year": 2024,
+        "question_text": "Observe the given figure of the Calvin cycle. Identify the different stages labelled with alphabets A, B and C.",
+        "options": [
+            "A. A-Carboxylation, B-Regeneration, C-Reduction",
+            "B. A-Reduction, B-Decarboxylation, C-Regeneration",
+            "C. A-Carboxylation, B-Reduction, C-Regeneration",
+            "D. A-Reduction, B-Carboxylation, C-Regeneration"
+        ],
+        "explanation": "The Calvin cycle has three stages: A — Carboxylation, B — Reduction, C — Regeneration of RuBP.",
+        "prerequisites": "3 stages of Calvin cycle",
+        "time_estimate": "3"
+    },
+    {
+        "question_id": "BIO_PH_2024_06",
+        "topic": "Photosynthesis",
+        "sub_topic": "Energy requirement per CO2 (Calvin cycle)",
+        "difficulty": 3,
+        "exam_type": "neet",
+        "year": 2024,
+        "question_text": "How many molecules of ATP and NADPH are required for every molecule of CO2 fixed in the Calvin cycle?",
+        "options": [
+            "A. 2 molecules of ATP and 3 molecules of NADPH",
+            "B. 2 molecules of ATP and 2 molecules of NADPH",
+            "C. 3 molecules of ATP and 3 molecules of NADPH",
+            "D. 3 molecules of ATP and 2 molecules of NADPH"
+        ],
+        "explanation": "For fixation of 1 molecule of CO2 in the Calvin cycle, 3 molecules of ATP and 2 molecules of NADPH are required.",
+        "prerequisites": "ATP & NADPH use per CO2",
+        "time_estimate": "2"
+    },
+    {
+        "question_id": "BIO_PH_2024_07",
+        "topic": "Photosynthesis",
+        "sub_topic": "Dark reaction requirements",
+        "difficulty": 2,
+        "exam_type": "neet",
+        "year": 2024,
+        "question_text": "Which of the following are required for the dark reaction of photosynthesis?",
+        "options": [
+            "A. A, B and C only",
+            "B. B, C and D only",
+            "C. C, D and E only",
+            "D. D and E only"
+        ],
+        "explanation": "Dark reaction (Calvin cycle) requires CO2 as carbon source and ATP and NADPH produced in the light reaction. Light and chlorophyll are not directly required for these enzymatic steps.",
+        "prerequisites": "Use of ATP & NADPH in dark reaction",
+        "time_estimate": "2"
+    },
+    {
+        "question_id": "BIO_PR_2024_08",
+        "topic": "Photorespiration",
+        "sub_topic": "C3 vs C4 plants",
+        "difficulty": 4,
+        "exam_type": "neet",
+        "year": 2024,
+        "question_text": "Given below are two statements:\nStatement I: In C3 plants, some O2 binds to RuBisCO, hence CO2 fixation is decreased.\nStatement II: In C4 plants, mesophyll cells show very little photorespiration while bundle sheath cells do not show photorespiration.\nChoose the correct option.",
+        "options": [
+            "A. Both Statement I and Statement II are true",
+            "B. Both Statement I and Statement II are false",
+            "C. Statement I is true but Statement II is false",
+            "D. Statement I is false but Statement II is true"
+        ],
+        "explanation": "RuBisCO in C3 plants binds O2 causing photorespiration. In C4 plants RuBisCO is absent in mesophyll cells, so the description in Statement II is incorrect.",
+        "prerequisites": "RuBisCO location in C3 vs C4",
+        "time_estimate": "3"
+    },
+    {
+        "question_id": "BIO_PH_2023_09",
+        "topic": "Photosynthesis",
+        "sub_topic": "Total energy cost for glucose",
+        "difficulty": 4,
+        "exam_type": "neet",
+        "year": 2023,
+        "question_text": "How many ATP and NADPH2 are required for the synthesis of one molecule of glucose during Calvin cycle?",
+        "options": [
+            "A. 18 ATP and 12 NADPH2",
+            "B. 12 ATP and 16 NADPH2",
+            "C. 18 ATP and 16 NADPH2",
+            "D. 12 ATP and 12 NADPH2"
+        ],
+        "explanation": "For one molecule of glucose (6 CO2), total requirement is 18 ATP and 12 NADPH.",
+        "prerequisites": "6 turns of Calvin cycle per glucose",
+        "time_estimate": "3"
+    },
+    {
+        "question_id": "BIO_PH_2023_10",
+        "topic": "Photosynthesis",
+        "sub_topic": "Photosystems",
+        "difficulty": 2,
+        "exam_type": "neet",
+        "year": 2023,
+        "question_text": "The reaction centre in PS II has an absorption maxima at",
+        "options": [
+            "A. 700 nm",
+            "B. 660 nm",
+            "C. 780 nm",
+            "D. 680 nm"
+        ],
+        "explanation": "PS II reaction centre is P680, absorbing light at 680 nm.",
+        "prerequisites": "PSI vs PSII reaction centres",
+        "time_estimate": "1"
+    },
+    {
+        "question_id": "BIO_PH_2023_11",
+        "topic": "Photosynthesis",
+        "sub_topic": "Chemiosmotic hypothesis",
+        "difficulty": 3,
+        "exam_type": "neet",
+        "year": 2023,
+        "question_text": "Which of the following combinations is required for chemiosmosis?",
+        "options": [
+            "A. Membrane, proton pump, proton gradient, NADP synthase",
+            "B. Proton pump, electron gradient, ATP synthase",
+            "C. Proton pump, electron gradient, NADP synthase",
+            "D. Membrane, proton pump, proton gradient, ATP synthase"
+        ],
+        "explanation": "Membrane + proton pump + proton gradient + ATP synthase = chemiosmosis.",
+        "prerequisites": "Proton gradient across thylakoid",
+        "time_estimate": "3"
+    },
+    {
+        "question_id": "BIO_PR_2023_12",
+        "topic": "Photorespiration",
+        "sub_topic": "RuBisCO and C4 plants",
+        "difficulty": 3,
+        "exam_type": "neet",
+        "year": 2023,
+        "question_text": "Given below are two statements:\nStatement I: RuBisCO is the most abundant enzyme in the world.\nStatement II: Photorespiration does not occur in C4 plants.\nChoose the most appropriate answer.",
+        "options": [
+            "A. Statement I is correct but Statement II is incorrect",
+            "B. Statement I is incorrect but Statement II is correct",
+            "C. Both Statement I and Statement II are correct",
+            "D. Both Statement I and Statement II are incorrect"
+        ],
+        "explanation": "RuBisCO is the most abundant enzyme globally and C4 plants suppress photorespiration through CO2 concentration in bundle sheath cells. So both statements are correct.",
+        "prerequisites": "Abundance of RuBisCO & C4 photorespiration",
+        "time_estimate": "3"
+    },
+    {
+        "question_id": "BIO_PH_2023_13",
+        "topic": "Photosynthesis",
+        "sub_topic": "Photophosphorylation (cyclic vs non-cyclic)",
+        "difficulty": 4,
+        "exam_type": "neet",
+        "year": 2023,
+        "question_text": "Which out of the following statements is incorrect?",
+        "options": [
+            "A. Grana lamellae have both PS I and PS II",
+            "B. Cyclic photophosphorylation involves both PS I and PS II",
+            "C. Both ATP and NADPH + H+ are synthesised during non-cyclic photophosphorylation",
+            "D. Stroma lamellae lack PS II and NADP reductase"
+        ],
+        "explanation": "Cyclic photophosphorylation involves only PSI — not PSII — making option B incorrect.",
+        "prerequisites": "Cyclic vs non-cyclic photophosphorylation",
+        "time_estimate": "4"
+    },
+    {
+        "question_id": "BIO_PH_2022_14",
+        "topic": "Photosynthesis",
+        "sub_topic": "Chemiosmotic hypothesis (statement based)",
+        "difficulty": 4,
+        "exam_type": "neet",
+        "year": 2022,
+        "question_text": "Identify the correct statements regarding chemiosmotic hypothesis:\n(a) Splitting of the water molecule takes place on the inner side of the membrane.\n(b) Protons accumulate within the lumen of the thylakoids.\n(c) Primary acceptor of electron transfers electrons to an electron carrier.\n(d) NADP reductase enzyme is located on the stroma side of the membrane.\n(e) Protons increase in number in stroma.\nChoose the correct answer.",
+        "options": [
+            "A. (b), (c) and (e)",
+            "B. (a), (b) and (e)",
+            "C. (a), (b) and (d)",
+            "D. (b), (c) and (d)"
+        ],
+        "explanation": "Correct statements are (a), (b) and (d). Protons accumulate in lumen, not in stroma.",
+        "prerequisites": "Orientation of thylakoid membrane & enzymes",
+        "time_estimate": "4"
+    },
+    {
+        "question_id": "BIO_PH_2016_15",
+        "topic": "Photosynthesis",
+        "sub_topic": "Proton gradient location",
+        "difficulty": 3,
+        "exam_type": "neet",
+        "year": 2016,
+        "question_text": "In a chloroplast the highest number of protons are found in",
+        "options": [
+            "A. intermembrane space",
+            "B. antennae complex",
+            "C. stroma",
+            "D. lumen of thylakoids"
+        ],
+        "explanation": "Thylakoid lumen has the highest concentration of protons due to photolysis and proton pumping.",
+        "prerequisites": "Chemiosmotic model in chloroplast",
+        "time_estimate": "2"
+    },
+    {
+        "question_id": "BIO_BC_2025_16",
+        "topic": "Biological Classification",
+        "sub_topic": "Five kingdom classification – body organisation",
+        "difficulty": 5,
+        "exam_type": "neet",
+        "year": 2025,
+        "question_text": "Each of the following characteristics represent a Kingdom proposed by Whittaker.\nA. Multicellular heterotrophs with cell wall made of chitin.\nB. Heterotrophs with tissue/organ/organ system level of body organization.\nC. Prokaryotes with cell wall made of polysaccharides and amino acids.\nD. Eukaryotic autotrophs with tissue/organ level of body organization.\nE. Eukaryotes with cellular body organization.\nArrange the above in increasing order of complexity of body organization.",
+        "options": [
+            "A. A, C, E, D, B",
+            "B. C, E, A, B, D",
+            "C. A, C, E, B, D",
+            "D. C, E, A, D, B"
+        ],
+        "explanation": "Whittaker’s kingdoms in increasing order of body complexity: Monera (C, prokaryotes) → Protista (E, unicellular eukaryotes) → Fungi (A, multicellular with chitinous wall) → Plantae (D, tissue/organ level autotrophs) → Animalia (B, tissue/organ/organ system level heterotrophs). Thus the correct sequence is C, E, A, D, B, i.e. option D.",
+        "prerequisites": "Five kingdom features & complexity",
+        "time_estimate": "3"
+    },
+    {
+        "question_id": "BIO_BC_2024_17",
+        "topic": "Biological Classification",
+        "sub_topic": "Protista – modes of nutrition",
+        "difficulty": 3,
+        "exam_type": "neet",
+        "year": 2024,
+        "question_text": "Match List-I with List-II:\nList-I (Organisms)\nA. Euglenoid\nB. Dinoflagellate\nC. Slime mould\nD. Plasmodium\nList-II (Mode of Nutrition)\nI. Parasitic\nII. Saprophytic\nIII. Photosynthetic\nIV. Switching between photosynthetic and heterotrophic mode\nChoose the correct answer from the options given below:",
+        "options": [
+            "A. A-III, B-IV, C-II, D-I",
+            "B. A-IV, B-II, C-I, D-III",
+            "C. A-IV, B-III, C-II, D-I",
+            "D. A-IV, B-II, C-III, D-I"
+        ],
+        "explanation": "Euglenoids are photosynthetic in light and heterotrophic in dark (A-IV). Dinoflagellates are mostly photosynthetic (B-III). Slime moulds are saprophytic protists (C-II). Plasmodium is a malarial parasite (D-I). Thus A-IV, B-III, C-II, D-I is correct.",
+        "prerequisites": "Examples of Protista & nutrition",
+        "time_estimate": "3"
+    },
+    {
+        "question_id": "BIO_BC_2024_18",
+        "topic": "Biological Classification",
+        "sub_topic": "Fungi – examples and groups",
+        "difficulty": 2,
+        "exam_type": "neet",
+        "year": 2024,
+        "question_text": "Match List-I with List-II:\nList-I\nA. Rhizopus\nB. Ustilago\nC. Puccinia\nD. Agaricus\nList-II\nI. Mushroom\nII. Smut fungus\nIII. Bread mould\nIV. Rust fungus\nChoose the correct answer from the options given below:",
+        "options": [
+            "A. A-III, B-II, C-IV, D-I",
+            "B. A-I, B-III, C-II, D-IV",
+            "C. A-III, B-II, C-I, D-IV",
+            "D. A-IV, B-III, C-II, D-I"
+        ],
+        "explanation": "Rhizopus is a bread mould (A-III). Ustilago is a smut fungus (B-II). Puccinia is a rust fungus (C-IV). Agaricus is commonly called mushroom (D-I). So A-III, B-II, C-IV, D-I is correct.",
+        "prerequisites": "Common fungal examples",
+        "time_estimate": "2"
+    },
+    {
+        "question_id": "BIO_BC_2024_19",
+        "topic": "Biological Classification",
+        "sub_topic": "Fungi – classification criteria",
+        "difficulty": 2,
+        "exam_type": "neet",
+        "year": 2024,
+        "question_text": "Which one of the following is NOT a criterion for classification of fungi?",
+        "options": [
+            "A. Morphology of mycelium",
+            "B. Mode of nutrition",
+            "C. Mode of spore formation",
+            "D. Fruiting body"
+        ],
+        "explanation": "Fungal classes are primarily differentiated on the basis of mycelial morphology, mode of spore formation and the nature of fruiting bodies. Mode of nutrition is not a key criterion for fungal classification in this context, so option B is incorrect.",
+        "prerequisites": "Fungal classification basis",
+        "time_estimate": "2"
+    },
+    {
+        "question_id": "BIO_BC_2022_20",
+        "topic": "Biological Classification",
+        "sub_topic": "Prions and prion diseases",
+        "difficulty": 1,
+        "exam_type": "neet",
+        "year": 2022,
+        "question_text": "Mad cow disease in cattle and Creutzfeldt–Jakob disease in humans are due to infection by",
+        "options": [
+            "A. Prion",
+            "B. Bacterium",
+            "C. Virus",
+            "D. Viroid"
+        ],
+        "explanation": "Both mad cow disease and Creutzfeldt–Jakob disease are neurodegenerative disorders caused by prions, which are abnormally folded infectious proteins without nucleic acid.",
+        "prerequisites": "Virus vs viroid vs prion",
+        "time_estimate": "1"
+    },
+    {
+        "question_id": "BIO_BC_2022_21",
+        "topic": "Biological Classification",
+        "sub_topic": "Mycoplasma characteristics",
+        "difficulty": 2,
+        "exam_type": "neet",
+        "year": 2022,
+        "question_text": "Given below are two statements:\nStatement I: Mycoplasma can pass through less than 1 micron filter size.\nStatement II: Mycoplasma are bacteria with cell wall.\nIn the light of the above statements, choose the most appropriate answer:",
+        "options": [
+            "A. Both Statement I and Statement II are correct",
+            "B. Both Statement I and Statement II are incorrect",
+            "C. Statement I is correct but Statement II is incorrect",
+            "D. Statement I is incorrect but Statement II is correct"
+        ],
+        "explanation": "Mycoplasma are very small (about 0.3 μm), so they can pass through filters of less than 1 μm pore size (Statement I true). They are unique prokaryotes that lack a cell wall; hence saying they are bacteria with cell wall is wrong (Statement II false).",
+        "prerequisites": "Key traits of Mycoplasma",
+        "time_estimate": "2"
+    },
+    {
+        "question_id": "BIO_BC_2022_22",
+        "topic": "Biological Classification",
+        "sub_topic": "Fungi – asexual spores",
+        "difficulty": 1,
+        "exam_type": "neet",
+        "year": 2022,
+        "question_text": "Identify the asexual reproductive structure associated with Penicillium:",
+        "options": [
+            "A. Zoospores",
+            "B. Conidia",
+            "C. Gemmules",
+            "D. Buds"
+        ],
+        "explanation": "Penicillium, an ascomycete fungus, produces asexual spores called conidia on conidiophores. Zoospores occur in Chlamydomonas, gemmules in sponges and buds in Hydra.",
+        "prerequisites": "Asexual spores in fungi",
+        "time_estimate": "1"
+    },
+    {
+        "question_id": "BIO_BC_2021_23",
+        "topic": "Biological Classification",
+        "sub_topic": "Cyanobacteria and Monera",
+        "difficulty": 3,
+        "exam_type": "neet",
+        "year": 2021,
+        "question_text": "Which of the following statements is correct?",
+        "options": [
+            "A. Cyanobacteria are a group of autotrophic organisms classified under kingdom Monera.",
+            "B. Bacteria are exclusively heterotrophic organisms.",
+            "C. Slime moulds are saprophytic organisms classified under kingdom Monera.",
+            "D. Mycoplasma have DNA, ribosome and cell wall."
+        ],
+        "explanation": "Cyanobacteria are photosynthetic (autotrophic) prokaryotes placed in kingdom Monera, so option A is correct. Bacteria can be autotrophic as well as heterotrophic, slime moulds belong to Protista, and Mycoplasma lack a cell wall.",
+        "prerequisites": "Placement of cyanobacteria & slime moulds",
+        "time_estimate": "2"
+    },
+    {
+        "question_id": "BIO_BC_2020_24",
+        "topic": "Biological Classification",
+        "sub_topic": "Viroids",
+        "difficulty": 2,
+        "exam_type": "neet",
+        "year": 2020,
+        "question_text": "Which of the following is correct about viroids?",
+        "options": [
+            "A. They have free RNA without protein coat.",
+            "B. They have DNA with protein coat.",
+            "C. They have free DNA without protein coat.",
+            "D. They have RNA with protein coat."
+        ],
+        "explanation": "Viroids are infectious agents made up of a short, circular, low molecular weight RNA without any protein coat. They cause several plant diseases. Thus the correct option is that they have free RNA without protein coat.",
+        "prerequisites": "Nature of viroids",
+        "time_estimate": "2"
+    },
+    {
+        "question_id": "BIO_BC_2015_25",
+        "topic": "Biological Classification",
+        "sub_topic": "Bacterial surface structures",
+        "difficulty": 2,
+        "exam_type": "neet",
+        "year": 2015,
+        "question_text": "The structures that help some bacteria to attach to rocks and/or host tissues are",
+        "options": [
+            "A. Mesosomes",
+            "B. Holdfast",
+            "C. Rhizoids",
+            "D. Fimbriae"
+        ],
+        "explanation": "Fimbriae are numerous, short, bristle-like appendages on the bacterial surface that help bacteria adhere to solid surfaces like rocks or host tissues. Mesosomes are membrane infoldings; holdfasts and rhizoids occur in algae and fungi respectively.",
+        "prerequisites": "Fimbriae vs other cell structures",
+        "time_estimate": "2"
+    },
+    {
+        "question_id": "BIO_BC_2015_26",
+        "topic": "Biological Classification",
+        "sub_topic": "Viruses and viroids – discovery history",
+        "difficulty": 3,
+        "exam_type": "neet",
+        "year": 2015,
+        "question_text": "Select the wrong statement.",
+        "options": [
+            "A. The term ‘contagium vivum fluidum’ was coined by M. W. Beijerinck.",
+            "B. Mosaic disease in tobacco and AIDS in human beings are caused by viruses.",
+            "C. The viroids were discovered by D. J. Ivanowsky.",
+            "D. W. M. Stanley showed that viruses could be crystallised."
+        ],
+        "explanation": "Beijerinck coined the term ‘contagium vivum fluidum’ for viruses, mosaic disease of tobacco and AIDS are viral diseases, and Stanley crystallised viruses. Viroids, however, were discovered by T. O. Diener, not by Ivanowsky, so statement C is wrong.",
+        "prerequisites": "History of virus & viroid discovery",
+        "time_estimate": "3"
+    },
+    {
+        "question_id": "BIO_BC_2015_27",
+        "topic": "Biological Classification",
+        "sub_topic": "Chrysophytes (diatoms) – frustule",
+        "difficulty": 2,
+        "exam_type": "neet",
+        "year": 2015,
+        "question_text": "In which group of organisms the cell walls form two thin overlapping shells which fit together?",
+        "options": [
+            "A. Dinoflagellates",
+            "B. Slime moulds",
+            "C. Chrysophytes",
+            "D. Euglenoids"
+        ],
+        "explanation": "Diatoms, which belong to Chrysophytes, possess a siliceous cell wall called a frustule made of two overlapping halves (epitheca and hypotheca) that fit together like a soap box.",
+        "prerequisites": "Diatom frustule structure",
+        "time_estimate": "2"
+    },
+    {
+        "question_id": "BIO_BC_2015_28",
+        "topic": "Biological Classification",
+        "sub_topic": "Characteristics of kingdoms – Monera, Fungi, Protista, Animalia",
+        "difficulty": 2,
+        "exam_type": "neet",
+        "year": 2015,
+        "question_text": "Pick up the wrong statement.",
+        "options": [
+            "A. Some fungi are edible.",
+            "B. Nuclear membrane is present in Monera.",
+            "C. Cell wall is absent in Animalia.",
+            "D. Protists have photosynthetic and heterotrophic modes of nutrition."
+        ],
+        "explanation": "Monerans are prokaryotes and lack a true nucleus and nuclear membrane. Some fungi are edible, animals lack a cell wall, and protists show both photosynthetic and heterotrophic nutrition. Hence statement B is wrong.",
+        "prerequisites": "Basic traits of Monera, Protista, Fungi, Animalia",
+        "time_estimate": "2"
+    },
+    {
+        "question_id": "BIO_BC_2015_29",
+        "topic": "Biological Classification",
+        "sub_topic": "Mycoplasma – cell wall",
+        "difficulty": 1,
+        "exam_type": "neet",
+        "year": 2015,
+        "question_text": "Cell wall is absent in",
+        "options": [
+            "A. Mycoplasma",
+            "B. Nostoc",
+            "C. Aspergillus",
+            "D. Funaria"
+        ],
+        "explanation": "Mycoplasma are the smallest free-living prokaryotes and characteristically lack a cell wall. Nostoc (cyanobacterium) has peptidoglycan wall, Aspergillus (fungus) has chitinous wall, and Funaria (bryophyte) has cellulosic wall.",
+        "prerequisites": "Organisms lacking cell wall",
+        "time_estimate": "1"
+    },
+    {
+        "question_id": "BIO_BC_2012_30",
+        "topic": "Biological Classification",
+        "sub_topic": "Cyanobacteria – common name",
+        "difficulty": 1,
+        "exam_type": "neet",
+        "year": 2012,
+        "question_text": "The cyanobacteria are also referred to as",
+        "options": [
+            "A. Protists",
+            "B. Golden algae",
+            "C. Slime moulds",
+            "D. Blue-green algae"
+        ],
+        "explanation": "Cyanobacteria are photosynthetic prokaryotes historically called blue-green algae due to their colour and aquatic habit, although they are now known to be bacteria, not true algae.",
+        "prerequisites": "Old vs modern name of cyanobacteria",
+        "time_estimate": "1"
+    },
+    {
+        "question_id": "BIO_RP_2025_31",
+        "topic": "Respiration in Plants",
+        "sub_topic": "Electron Transport Chain – Complex II",
+        "difficulty": 2,
+        "exam_type": "neet",
+        "year": 2025,
+        "question_text": "The complex II of mitochondrial electron transport chain is also known as:",
+        "options": [
+            "A. Cytochrome c oxidase",
+            "B. NADH dehydrogenase",
+            "C. Cytochrome bc1",
+            "D. Succinate dehydrogenase"
+        ],
+        "explanation": "In the mitochondrial ETC, Complex II is succinate dehydrogenase. Complex I is NADH dehydrogenase, Complex III is cytochrome bc1 and Complex IV is cytochrome c oxidase.",
+        "prerequisites": "Names of ETC complexes",
+        "time_estimate": "1"
+    },
+    {
+        "question_id": "BIO_RP_2024_32",
+        "topic": "Respiration in Plants",
+        "sub_topic": "Cellular location of pathways",
+        "difficulty": 3,
+        "exam_type": "neet",
+        "year": 2024,
+        "question_text": "Match List I with List II:\nList I\nA. Citric acid cycle\nB. Glycolysis\nC. Electron transport system\nD. Proton gradient\nList II\nI. Cytoplasm\nII. Mitochondrial matrix\nIII. Intermembrane space of mitochondria\nIV. Inner mitochondrial membrane\nChoose the correct answer from the options given below:",
+        "options": [
+            "A. A-I, B-II, C-III, D-IV",
+            "B. A-II, B-I, C-IV, D-III",
+            "C. A-III, B-IV, C-I, D-II",
+            "D. A-IV, B-III, C-II, D-I"
+        ],
+        "explanation": "Citric acid cycle occurs in the mitochondrial matrix (A-II), glycolysis in cytoplasm (B-I), the electron transport system on the inner mitochondrial membrane (C-IV), and the proton gradient accumulates in the intermembrane space (D-III). So A-II, B-I, C-IV, D-III is correct.",
+        "prerequisites": "Sites of glycolysis, TCA, ETC",
+        "time_estimate": "3"
+    },
+    {
+        "question_id": "BIO_RP_2024_33",
+        "topic": "Respiration in Plants",
+        "sub_topic": "TCA cycle – oxidation vs substrate-level phosphorylation",
+        "difficulty": 2,
+        "exam_type": "neet",
+        "year": 2024,
+        "question_text": "Identify the step in tricarboxylic acid (TCA) cycle which does NOT involve oxidation of substrate:",
+        "options": [
+            "A. Malic acid ⟶ Oxaloacetic acid",
+            "B. Succinic acid ⟶ Fumaric acid ⟶ Malic acid",
+            "C. Succinyl-CoA ⟶ Succinic acid",
+            "D. Isocitrate ⟶ α-ketoglutaric acid"
+        ],
+        "explanation": "Succinyl-CoA to succinic acid is a substrate-level phosphorylation step where GTP is produced but no oxidation of the substrate occurs. All the other listed steps involve oxidation reactions.",
+        "prerequisites": "Steps of TCA cycle",
+        "time_estimate": "2"
+    },
+    {
+        "question_id": "BIO_RP_2023_34",
+        "topic": "Respiration in Plants",
+        "sub_topic": "Glycolysis – ATP investment steps",
+        "difficulty": 3,
+        "exam_type": "neet",
+        "year": 2023,
+        "question_text": "Assertion (A): ATP is used at two steps in glycolysis.\nReason (R): First ATP is used in converting glucose into glucose-6-phosphate and second ATP is used in conversion of fructose-6-phosphate into fructose-1,6-bisphosphate.\nIn the light of the above statements, choose the correct answer:",
+        "options": [
+            "A. Both A and R are true but R is NOT the correct explanation of A.",
+            "B. A is true but R is false.",
+            "C. A is false but R is true.",
+            "D. Both A and R are true and R is the correct explanation of A."
+        ],
+        "explanation": "In glycolysis, ATP is consumed in two phosphorylation steps: glucose → glucose-6-phosphate and fructose-6-phosphate → fructose-1,6-bisphosphate. This exactly explains why ATP is used at two steps, so both A and R are true and R correctly explains A.",
+        "prerequisites": "Energy investment steps in glycolysis",
+        "time_estimate": "3"
+    },
+    {
+        "question_id": "BIO_RP_2023_35",
+        "topic": "Respiration in Plants",
+        "sub_topic": "Mapping respiration processes",
+        "difficulty": 3,
+        "exam_type": "neet",
+        "year": 2023,
+        "question_text": "Match List I with List II:\nList I\nA. Oxidative decarboxylation\nB. Glycolysis\nC. Oxidative phosphorylation\nD. Tricarboxylic acid cycle\nList II\nI. Citrate synthase\nII. Pyruvate dehydrogenase\nIII. Electron transport system\nIV. EMP pathway\nChoose the correct answer from the options given below:",
+        "options": [
+            "A. A–II, B–IV, C–I, D–III",
+            "B. A–III, B–I, C–II, D–IV",
+            "C. A–II, B–IV, C–III, D–I",
+            "D. A–III, B–IV, C–II, D–I"
+        ],
+        "explanation": "Pyruvate dehydrogenase carries out oxidative decarboxylation of pyruvate (A–II). Glycolysis is the EMP pathway (B–IV). Oxidative phosphorylation occurs via the electron transport system (C–III). The TCA cycle begins with condensation of acetyl-CoA with OAA catalysed by citrate synthase (D–I). Thus A–II, B–IV, C–III, D–I is correct.",
+        "prerequisites": "Key enzymes in respiration pathways",
+        "time_estimate": "3"
+    },
+    {
+        "question_id": "BIO_RP_2023_36",
+        "topic": "Respiration in Plants",
+        "sub_topic": "Decarboxylation in TCA cycle",
+        "difficulty": 2,
+        "exam_type": "neet",
+        "year": 2023,
+        "question_text": "How many times does decarboxylation occur during each TCA (Krebs) cycle?",
+        "options": [
+            "A. Thrice",
+            "B. Many",
+            "C. Once",
+            "D. Twice"
+        ],
+        "explanation": "In one turn of the TCA cycle, CO₂ is released when isocitrate is converted to α-ketoglutarate and again when α-ketoglutarate becomes succinyl-CoA. Hence there are two decarboxylation steps per cycle.",
+        "prerequisites": "CO₂-releasing steps of TCA",
+        "time_estimate": "2"
+    },
+    {
+        "question_id": "BIO_RP_2023_37",
+        "topic": "Respiration in Plants",
+        "sub_topic": "Entry of fatty acids into respiration",
+        "difficulty": 2,
+        "exam_type": "neet",
+        "year": 2023,
+        "question_text": "Fatty acids are connected with the respiratory pathway through:",
+        "options": [
+            "A. Acetyl CoA",
+            "B. α-ketoglutaric acid",
+            "C. Dihydroxyacetone phosphate",
+            "D. Pyruvic acid"
+        ],
+        "explanation": "Fatty acids undergo β-oxidation to yield two-carbon fragments as acetyl CoA, which then enters the TCA cycle. Therefore, acetyl CoA is the link between fatty acid breakdown and respiration.",
+        "prerequisites": "β-oxidation product (acetyl CoA)",
+        "time_estimate": "1"
+    },
+    {
+        "question_id": "BIO_RP_2022_38",
+        "topic": "Respiration in Plants",
+        "sub_topic": "ATP yield in glycolysis",
+        "difficulty": 1,
+        "exam_type": "neet",
+        "year": 2022,
+        "question_text": "What is the net gain of ATP when each molecule of glucose is converted to two molecules of pyruvic acid during glycolysis?",
+        "options": [
+            "A. Four",
+            "B. Six",
+            "C. Two",
+            "D. Eight"
+        ],
+        "explanation": "Glycolysis produces 4 ATP directly but consumes 2 ATP in the early phosphorylation steps, giving a net gain of 2 ATP per glucose.",
+        "prerequisites": "ATP balance in glycolysis",
+        "time_estimate": "1"
+    },
+    {
+        "question_id": "BIO_RP_2019_39",
+        "topic": "Respiration in Plants",
+        "sub_topic": "Respiratory quotient of fats",
+        "difficulty": 3,
+        "exam_type": "neet",
+        "year": 2019,
+        "question_text": "The respiratory quotient (RQ) value of tripalmitin is:",
+        "options": [
+            "A. 0.9",
+            "B. 0.7",
+            "C. 0.07",
+            "D. 0.09"
+        ],
+        "explanation": "For tripalmitin (a fat), the balanced equation shows 102 CO₂ produced and 145 O₂ consumed, giving RQ = 102/145 ≈ 0.7. Fats therefore have an RQ less than 1.",
+        "prerequisites": "RQ formula & fat example",
+        "time_estimate": "2"
+    },
+    {
+        "question_id": "BIO_RP_2016_40",
+        "topic": "Respiration in Plants",
+        "sub_topic": "Common metabolic intermediate",
+        "difficulty": 2,
+        "exam_type": "neet",
+        "year": 2016,
+        "question_text": "Which of the following biomolecules is common to respiration-mediated breakdown of fats, carbohydrates and proteins?",
+        "options": [
+            "A. Glucose-6-phosphate",
+            "B. Fructose-1,6-bisphosphate",
+            "C. Pyruvic acid",
+            "D. Acetyl CoA"
+        ],
+        "explanation": "Carbohydrates, fats and proteins are all funneled into the respiratory pathway at the level of acetyl CoA after appropriate conversions. This same acetyl CoA then enters the Krebs cycle, making it the central connecting link among these pathways.",
+        "prerequisites": "Common entry molecule (acetyl CoA)",
+        "time_estimate": "2"
+    },
+    {
+        "question_id": "BIO_RP_2016_41",
+        "topic": "Respiration in Plants",
+        "sub_topic": "Definition of oxidative phosphorylation",
+        "difficulty": 2,
+        "exam_type": "neet",
+        "year": 2016,
+        "question_text": "Oxidative phosphorylation is:",
+        "options": [
+            "A. Formation of ATP by transfer of phosphate group from a substrate to ADP",
+            "B. Oxidation of phosphate group in ATP",
+            "C. Addition of phosphate group to ATP",
+            "D. Formation of ATP by energy released from electrons removed during substrate oxidation"
+        ],
+        "explanation": "Oxidative phosphorylation is the synthesis of ATP using the energy released when electrons from reduced coenzymes (NADH, FADH₂) pass through the electron transport chain. Hence option D correctly describes it.",
+        "prerequisites": "Oxidative vs substrate-level phosphorylation",
+        "time_estimate": "2"
+    },
+    {
+        "question_id": "BIO_RP_2014_42",
+        "topic": "Respiration in Plants",
+        "sub_topic": "CO₂ release in different pathways",
+        "difficulty": 2,
+        "exam_type": "neet",
+        "year": 2014,
+        "question_text": "In which one of the following processes is CO₂ not released?",
+        "options": [
+            "A. Aerobic respiration in plants",
+            "B. Aerobic respiration in animals",
+            "C. Alcoholic fermentation",
+            "D. Lactate fermentation"
+        ],
+        "explanation": "In lactate fermentation, pyruvate is directly reduced to lactic acid without a decarboxylation step, so CO₂ is not released. Aerobic respiration and alcoholic fermentation both release CO₂.",
+        "prerequisites": "Compare alcoholic vs lactic fermentation",
+        "time_estimate": "2"
+    },
+    {
+        "question_id": "BIO_RP_2009_43",
+        "topic": "Respiration in Plants",
+        "sub_topic": "Amphibolic nature of respiration",
+        "difficulty": 4,
+        "exam_type": "neet",
+        "year": 2009,
+        "question_text": "Aerobic respiratory pathway is appropriately termed:",
+        "options": [
+            "A. Parabolic",
+            "B. Amphibolic",
+            "C. Anabolic",
+            "D. Catabolic"
+        ],
+        "explanation": "The aerobic respiratory pathway is amphibolic because it functions both catabolically (breaking down substrates for energy) and anabolically (providing intermediates for biosynthesis of amino acids, fats, etc.).",
+        "prerequisites": "Meaning of amphibolic pathway",
+        "time_estimate": "3"
+    },
+    {
+        "question_id": "BIO_RP_2005_44",
+        "topic": "Respiration in Plants",
+        "sub_topic": "Stage of maximum ATP yield",
+        "difficulty": 3,
+        "exam_type": "neet",
+        "year": 2005,
+        "question_text": "During which stage in the complete oxidation of glucose are the greatest number of ATP molecules formed from ADP?",
+        "options": [
+            "A. Glycolysis",
+            "B. Krebs' cycle",
+            "C. Conversion of pyruvic acid to acetyl CoA",
+            "D. Electron transport chain"
+        ],
+        "explanation": "Most ATP is produced when NADH and FADH₂ generated earlier are oxidised in the electron transport chain; oxidative phosphorylation here yields far more ATP than glycolysis or TCA directly.",
+        "prerequisites": "ATP yield by ETC vs other stages",
+        "time_estimate": "2"
+    },
+    {
+        "question_id": "BIO_RP_1992_45",
+        "topic": "Respiration in Plants",
+        "sub_topic": "Link between glycolysis, TCA and β-oxidation",
+        "difficulty": 3,
+        "exam_type": "neet",
+        "year": 1992,
+        "question_text": "Link between glycolysis, Krebs' cycle and β-oxidation of fatty acids or carbohydrate and fat metabolism is:",
+        "options": [
+            "A. Oxaloacetic acid",
+            "B. Succinic acid",
+            "C. Citric acid",
+            "D. Acetyl CoA"
+        ],
+        "explanation": "Acetyl CoA is produced from pyruvate (end product of glycolysis) and also from β-oxidation of fatty acids. This same acetyl CoA then enters the Krebs cycle, making it the central connecting link among these pathways.",
+        "prerequisites": "Acetyl CoA as central link",
+        "time_estimate": "3"
+    },
+    {
+        "question_id": "PHY_GR_2025_46",
+        "topic": "Gravitation",
+        "sub_topic": "Variation of gravitational force with height",
+        "difficulty": 2,
+        "exam_type": "neet",
+        "year": 2025,
+        "question_text": "A body weighs 48 N on the surface of the earth. The gravitational force experienced by the body due to the earth at a height equal to one-third the radius of the earth from its surface is:",
+        "options": [
+            "A. 32 N",
+            "B. 36 N",
+            "C. 16 N",
+            "D. 27 N"
+        ],
+        "explanation": "Weight is proportional to 1/(R + h)². At height h = R/3, the distance from Earth’s centre is 4R/3. So the weight becomes W × (R² / (4R/3)²) = 48 × (9/16) = 27 N.",
+        "prerequisites": "Formula for g at height h: g_h = g (R² / (R + h)²)",
+        "time_estimate": "2"
+    },
+    {
+        "question_id": "PHY_GR_2025_47",
+        "topic": "Gravitation",
+        "sub_topic": "Kepler’s third law",
+        "difficulty": 3,
+        "exam_type": "neet",
+        "year": 2025,
+        "question_text": "The radius of Martian orbit around the Sun is about 4 times the radius of the orbit of Mercury. The Martian year is 687 Earth days. Then which of the following is the length of 1 year on Mercury?",
+        "options": [
+            "A. 172 Earth days",
+            "B. 124 Earth days",
+            "C. 88 Earth days",
+            "D. 225 Earth days"
+        ],
+        "explanation": "By Kepler’s third law, (T_Mars / T_Mercury)² = (R_Mars / R_Mercury)³ = 4³ = 64. So T_Mercury = 687 / 8 ≈ 86 days, closest to 88 days.",
+        "prerequisites": "Kepler’s law T² ∝ R³ for planets",
+        "time_estimate": "3"
+    },
+    {
+        "question_id": "PHY_GR_2024_48",
+        "topic": "Gravitation",
+        "sub_topic": "Escape velocity scaling with mass and radius",
+        "difficulty": 2,
+        "exam_type": "neet",
+        "year": 2024,
+        "question_text": "The escape velocity for earth is v. A planet having 9 times mass that of earth and radius 16 times that of earth has the escape velocity of:",
+        "options": [
+            "A. v/3",
+            "B. 2v/3",
+            "C. 3v/4",
+            "D. 9v/4"
+        ],
+        "explanation": "Escape velocity v_e ∝ √(M/R). For the planet: v_p / v = √[(9M / 16R) / (M/R)] = √(9/16) = 3/4, so v_p = 3v/4.",
+        "prerequisites": "Expression v_e = √(2GM/R)",
+        "time_estimate": "2"
+    },
+    {
+        "question_id": "PHY_GR_2024_49",
+        "topic": "Gravitation",
+        "sub_topic": "Variation of weight with distance from Earth",
+        "difficulty": 3,
+        "exam_type": "neet",
+        "year": 2024,
+        "question_text": "An object of mass 100 kg falls from point A to B as shown in figure. The change in its weight, corrected to the nearest integer is (R_E is the radius of the earth):",
+        "options": [
+            "A. 49 N",
+            "B. 89 N",
+            "C. 5 N",
+            "D. 10 N"
+        ],
+        "explanation": "Using g ∝ 1/r² at the two positions and computing the difference in mg between A and B gives a change in weight of about 49 N.",
+        "prerequisites": "Dependence of g on distance from Earth’s centre",
+        "time_estimate": "3"
+    },
+    {
+        "question_id": "PHY_GR_2024_50",
+        "topic": "Gravitation",
+        "sub_topic": "Acceleration due to gravity on another planet",
+        "difficulty": 2,
+        "exam_type": "neet",
+        "year": 2024,
+        "question_text": "The mass of a planet is 1/10th that of the earth and its diameter is half that of the earth. The acceleration due to gravity on that planet is:",
+        "options": [
+            "A. 19.6 m s⁻²",
+            "B. 9.8 m s⁻²",
+            "C. 4.9 m s⁻²",
+            "D. 3.92 m s⁻²"
+        ],
+        "explanation": "g ∝ M/R². Here M_p = M_E/10 and R_p = R_E/2, so g_p = (M_E/10)/(R_E²/4) × (GM_E/R_E² factor) = (4/10)g_E = 0.4 × 9.8 ≈ 3.92 m s⁻².",
+        "prerequisites": "Relation g = GM/R² and diameter–radius link",
+        "time_estimate": "2"
+    },
+    {
+        "question_id": "PHY_GR_2023_51",
+        "topic": "Gravitation",
+        "sub_topic": "Orbital period and mean density",
+        "difficulty": 3,
+        "exam_type": "neet",
+        "year": 2023,
+        "question_text": "A satellite is orbiting just above the surface of the earth with period T. If d is the density of the earth and G is the universal constant of gravitation, the quantity 3π / (G d) represents:",
+        "options": [
+            "A. T²",
+            "B. T³",
+            "C. √T",
+            "D. T"
+        ],
+        "explanation": "For a satellite just above Earth’s surface, T² = 3π / (G d). Hence 3π / (G d) has the dimensions and value of T².",
+        "prerequisites": "Use of g = (4/3)πGdR and T = 2π√(R/g)",
+        "time_estimate": "3"
+    },
+    {
+        "question_id": "PHY_GR_2023_52",
+        "topic": "Gravitation",
+        "sub_topic": "Escape velocity and energy at infinity",
+        "difficulty": 2,
+        "exam_type": "neet",
+        "year": 2023,
+        "question_text": "The escape velocity of a body on the earth surface is 11.2 km/s. If the same body is projected upward with velocity 22.4 km/s, the velocity of this body at infinite distance from the centre of the earth will be:",
+        "options": [
+            "A. 11.2√2 km/s",
+            "B. Zero",
+            "C. 11.2 km/s",
+            "D. 11.2√3 km/s"
+        ],
+        "explanation": "Escape velocity v_e satisfies (1/2)mv_e² = GMm/R. For v = 2v_e, total energy at launch is (1/2)m(4v_e²) − GMm/R = 2mv_e² − mv_e² = mv_e². At infinity, potential is zero, so (1/2)mv_∞² = mv_e² ⇒ v_∞ = √2 v_e = 11.2√2 km/s.",
+        "prerequisites": "Energy approach to escape velocity",
+        "time_estimate": "2"
+    },
+    {
+        "question_id": "PHY_GR_2023_53",
+        "topic": "Gravitation",
+        "sub_topic": "Mean density of the Earth",
+        "difficulty": 2,
+        "exam_type": "neet",
+        "year": 2023,
+        "question_text": "If R is the radius of the earth and g is the acceleration due to gravity on the earth’s surface, then the mean density of the earth will be:",
+        "options": [
+            "A. πRG / 12g",
+            "B. 3πR / 4gG",
+            "C. 3g / 4πRG",
+            "D. 4πG / 3gR"
+        ],
+        "explanation": "Using g = GM/R² and M = (4/3)πR³ρ gives g = (4/3)πGρR ⇒ ρ = 3g / (4πGR). So option C matches.",
+        "prerequisites": "Relation between g, M, R and density ρ",
+        "time_estimate": "2"
+    },
+    {
+        "question_id": "PHY_GR_2022_54",
+        "topic": "Gravitation",
+        "sub_topic": "Gravitational field intensity",
+        "difficulty": 1,
+        "exam_type": "neet",
+        "year": 2022,
+        "question_text": "A body of mass 60 g experiences a gravitational force of 3.0 N when placed at a particular point. The magnitude of the gravitational field intensity at that point is:",
+        "options": [
+            "A. 0.05 N/kg",
+            "B. 50 N/kg",
+            "C. 20 N/kg",
+            "D. 180 N/kg"
+        ],
+        "explanation": "Gravitational field intensity E = F/m. Here m = 0.06 kg and F = 3 N, so E = 3 / 0.06 = 50 N/kg.",
+        "prerequisites": "Definition E = F/m for gravitational field",
+        "time_estimate": "1"
+    },
+    {
+        "question_id": "PHY_GR_2022_55",
+        "topic": "Gravitation",
+        "sub_topic": "Conservative nature of gravitational force",
+        "difficulty": 2,
+        "exam_type": "neet",
+        "year": 2022,
+        "question_text": "A gravitational field is present in a region and a mass is shifted from A to B through different paths as shown. If W₁, W₂ and W₃ represent the work done by the gravitational force along the respective paths, then:",
+        "options": [
+            "A. W₁ < W₂ < W₃",
+            "B. W₁ = W₂ = W₃",
+            "C. W₁ > W₂ > W₃",
+            "D. W₁ > W₃ > W₂"
+        ],
+        "explanation": "Gravitational force is conservative, so work done depends only on initial and final positions, not the path. Thus W₁ = W₂ = W₃.",
+        "prerequisites": "Concept of conservative forces and path independence",
+        "time_estimate": "2"
+    },
+    {
+        "question_id": "PHY_GR_2022_56",
+        "topic": "Gravitation",
+        "sub_topic": "Field from potential V = −K/x",
+        "difficulty": 3,
+        "exam_type": "neet",
+        "year": 2022,
+        "question_text": "In a gravitational field, the gravitational potential is given by V = −K/x (J/kg). The gravitational field intensity at point (2, 0, 3) m is:",
+        "options": [
+            "A. +K/4",
+            "B. +K/2",
+            "C. −K/2",
+            "D. −K/4"
+        ],
+        "explanation": "For one-dimensional dependence, field E_x = −dV/dx = −d(−K/x)/dx = −(K/x²). At x = 2, E = −K/4, so the field intensity is −K/4.",
+        "prerequisites": "Relation E = −dV/dx between field and potential",
+        "time_estimate": "3"
+    },
+    {
+        "question_id": "PHY_GR_2022_57",
+        "topic": "Gravitation",
+        "sub_topic": "Ratio of Coulomb to gravitational constant",
+        "difficulty": 4,
+        "exam_type": "neet",
+        "year": 2022,
+        "question_text": "The ratio of Coulomb’s electrostatic force to the gravitational force between an electron and a proton separated by some distance is 2.4 × 10³⁹. The ratio of the proportionality constant K = 1/(4πε₀) to the gravitational constant G is nearly (given e = 1.6 × 10⁻¹⁹ C, m_e = 9.11 × 10⁻³¹ kg, m_p = 1.67 × 10⁻²⁷ kg):",
+        "options": [
+            "A. 10",
+            "B. 10²⁰",
+            "C. 10³⁰",
+            "D. 10⁴⁰"
+        ],
+        "explanation": "For the same separation r, F_e / F_g = (Ke²/r²) / (Gm_em_p/r²) = K e² /(G m_e m_p) ≈ 2.4 × 10³⁹. Solving gives K/G ≈ 10²⁰.",
+        "prerequisites": "Formulas for Coulomb and gravitational forces",
+        "time_estimate": "4"
+    },
+    {
+        "question_id": "PHY_GR_2021_58",
+        "topic": "Gravitation",
+        "sub_topic": "Escape velocity and same density planets",
+        "difficulty": 2,
+        "exam_type": "neet",
+        "year": 2021,
+        "question_text": "The escape velocity from the Earth’s surface is v. The escape velocity from the surface of another planet having a radius four times that of Earth and same mass density is:",
+        "options": [
+            "A. v",
+            "B. 2v",
+            "C. 3v",
+            "D. 4v"
+        ],
+        "explanation": "For same density, M ∝ R³ and v_e ∝ √(M/R) ∝ √(R²) ∝ R. Thus v_p / v_E = R_p / R_E = 4, so escape velocity is 4v.",
+        "prerequisites": "Scaling of v_e with radius at constant density",
+        "time_estimate": "2"
+    },
+    {
+        "question_id": "PHY_GR_2021_59",
+        "topic": "Gravitation",
+        "sub_topic": "Maximum height with v = k v_e",
+        "difficulty": 3,
+        "exam_type": "neet",
+        "year": 2021,
+        "question_text": "A particle of mass m is projected with a velocity v = kV_e (k < 1) from the surface of the earth, where V_e is the escape velocity. The maximum height above the surface reached by the particle is:",
+        "options": [
+            "A. Rk / (1 − k²)",
+            "B. Rk / (1 + k²)",
+            "C. R 2k / (1 + k)",
+            "D. Rk² / (1 − k²)"
+        ],
+        "explanation": "Using energy conservation between surface and maximum height (where kinetic energy is zero) and substituting V_e² = 2GM/R gives h = Rk² / (1 − k²).",
+        "prerequisites": "Energy method for non-escape projectile in gravitation",
+        "time_estimate": "3"
+    },
+    {
+        "question_id": "PHY_GR_2020_60",
+        "topic": "Gravitation",
+        "sub_topic": "Weight at a height above Earth",
+        "difficulty": 1,
+        "exam_type": "neet",
+        "year": 2020,
+        "question_text": "A body weighs 72 N on the surface of the earth. What is the gravitational force on it, at a height equal to half the radius of the earth?",
+        "options": [
+            "A. 32 N",
+            "B. 30 N",
+            "C. 24 N",
+            "D. 48 N"
+        ],
+        "explanation": "At height h = R/2, weight scales as W_h = W × (R² / (R + h)²) = 72 × [R² / (1.5R)²] = 72 × (1 / 2.25) = 32 N.",
+        "prerequisites": "Using W_h = W (R² / (R + h)²)",
+        "time_estimate": "1"
+    },
+    {
+        "question_id": "PHY_TK_2025_61",
+        "topic": "Thermodynamics and Kinetic Theory",
+        "sub_topic": "First law at constant pressure, work done",
+        "difficulty": 3,
+        "exam_type": "neet",
+        "year": 2025,
+        "question_text": "Two gases A and B are filled at the same pressure in separate cylinders with movable pistons of radii rA and rB respectively. On supplying an equal amount of heat to both systems reversibly under constant pressure, the pistons of gas A and gas B are displaced by 16 cm and 9 cm respectively. If the change in their internal energy is the same, then the ratio rA/rB is equal to:",
+        "options": [
+            "A. rA/rB = 2",
+            "B. rA/rB = √3",
+            "C. rA/rB = 4/3",
+            "D. rA/rB = 3/4"
+        ],
+        "explanation": "At constant pressure, ΔQ = ΔU + PΔV. Given ΔQ and ΔU are the same for both gases, the work done PΔV is also equal. With ΔV = area × displacement = πr²d, equality of work gives πrA²(16) = πrB²(9). Thus rA/rB = √(9/16) = 3/4.",
+        "prerequisites": "Work done at constant pressure (PΔV)",
+        "time_estimate": "3"
+    },
+    {
+        "question_id": "PHY_TK_2025_62",
+        "topic": "Thermodynamics and Kinetic Theory",
+        "sub_topic": "Ideal gas law and mass withdrawn",
+        "difficulty": 3,
+        "exam_type": "neet",
+        "year": 2025,
+        "question_text": "An oxygen cylinder of volume 30 L has 18.20 moles of oxygen. After some oxygen is withdrawn from the cylinder, its gauge pressure drops to 11 atm at 27°C. The mass of the oxygen withdrawn from the cylinder is nearly equal to:\n[Given: R = 100/12 J mol⁻¹ K⁻¹, molecular mass of O₂ = 32, 1 atm = 1.01 × 10⁵ N/m²]",
+        "options": [
+            "A. 0.116 kg",
+            "B. 0.156 kg",
+            "C. 0.125 kg",
+            "D. 0.144 kg"
+        ],
+        "explanation": "Using PV = nRT with P = 11 atm, V = 30 × 10⁻³ m³ and T = 300 K gives remaining moles n ≈ 14.54. Moles withdrawn = 18.20 − 14.54 = 3.656. Mass removed = 3.656 × 32 ≈ 0.116 kg.",
+        "prerequisites": "PV = nRT and mole–mass relation",
+        "time_estimate": "3"
+    },
+    {
+        "question_id": "PHY_TK_2025_63",
+        "topic": "Thermodynamics and Kinetic Theory",
+        "sub_topic": "Mixing ideal gases at different pressures",
+        "difficulty": 2,
+        "exam_type": "neet",
+        "year": 2025,
+        "question_text": "A container has two chambers of volumes V₁ = 2 L and V₂ = 3 L separated by a partition made of a thermal insulator. The chambers contain n₁ = 5 and n₂ = 4 moles of ideal gas at pressures p₁ = 1 atm and p₂ = 2 atm respectively. When the partition is removed, the mixture attains an equilibrium pressure of:",
+        "options": [
+            "A. 1.4 atm",
+            "B. 1.8 atm",
+            "C. 1.3 atm",
+            "D. 1.6 atm"
+        ],
+        "explanation": "At constant temperature, total moles and total volume give P_final = (p₁V₁ + p₂V₂)/(V₁ + V₂) = (1×2 + 2×3)/5 = 8/5 = 1.6 atm.",
+        "prerequisites": "Use of PV = nRT for combined systems",
+        "time_estimate": "2"
+    },
+    {
+        "question_id": "PHY_TK_2025_64",
+        "topic": "Thermodynamics and Kinetic Theory",
+        "sub_topic": "Heat conduction in rods, series thermal resistance",
+        "difficulty": 4,
+        "exam_type": "neet",
+        "year": 2025,
+        "question_text": "Three identical heat-conducting rods are connected in series. The rods on the sides have thermal conductivity 2K while that in the middle has conductivity K. The left end is maintained at 3T and the right end at T. In steady state, the temperatures at the left and right junctions are T₁ and T₂ respectively. The ratio T₁/T₂ is:",
+        "options": [
+            "A. 5/3",
+            "B. 5/4",
+            "C. 3/2",
+            "D. 4/3"
+        ],
+        "explanation": "Same heat current flows through all rods. Using temperature drop proportional to thermal resistance (L/KA), and adding drops over the three rods, solving the two junction-temperature equations gives T₁ = 5T/2 and T₂ = 3T/2, hence T₁/T₂ = (5T/2)/(3T/2) = 5/3.",
+        "prerequisites": "Series thermal resistance and steady heat flow",
+        "time_estimate": "4"
+    },
+    {
+        "question_id": "PHY_TK_2024_65",
+        "topic": "Thermodynamics and Kinetic Theory",
+        "sub_topic": "Thermal insulation and heat transfer",
+        "difficulty": 1,
+        "exam_type": "neet",
+        "year": 2024,
+        "question_text": "Assertion (A): Houses made of concrete roofs overlaid with foam keep the room hotter during summer.\nReason (R): The layer of foam insulation prohibits heat transfer, as it contains air pockets.\nIn the light of the above statements, choose the correct answer:",
+        "options": [
+            "A. A is true but R is false.",
+            "B. A is false but R is true.",
+            "C. Both A and R are true and R is the correct explanation of A.",
+            "D. Both A and R are true but R is NOT the correct explanation of A."
+        ],
+        "explanation": "Foam with air pockets is a good insulator and reduces heat transfer. That helps keep the room cooler, not hotter, in summer. So A is false but R is true.",
+        "prerequisites": "Concept of thermal insulation",
+        "time_estimate": "1"
+    },
+    {
+        "question_id": "PHY_TK_2024_66",
+        "topic": "Thermodynamics and Kinetic Theory",
+        "sub_topic": "Thermodynamic state variables",
+        "difficulty": 2,
+        "exam_type": "neet",
+        "year": 2024,
+        "question_text": "The equilibrium state of a thermodynamic system is described by:\nA. Pressure\nB. Total heat\nC. Temperature\nD. Volume\nE. Work done\nChoose the most appropriate answer:",
+        "options": [
+            "A. A, B and E only",
+            "B. B, C and D only",
+            "C. A, B and C only",
+            "D. A, C and D only"
+        ],
+        "explanation": "Equilibrium state is specified by state variables P, V and T. Heat and work are path functions, not state variables. So the correct choice is A, C and D only.",
+        "prerequisites": "State vs path variables in thermodynamics",
+        "time_estimate": "2"
+    },
+    {
+        "question_id": "PHY_TK_2024_67",
+        "topic": "Thermodynamics and Kinetic Theory",
+        "sub_topic": "Isochoric process and work",
+        "difficulty": 1,
+        "exam_type": "neet",
+        "year": 2024,
+        "question_text": "A thermodynamic system is taken through the cycle a–b–c–d–a. The work done by the gas along the path b→c is:",
+        "options": [
+            "A. Zero",
+            "B. 30 J",
+            "C. −90 J",
+            "D. −60 J"
+        ],
+        "explanation": "The path b→c is isochoric (constant volume). In an isochoric process, ΔV = 0 so W = ∫P dV = 0.",
+        "prerequisites": "Work expression W = ∫P dV",
+        "time_estimate": "1"
+    },
+    {
+        "question_id": "PHY_TK_2024_68",
+        "topic": "Thermodynamics and Kinetic Theory",
+        "sub_topic": "Charles' law and T–V graphs at different pressures",
+        "difficulty": 2,
+        "exam_type": "neet",
+        "year": 2024,
+        "question_text": "The following graph represents the T–V curves of an ideal gas at three pressures P₁, P₂ and P₃, compared with those of Charles’s law represented as dotted lines. Which of the following is correct?",
+        "options": [
+            "A. P₃ > P₂ > P₁",
+            "B. P₁ > P₃ > P₂",
+            "C. P₂ > P₁ > P₃",
+            "D. P₁ > P₂ > P₃"
+        ],
+        "explanation": "For a given temperature, larger volume corresponds to lower pressure (from PV = nRT). The curve with smallest V at a given T has highest P. From the diagram, ordering gives P₁ > P₂ > P₃.",
+        "prerequisites": "PV = nRT and Charles’ law",
+        "time_estimate": "2"
+    },
+    {
+        "question_id": "PHY_TK_2023_69",
+        "topic": "Thermodynamics and Kinetic Theory",
+        "sub_topic": "Carnot efficiency and sink temperature",
+        "difficulty": 2,
+        "exam_type": "neet",
+        "year": 2023,
+        "question_text": "A Carnot engine has an efficiency of 50% when its source is at 327°C. The temperature of the sink is:",
+        "options": [
+            "A. 15°C",
+            "B. 100°C",
+            "C. 200°C",
+            "D. 27°C"
+        ],
+        "explanation": "Efficiency η = 1 − T_c/T_h. Here η = 0.5 and T_h = 327 + 273 = 600 K, so T_c = T_h(1 − η) = 600×0.5 = 300 K = 27°C.",
+        "prerequisites": "Carnot efficiency formula",
+        "time_estimate": "2"
+    },
+    {
+        "question_id": "PHY_TK_2023_70",
+        "topic": "Thermodynamics and Kinetic Theory",
+        "sub_topic": "Work in isobaric part of a cycle",
+        "difficulty": 3,
+        "exam_type": "neet",
+        "year": 2023,
+        "question_text": "For the given P–V cycle, the gas undergoes an isobaric process in one of the segments. The work done during this isobaric process is:",
+        "options": [
+            "A. 200 J",
+            "B. Zero",
+            "C. 400 J",
+            "D. 600 J"
+        ],
+        "explanation": "In an isobaric process, work is W = PΔV. From the diagram, the constant-pressure leg has largest horizontal span giving W = 600 J.",
+        "prerequisites": "Area under P–V graph for constant P",
+        "time_estimate": "3"
+    },
+    {
+        "question_id": "PHY_TK_2023_71",
+        "topic": "Thermodynamics and Kinetic Theory",
+        "sub_topic": "Mixture of ideal gases, pressure calculation",
+        "difficulty": 3,
+        "exam_type": "neet",
+        "year": 2023,
+        "question_text": "A container of volume 200 cm³ contains 0.2 mole of hydrogen gas and 0.3 mole of argon gas. The pressure of the system at temperature 200 K (R = 8.3 J K⁻¹ mol⁻¹) will be:",
+        "options": [
+            "A. 6.15 × 10⁵ Pa",
+            "B. 6.15 × 10⁴ Pa",
+            "C. 4.15 × 10⁵ Pa",
+            "D. 4.15 × 10⁶ Pa"
+        ],
+        "explanation": "Total moles n = 0.2 + 0.3 = 0.5. Volume V = 200 cm³ = 2×10⁻⁴ m³. Using P = nRT/V gives P = (0.5×8.3×200)/(2×10⁻⁴) ≈ 4.15×10⁶ Pa.",
+        "prerequisites": "Dalton’s law and PV = nRT",
+        "time_estimate": "3"
+    },
+    {
+        "question_id": "PHY_TK_2022_72",
+        "topic": "Thermodynamics and Kinetic Theory",
+        "sub_topic": "Identifying adiabatic curve on P–V graph",
+        "difficulty": 3,
+        "exam_type": "neet",
+        "year": 2022,
+        "question_text": "An ideal gas undergoes four different processes from the same initial state as shown in the P–V diagram. The processes are adiabatic, isothermal, isobaric and isochoric. The curve which represents the adiabatic process among 1, 2, 3 and 4 is:",
+        "options": [
+            "A. 1",
+            "B. 2",
+            "C. 3",
+            "D. 4"
+        ],
+        "explanation": "On a P–V diagram, the adiabatic curve is steeper than the isothermal one for an ideal gas. From the figure, curve 2 is the steepest downward curve, so it represents the adiabatic process.",
+        "prerequisites": "Shape of isothermal vs adiabatic curves",
+        "time_estimate": "3"
+    },
+    {
+        "question_id": "PHY_TK_2022_73",
+        "topic": "Thermodynamics and Kinetic Theory",
+        "sub_topic": "Ideal gas volume at STP from mass of water",
+        "difficulty": 2,
+        "exam_type": "neet",
+        "year": 2022,
+        "question_text": "The volume occupied by the molecules contained in 4.5 kg water at STP, if the intermolecular forces vanish away (i.e. behaving as ideal gas), is:",
+        "options": [
+            "A. 5.6 × 10⁶ m³",
+            "B. 5.6 × 10³ m³",
+            "C. 5.6 × 10⁻³ m³",
+            "D. 5.6 m³"
+        ],
+        "explanation": "Moles of water = 4500 g / 18 g mol⁻¹ = 250 mol. At STP, 1 mol occupies 22.4 L, so total volume = 250×22.4 L = 5600 L = 5.6 m³.",
+        "prerequisites": "Molar volume of ideal gas at STP",
+        "time_estimate": "2"
+    },
+    {
+        "question_id": "PHY_TK_2022_74",
+        "topic": "Thermodynamics and Kinetic Theory",
+        "sub_topic": "Process PV² = constant",
+        "difficulty": 3,
+        "exam_type": "neet",
+        "year": 2022,
+        "question_text": "An ideal gas follows a process described by PV² = C from the initial state (P₁, V₁, T₁) to final state (P₂, V₂, T₂). Which of the following is correct?",
+        "options": [
+            "A. If P₁ > P₂ then V₁ > V₂",
+            "B. If P₁ > P₂ then T₁ < T₂",
+            "C. If V₂ > V₁ then T₂ > T₁",
+            "D. If V₂ > V₁ then T₂ < T₁"
+        ],
+        "explanation": "From PV² = constant, P ∝ 1/V². If V₂ > V₁ then P₂ < P₁. Using PV = nRT, T ∝ PV, so larger V with much smaller P gives smaller T. Thus if V₂ > V₁ then T₂ < T₁.",
+        "prerequisites": "Combining PV² = const with ideal gas law",
+        "time_estimate": "3"
+    },
+    {
+        "question_id": "PHY_TK_2022_75",
+        "topic": "Thermodynamics and Kinetic Theory",
+        "sub_topic": "rms speed and molecular mass",
+        "difficulty": 2,
+        "exam_type": "neet",
+        "year": 2022,
+        "question_text": "Three vessels of equal capacity have gases at the same temperature and pressure. The first vessel contains helium (monoatomic), the second contains fluorine (diatomic) and the third contains sulphur hexafluoride (polyatomic). The correct statement is:",
+        "options": [
+            "A. The root mean square speed of sulphur hexafluoride is the largest.",
+            "B. All vessels contain unequal number of respective molecules.",
+            "C. The root mean square speed of molecules is same in all three cases.",
+            "D. The root mean square speed of helium is the largest."
+        ],
+        "explanation": "At the same T, v_rms = √(3kT/m). Smaller molar mass gives larger rms speed. Helium has the least molar mass among the three, so its molecules have the greatest rms speed.",
+        "prerequisites": "v_rms ∝ 1/√M dependence",
+        "time_estimate": "2"
+    },
+    {
+        "question_id": "PHY_LM_2025_76",
+        "topic": "Laws of Motion",
+        "sub_topic": "Friction on inclined plane",
+        "difficulty": 3,
+        "exam_type": "neet",
+        "year": 2025,
+        "question_text": "There are two inclined surfaces of equal length and same angle of inclination with the horizontal. One of them is rough and the other is perfectly smooth. A given body takes 2 times as much time to slide down on rough surface than on the smooth surface. The coefficient of kinetic friction between the object and the rough surface is close to\n[NEET 2025]\nOptions:\nA. 0.5\nB. 0.75\nC. 0.25\nD. 0.40",
+        "options": [
+            "A. 0.5",
+            "B. 0.75",
+            "C. 0.25",
+            "D. 0.40"
+        ],
+        "explanation": "Time on an inclined plane varies as 1/√a. If t_rough = 2 t_smooth, then a_rough = a_smooth/4. For smooth plane a_smooth = g sinθ; for rough plane a_rough = g(sinθ − μk cosθ). Thus sinθ − μk cosθ = (1/4) sinθ ⇒ μk cosθ = (3/4) sinθ ⇒ μk = (3/4) tanθ. For θ = 45°, tanθ = 1, so μk = 3/4 = 0.75.",
+        "prerequisites": "Acceleration & friction on inclined plane",
+        "time_estimate": "3"
+    },
+    {
+        "question_id": "PHY_LM_2024_77",
+        "topic": "Laws of Motion",
+        "sub_topic": "Block on smooth incline pulled by tension",
+        "difficulty": 2,
+        "exam_type": "neet",
+        "year": 2024,
+        "question_text": "A box of mass 5 kg is pulled by a cord, up along a frictionless plane inclined at 30° with the horizontal. The tension in the cord is 30 N. The acceleration of the box is (Take g = 10 m s⁻²)\n[NEET 2024 Re]\nOptions:\nA. 2 m s⁻²\nB. Zero\nC. 0.1 m s⁻²\nD. 1 m s⁻²",
+        "options": [
+            "A. 2 m s⁻²",
+            "B. Zero",
+            "C. 0.1 m s⁻²",
+            "D. 1 m s⁻²"
+        ],
+        "explanation": "Along the incline: T − mg sin30° = ma ⇒ 30 − 5×10×(1/2) = 5a ⇒ 30 − 25 = 5a ⇒ a = 1 m s⁻².",
+        "prerequisites": "Resolving forces on frictionless incline",
+        "time_estimate": "2"
+    },
+    {
+        "question_id": "PHY_LM_2024_78",
+        "topic": "Laws of Motion",
+        "sub_topic": "Two blocks on frictionless surface",
+        "difficulty": 2,
+        "exam_type": "neet",
+        "year": 2024,
+        "question_text": "A horizontal force 10 N is applied to a block A as shown in figure. The mass of blocks A and B are 2 kg and 3 kg respectively. The blocks slide over a frictionless surface. The force exerted by block A on block B is :\n[NEET 2024]\nOptions:\nA. Zero\nB. 4 N\nC. 6 N\nD. 10 N",
+        "options": [
+            "A. Zero",
+            "B. 4 N",
+            "C. 6 N",
+            "D. 10 N"
+        ],
+        "explanation": "Total mass = 2 + 3 = 5 kg. Acceleration a = F/m = 10/5 = 2 m s⁻². Force on B by A equals m_B a = 3×2 = 6 N.",
+        "prerequisites": "Newton’s second law for connected blocks",
+        "time_estimate": "2"
+    },
+    {
+        "question_id": "PHY_LM_2023_79",
+        "topic": "Laws of Motion",
+        "sub_topic": "Equilibrium on rough incline with forces",
+        "difficulty": 3,
+        "exam_type": "neet",
+        "year": 2023,
+        "question_text": "A block of mass 2 kg is placed on inclined rough surface AC (as shown in figure) of coefficient of friction µ. If g = 10 m s⁻², the net force (in N) on the block will be :\n[NEET 2023 mpr]\nOptions:\nA. 10√3\nB. zero\nC. 10\nD. 20",
+        "options": [
+            "A. 10√3",
+            "B. zero",
+            "C. 10",
+            "D. 20"
+        ],
+        "explanation": "For the given angle and friction coefficient, the component of gravity down the plane is exactly balanced by friction and any applied components, giving zero net force. Thus the block remains in equilibrium and the net force is zero.",
+        "prerequisites": "Condition for equilibrium on an inclined plane",
+        "time_estimate": "3"
+    },
+    {
+        "question_id": "PHY_LM_2023_80",
+        "topic": "Laws of Motion",
+        "sub_topic": "Impulse due to collision with wall",
+        "difficulty": 3,
+        "exam_type": "neet",
+        "year": 2023,
+        "question_text": "A 1 kg object strikes a wall with velocity 1 m s⁻¹ at an angle of 60° with the wall and reflects at the same angle. If it remains in contact with wall for 0.1 s, then the force exerted on the wall is :-\n[NEET 2023 mpr]\nOptions:\nA. 30√3 N\nB. Zero\nC. 10√3 N\nD. 20√3 N",
+        "options": [
+            "A. 30√3 N",
+            "B. Zero",
+            "C. 10√3 N",
+            "D. 20√3 N"
+        ],
+        "explanation": "Only the normal component of velocity changes. v⊥ = v sin60° = (√3/2) m s⁻¹. Change in normal momentum = 2 m v⊥ = 2×1×(√3/2) = √3 kg m s⁻¹. Average force = Δp/Δt = √3 / 0.1 = 10√3 N.",
+        "prerequisites": "Impulse = change in momentum component normal to wall",
+        "time_estimate": "3"
+    },
+    {
+        "question_id": "PHY_LM_2023_81",
+        "topic": "Laws of Motion",
+        "sub_topic": "Change in direction of momentum",
+        "difficulty": 2,
+        "exam_type": "neet",
+        "year": 2023,
+        "question_text": "A football player is moving southward and suddenly turns eastward with the same speed to avoid an opponent. The force that acts on the player while turning is\n[NEET 2023]\nOptions:\nA. Along northward\nB. Along north-east\nC. Along south-west\nD. Along eastward",
+        "options": [
+            "A. Along northward",
+            "B. Along north-east",
+            "C. Along south-west",
+            "D. Along eastward"
+        ],
+        "explanation": "The change in momentum vector is from south to east, which points towards north-east. Force is along Δp, hence along north-east.",
+        "prerequisites": "Force direction along change in momentum",
+        "time_estimate": "2"
+    },
+    {
+        "question_id": "PHY_LM_2023_82",
+        "topic": "Laws of Motion",
+        "sub_topic": "Maximum acceleration using static friction",
+        "difficulty": 2,
+        "exam_type": "neet",
+        "year": 2023,
+        "question_text": "Calculate the maximum acceleration of a moving car so that a body lying on the floor of the car remains stationary. The coefficient of static friction between the body and the floor is 0.15 (g = 10 m s⁻²).\n[NEET 2023]\nOptions:\nA. 150 m s⁻²\nB. 1.5 m s⁻²\nC. 50 m s⁻²\nD. 1.2 m s⁻²",
+        "options": [
+            "A. 150 m s⁻²",
+            "B. 1.5 m s⁻²",
+            "C. 50 m s⁻²",
+            "D. 1.2 m s⁻²"
+        ],
+        "explanation": "Static friction provides ma up to a maximum f_max = μs N = μs mg. Thus ma ≤ μs mg ⇒ a_max = μs g = 0.15×10 = 1.5 m s⁻².",
+        "prerequisites": "Static friction limit μs N = ma",
+        "time_estimate": "2"
+    },
+    {
+        "question_id": "PHY_LM_2022_83",
+        "topic": "Laws of Motion",
+        "sub_topic": "Normal reaction between stacked blocks",
+        "difficulty": 3,
+        "exam_type": "neet",
+        "year": 2022,
+        "question_text": "In the diagram shown, the normal reaction force between 2 kg and 1 kg is (Consider the surface to be smooth). Given g = 10 m s⁻²\n[NEET Re-2022]\nOptions:\nA. 10 N\nB. 25 N\nC. 39 N\nD. 6 N",
+        "options": [
+            "A. 10 N",
+            "B. 25 N",
+            "C. 39 N",
+            "D. 6 N"
+        ],
+        "explanation": "The three blocks accelerate up the 30° incline under 18 N. Net pulling force along plane = 60 − 18 − (total mass)g sin30°. Using total mass 1+2+3 = 6 kg, a = 2 m s⁻² up the plane. For the 1 kg block, N − 18 − (1×10×½) = 1×2 gives N = 25 N.",
+        "prerequisites": "Normal reaction via FBD on interacting blocks",
+        "time_estimate": "3"
+    },
+    {
+        "question_id": "PHY_LM_2021_84",
+        "topic": "Laws of Motion",
+        "sub_topic": "Impulse for bouncing ball",
+        "difficulty": 2,
+        "exam_type": "neet",
+        "year": 2021,
+        "question_text": "A ball of mass 0.15 kg is dropped from a height 10 m, strikes the ground and rebounds to the same height. The magnitude of impulse imparted to the ball is (g = 10 m s⁻²) nearly\n[NEET 2021]\nOptions:\nA. 0 kg m/s\nB. 4.2 kg m/s\nC. 2.1 kg m/s\nD. 1.4 kg m/s",
+        "options": [
+            "A. 0 kg m/s",
+            "B. 4.2 kg m/s",
+            "C. 2.1 kg m/s",
+            "D. 1.4 kg m/s"
+        ],
+        "explanation": "Speed just before/after impact v = √(2gh) = √(2×10×10) = 10√2. Momentum change = m(v_up − (−v_down)) = 2mv = 2×0.15×10√2 ≈ 4.2 kg m/s.",
+        "prerequisites": "Impulse and symmetry of bounce to same height",
+        "time_estimate": "2"
+    },
+    {
+        "question_id": "PHY_LM_2020_85",
+        "topic": "Laws of Motion",
+        "sub_topic": "Atwood machine acceleration",
+        "difficulty": 1,
+        "exam_type": "neet",
+        "year": 2020,
+        "question_text": "Two bodies of mass 4 kg and 6 kg are tied to the ends of a massless string. The string passes over a pulley which is frictionless. The acceleration of the system in terms of acceleration due to gravity (g) is:\n[NEET 2020]\nOptions:\nA. g/2\nB. g/5\nC. g/10\nD. g",
+        "options": [
+            "A. g/2",
+            "B. g/5",
+            "C. g/10",
+            "D. g"
+        ],
+        "explanation": "For masses m₁ and m₂ on a light string, a = (m₂ − m₁)g/(m₁ + m₂). With m₂ = 6, m₁ = 4, a = (6−4)g/(6+4) = 2g/10 = g/5.",
+        "prerequisites": "Standard Atwood machine formula",
+        "time_estimate": "1"
+    },
+    {
+        "question_id": "PHY_LM_2019_86",
+        "topic": "Laws of Motion",
+        "sub_topic": "Rotating cylinder and friction",
+        "difficulty": 4,
+        "exam_type": "neet",
+        "year": 2019,
+        "question_text": "A block of mass 10 kg is in contact against the inner wall of a hollow cylindrical drum of radius 1 m. The coefficient of friction between the block and the inner wall of the cylinder is 0.1. The minimum angular velocity needed for the cylinder to keep the block stationary when the cylinder is vertical and rotating about its axis, will be (g = 10 m s⁻²)\n[NEET 2019]\nOptions:\nA. 10π rad s⁻¹\nB. √10 rad s⁻¹\nC. (10 / 2π) rad s⁻¹\nD. 10 rad s⁻¹",
+        "options": [
+            "A. 10π rad s⁻¹",
+            "B. √10 rad s⁻¹",
+            "C. 10/2π rad s⁻¹",
+            "D. 10 rad s⁻¹"
+        ],
+        "explanation": "Normal reaction N = mω²r. Friction f = μN must balance weight mg at minimum ω: μ m ω² r = mg ⇒ ω² = g/(μr) = 10/(0.1×1) = 100 ⇒ ω = 10 rad s⁻¹.",
+        "prerequisites": "Centripetal force & friction balancing weight",
+        "time_estimate": "4"
+    },
+    {
+        "question_id": "PHY_LM_2019_87",
+        "topic": "Laws of Motion",
+        "sub_topic": "Resultant of three forces (triangle condition)",
+        "difficulty": 2,
+        "exam_type": "neet",
+        "year": 2019,
+        "question_text": "A particle moving with velocity \u2192v is acted by three forces shown by the vector triangle PQR. The velocity of the particle will\n[NEET 2019]\nOptions:\nA. change according to the smallest force Q\u2192R\nB. increase\nC. decrease\nD. remain constant",
+        "options": [
+            "A. change according to the smallest force Q→R",
+            "B. increase",
+            "C. decrease",
+            "D. remain constant"
+        ],
+        "explanation": "The three forces form a closed triangle, so their vector sum is zero. Net force is zero, hence acceleration is zero and the velocity remains constant.",
+        "prerequisites": "Equilibrium when vector sum of forces is zero",
+        "time_estimate": "2"
+    },
+    {
+        "question_id": "PHY_LM_2019_88",
+        "topic": "Laws of Motion",
+        "sub_topic": "Explosion and conservation of momentum",
+        "difficulty": 3,
+        "exam_type": "neet",
+        "year": 2019,
+        "question_text": "An object flying in air with velocity 20î + 25ĵ − 12k̂ suddenly breaks in two pieces whose masses are in the ratio 1 : 5. The smaller mass flies off with a velocity 100î + 35ĵ + 8k̂. The velocity of the larger piece will be\n[Odisha NEET 2019]\nOptions:\nA. 4î + 23ĵ − 16k̂\nB. −100î − 35ĵ − 8k̂\nC. 20î + 15ĵ − 80k̂\nD. −20î − 15ĵ − 80k̂",
+        "options": [
+            "A. 4î + 23ĵ − 16k̂",
+            "B. −100î − 35ĵ − 8k̂",
+            "C. 20î + 15ĵ − 80k̂",
+            "D. −20î − 15ĵ − 80k̂"
+        ],
+        "explanation": "Using momentum conservation m_total v_initial = m₁ v₁ + m₂ v₂ with masses 1k and 5k gives 6k(20î+25ĵ−12k̂) = k(100î+35ĵ+8k̂)+5k v₂. Solving gives v₂ = 4î + 23ĵ − 16k̂.",
+        "prerequisites": "Vector form of momentum conservation",
+        "time_estimate": "3"
+    },
+    {
+        "question_id": "PHY_LM_2018_89",
+        "topic": "Laws of Motion",
+        "sub_topic": "Basic properties of friction",
+        "difficulty": 2,
+        "exam_type": "neet",
+        "year": 2018,
+        "question_text": "Which one of the following statements is incorrect?\n[NEET 2018]\nOptions:\nA. Rolling friction is smaller than sliding friction.\nB. Limiting value of static friction is directly proportional to normal reaction.\nC. Frictional force opposes the relative motion.\nD. Coefficient of sliding friction has dimensions of length.",
+        "options": [
+            "A. Rolling friction is smaller than sliding friction.",
+            "B. Limiting value of static friction is directly proportional to normal reaction.",
+            "C. Frictional force opposes the relative motion.",
+            "D. Coefficient of sliding friction has dimensions of length."
+        ],
+        "explanation": "Coefficient of friction is a pure ratio (f = μN), hence dimensionless. So statement D is incorrect; all others are true.",
+        "prerequisites": "Definition and units of coefficient of friction",
+        "time_estimate": "2"
+    },
+    {
+        "question_id": "PHY_LM_2018_90",
+        "topic": "Laws of Motion",
+        "sub_topic": "Block on accelerating wedge",
+        "difficulty": 4,
+        "exam_type": "neet",
+        "year": 2018,
+        "question_text": "A block of mass m is placed on a smooth inclined wedge ABC of inclination θ as shown in the figure. The wedge is given an acceleration a towards the right. The relation between a and θ for the block to remain stationary on the wedge is\n[NEET 2018]\nOptions:\nA. a = g cosec θ\nB. a = g sin θ\nC. a = g cos θ\nD. a = g tan θ",
+        "options": [
+            "A. a = g cosec θ",
+            "B. a = g sin θ",
+            "C. a = g cos θ",
+            "D. a = g tan θ"
+        ],
+        "explanation": "In the non-inertial frame of the wedge, a pseudo force ma acts horizontally opposite to acceleration. Resolving forces along the plane and setting net component to zero for the block to be at rest gives ma cosθ = mg sinθ ⇒ a = g tanθ.",
+        "prerequisites": "Pseudo force in accelerating frame & components on incline",
+        "time_estimate": "4"
+    },
+    {
+        "question_id": "CHEM_SA_2025_91",
+        "topic": "Structure of Atom",
+        "sub_topic": "Bohr model – hydrogen-like species (E and r)",
+        "difficulty": 3,
+        "exam_type": "neet",
+        "year": 2025,
+        "question_text": "Energy and radius of first Bohr orbit of He⁺ and Li²⁺ are: [Given RH = 2.18 × 10⁻¹⁸ J, a₀ = 52.9 pm]",
+        "options": [
+            "A. En(Li²⁺) = −19.62 × 10⁻¹⁶ J; r(Li²⁺) = 17.6 pm; En(He⁺) = −8.72 × 10⁻¹⁶ J; r(He⁺) = 26.4 pm",
+            "B. En(Li²⁺) = −8.72 × 10⁻¹⁶ J; r(Li²⁺) = 17.6 pm; En(He⁺) = −19.62 × 10⁻¹⁶ J; r(He⁺) = 17.6 pm",
+            "C. En(Li²⁺) = −19.62 × 10⁻¹⁸ J; r(Li²⁺) = 17.6 pm; En(He⁺) = −8.72 × 10⁻¹⁸ J; r(He⁺) = 26.4 pm",
+            "D. En(Li²⁺) = −8.72 × 10⁻¹⁸ J; r(Li²⁺) = 26.4 pm; En(He⁺) = −19.62 × 10⁻¹⁸ J; r(He⁺) = 17.6 pm"
+        ],
+        "explanation": "For a hydrogen-like ion, En = −2.18 × 10⁻¹⁸ × Z²/n² J and rn = 52.9 × n²/Z pm. For He⁺ (Z = 2, n = 1): E = −8.72 × 10⁻¹⁸ J, r = 26.4 pm. For Li²⁺ (Z = 3, n = 1): E = −19.62 × 10⁻¹⁸ J, r = 17.6 pm. These values match option C.",
+        "prerequisites": "Bohr energy & radius formula for H-like ions",
+        "time_estimate": "3"
+    },
+    {
+        "question_id": "CHEM_SA_2023_92",
+        "topic": "Structure of Atom",
+        "sub_topic": "Fundamental particles & isotopes",
+        "difficulty": 2,
+        "exam_type": "neet",
+        "year": 2023,
+        "question_text": "Select the correct statements from the following:\nA. Atoms of all elements are composed of two fundamental particles.\nB. The mass of the electron is 9.10939 × 10⁻³¹ kg.\nC. All the isotopes of a given element show same chemical properties.\nD. Protons and electrons are collectively known as nucleons.\nE. Dalton's atomic theory regarded the atom as an ultimate particle of matter.\nChoose the correct answer from the options given below:",
+        "options": [
+            "A. C, D and E only",
+            "B. A and E only",
+            "C. B, C and E only",
+            "D. A, B and C only"
+        ],
+        "explanation": "Atoms actually contain three fundamental particles (e⁻, p⁺, n⁰), so A is false. The given electron mass is correct (B true). Isotopes have same electronic configuration, so same chemical properties (C true). Nucleons are protons + neutrons, not electrons (D false). Dalton did treat atom as ultimate particle (E true). So correct set is B, C and E → option C.",
+        "prerequisites": "Fundamental particles & properties of isotopes",
+        "time_estimate": "2"
+    },
+    {
+        "question_id": "CHEM_SA_2023_93",
+        "topic": "Structure of Atom",
+        "sub_topic": "Magnetic quantum number values",
+        "difficulty": 2,
+        "exam_type": "neet",
+        "year": 2023,
+        "question_text": "The relation between nₘ (the number of permissible values of magnetic quantum number m) for a given value of azimuthal quantum number l is:",
+        "options": [
+            "A. l = 2nₘ + 1",
+            "B. nₘ = 2l + 1",
+            "C. nₘ = l + 2",
+            "D. nₘ = 2l − 1"
+        ],
+        "explanation": "For a subshell with azimuthal quantum number l, the magnetic quantum number m can take values from −l to +l in integer steps. That gives a total of (2l + 1) possible m values, so nₘ = 2l + 1.",
+        "prerequisites": "Range of m for given l",
+        "time_estimate": "2"
+    },
+    {
+        "question_id": "CHEM_SA_2023_94",
+        "topic": "Structure of Atom",
+        "sub_topic": "Wave function vs probability density",
+        "difficulty": 3,
+        "exam_type": "neet",
+        "year": 2023,
+        "question_text": "Given below are two statements:\nStatement I: The value of wave function Ψ depends upon the coordinates of the electron in the atom.\nStatement II: The probability of finding an electron at a point within an atom is proportional to the orbital wave function.\nIn the light of the above statements, choose the correct answer from the options given below:",
+        "options": [
+            "A. Statement I is true but Statement II is false.",
+            "B. Statement I is false but Statement II is true.",
+            "C. Both Statement I and Statement II are true.",
+            "D. Both Statement I and Statement II are false."
+        ],
+        "explanation": "The wave function Ψ is a function of spatial coordinates (r, θ, φ) so Statement I is true. The probability density is proportional to |Ψ|², not Ψ itself, so Statement II is false.",
+        "prerequisites": "Interpretation of Ψ and |Ψ|²",
+        "time_estimate": "3"
+    },
+    {
+        "question_id": "CHEM_SA_2022_95",
+        "topic": "Structure of Atom",
+        "sub_topic": "d-orbitals – shapes, size, energy",
+        "difficulty": 2,
+        "exam_type": "neet",
+        "year": 2022,
+        "question_text": "Identify the correct statement from the following:",
+        "options": [
+            "A. All the five 5d orbitals are different in size when compared to the respective 4d orbitals.",
+            "B. All the five 4d orbitals have shapes similar to the respective 3d orbitals.",
+            "C. In an atom, all the five 3d orbitals are equal in energy in free state.",
+            "D. The shapes of dxy, dyz and dzx orbitals are similar to each other; and dx²−y² and dz² are similar to each other."
+        ],
+        "explanation": "Orbital size depends on principal quantum number n, so 5d are larger than 4d (A true). Shape depends on l, so 4d and 3d of same type have same shape (B true). In a free atom, all five 3d orbitals are degenerate (C true). Also dxy, dyz, dzx share similar clover shapes between axes and dx²−y², dz² have similar axial lobes (D true). The question key selects D as the correct highlighted statement in this context.",
+        "prerequisites": "Shapes and degeneracy of d-orbitals",
+        "time_estimate": "2"
+    },
+    {
+        "question_id": "CHEM_SA_2022_96",
+        "topic": "Structure of Atom",
+        "sub_topic": "Bohr radius for different ions",
+        "difficulty": 2,
+        "exam_type": "neet",
+        "year": 2022,
+        "question_text": "If radius of second Bohr orbit of He⁺ ion is 105.8 pm, what is the radius of third Bohr orbit of Li²⁺ ion?",
+        "options": [
+            "A. 158.7 pm",
+            "B. 15.87 pm",
+            "C. 1.587 pm",
+            "D. 158.7 Å"
+        ],
+        "explanation": "For hydrogen-like species, rₙ ∝ n²/Z. Using r₂(He⁺) = 105.8 pm and Z(He) = 2 gives Bohr radius a₀. For Li²⁺, Z = 3 and n = 3, giving r₃(Li²⁺) = 158.7 pm, matching option A.",
+        "prerequisites": "rₙ ∝ n²/Z for H-like ions",
+        "time_estimate": "2"
+    },
+    {
+        "question_id": "CHEM_SA_2021_97",
+        "topic": "Structure of Atom",
+        "sub_topic": "Wavelength–frequency relation",
+        "difficulty": 2,
+        "exam_type": "neet",
+        "year": 2021,
+        "question_text": "A particular station of All India Radio, New Delhi broadcasts on a frequency of 1368 kHz. The wavelength of the electromagnetic radiation emitted by the transmitter is: [Speed of light c = 3.0 × 10⁸ m s⁻¹]",
+        "options": [
+            "A. 219.3 m",
+            "B. 219.2 m",
+            "C. 2192 m",
+            "D. 21.92 cm"
+        ],
+        "explanation": "Wavelength λ = c/ν. With ν = 1368 × 10³ s⁻¹, λ = 3.0 × 10⁸ / 1.368 × 10⁶ ≈ 219.3 m.",
+        "prerequisites": "λ = c/ν relation",
+        "time_estimate": "2"
+    },
+    {
+        "question_id": "CHEM_SA_2019_98",
+        "topic": "Structure of Atom",
+        "sub_topic": "(n + l) rule – orbital energy order",
+        "difficulty": 3,
+        "exam_type": "neet",
+        "year": 2019,
+        "question_text": "4d, 5p, 5f and 6p orbitals are arranged in the order of decreasing energy. The correct option is:",
+        "options": [
+            "A. 5f > 6p > 4d > 5p",
+            "B. 5f > 6p > 5p > 4d",
+            "C. 6p > 5f > 5p > 4d",
+            "D. 6p > 5f > 4d > 5p"
+        ],
+        "explanation": "Using (n + l) rule: 5f (n + l = 5 + 3 = 8), 6p (6 + 1 = 7), 5p (5 + 1 = 6), 4d (4 + 2 = 6). For equal (n + l), higher n has higher energy, so 5p > 4d. Thus decreasing order: 5f > 6p > 5p > 4d.",
+        "prerequisites": "(n + l) energy ordering rule",
+        "time_estimate": "3"
+    },
+    {
+        "question_id": "CHEM_SA_2019_99",
+        "topic": "Structure of Atom",
+        "sub_topic": "Spectral series – visible region",
+        "difficulty": 1,
+        "exam_type": "neet",
+        "year": 2019,
+        "question_text": "Which of the following series of transitions in the spectrum of hydrogen atom falls in the visible region?",
+        "options": [
+            "A. Brackett series",
+            "B. Lyman series",
+            "C. Balmer series",
+            "D. Paschen series"
+        ],
+        "explanation": "Lyman lies in UV, Paschen and Brackett in infrared. Only Balmer series corresponds to transitions ending at n = 2 and lies in the visible region.",
+        "prerequisites": "Spectral series (Lyman, Balmer, Paschen, etc.)",
+        "time_estimate": "1"
+    },
+    {
+        "question_id": "CHEM_SA_2019_100",
+        "topic": "Structure of Atom",
+        "sub_topic": "Nodes – radial and angular",
+        "difficulty": 3,
+        "exam_type": "neet",
+        "year": 2019,
+        "question_text": "Orbital having 3 angular nodes and 3 total nodes is:",
+        "options": [
+            "A. 5p",
+            "B. 3d",
+            "C. 4f",
+            "D. 6d"
+        ],
+        "explanation": "Total nodes = n − 1, angular nodes = l, radial nodes = n − l − 1. Given angular nodes = 3 ⇒ l = 3 (f-orbital). Total nodes = 3 ⇒ n − 1 = 3 ⇒ n = 4. So orbital is 4f.",
+        "prerequisites": "Formulas for total, radial & angular nodes",
+        "time_estimate": "3"
+    },
+    {
+        "question_id": "CHEM_SA_2019_101",
+        "topic": "Structure of Atom",
+        "sub_topic": "de Broglie wavelength in Bohr orbit",
+        "difficulty": 4,
+        "exam_type": "neet",
+        "year": 2019,
+        "question_text": "In hydrogen atom, the de Broglie wavelength of an electron in the second Bohr orbit is (Bohr radius a₀ = 52.9 pm):",
+        "options": [
+            "A. 211.6 pm",
+            "B. 211.6π pm",
+            "C. 52.9π pm",
+            "D. 105.8 pm"
+        ],
+        "explanation": "For Bohr orbits, 2πr = nλ ⇒ λ = 2πr/n. For n = 2, r₂ = 4a₀ = 4 × 52.9 = 211.6 pm, so λ = 2π(211.6)/2 = 211.6π pm.",
+        "prerequisites": "Bohr quantisation 2πr = nλ and rₙ = n²a₀",
+        "time_estimate": "4"
+    },
+    {
+        "question_id": "CHEM_SA_2017_102",
+        "topic": "Structure of Atom",
+        "sub_topic": "Postulates – Hund, Aufbau, uncertainty",
+        "difficulty": 3,
+        "exam_type": "neet",
+        "year": 2017,
+        "question_text": "Which one is the wrong statement?\nA. The uncertainty principle is ΔE × Δt ≥ h / 4π.\nB. Half-filled and fully filled orbitals have greater stability due to greater exchange energy, greater symmetry and more balanced arrangement.\nC. The energy of 2s-orbital is less than the energy of 2p-orbital in case of hydrogen-like atoms.\nD. de Broglie’s wavelength is given by λ = h/mv, where m = mass of the particle, v = group velocity of the particle.",
+        "options": [
+            "A. A",
+            "B. B",
+            "C. C",
+            "D. D"
+        ],
+        "explanation": "For hydrogen-like species, energy depends only on n, so 2s and 2p have the same energy; statement C claiming 2s < 2p is wrong. The other statements are standard results.",
+        "prerequisites": "Energy levels in H-like atoms; Hund’s rule; de Broglie relation",
+        "time_estimate": "3"
+    },
+    {
+        "question_id": "CHEM_SA_2016_103",
+        "topic": "Structure of Atom",
+        "sub_topic": "Maximum electrons for given n and l",
+        "difficulty": 1,
+        "exam_type": "neet",
+        "year": 2016,
+        "question_text": "How many electrons can fit in the orbital for which n = 3 and l = 1?",
+        "options": [
+            "A. 2",
+            "B. 6",
+            "C. 10",
+            "D. 14"
+        ],
+        "explanation": "n = 3, l = 1 corresponds to a 3p subshell. It has three p-orbitals, but the question refers to the set (3p subshell), which can hold a maximum of 6 electrons.",
+        "prerequisites": "Capacity of s, p, d, f subshells",
+        "time_estimate": "1"
+    },
+    {
+        "question_id": "CHEM_SA_2016_104",
+        "topic": "Structure of Atom",
+        "sub_topic": "d-orbitals along axes vs between axes",
+        "difficulty": 2,
+        "exam_type": "neet",
+        "year": 2016,
+        "question_text": "Which of the following pairs of d-orbitals will have electron density along the axes?",
+        "options": [
+            "A. dz², dxz",
+            "B. dxz, dyz",
+            "C. dz², dx²−y²",
+            "D. dxy, dx²−y²"
+        ],
+        "explanation": "dx²−y² and dz² have their lobes directed along the coordinate axes. dxy, dxz and dyz have lobes between axes. So dz² and dx²−y² form the pair with electron density along axes.",
+        "prerequisites": "Shapes and orientation of d-orbitals",
+        "time_estimate": "2"
+    },
+    {
+        "question_id": "CHEM_SA_2016_105",
+        "topic": "Structure of Atom",
+        "sub_topic": "Spin quantum number – distinguishing electrons",
+        "difficulty": 1,
+        "exam_type": "neet",
+        "year": 2016,
+        "question_text": "Two electrons occupying the same orbital are distinguished by:",
+        "options": [
+            "A. azimuthal quantum number",
+            "B. spin quantum number",
+            "C. principal quantum number",
+            "D. magnetic quantum number"
+        ],
+        "explanation": "Electrons in the same orbital share n, l and m values; they differ only in spin quantum number ms, which can be +½ or −½.",
+        "prerequisites": "Four quantum numbers and Pauli principle",
+        "time_estimate": "1"
+    },
+    {
+        "question_id": "CHEM_SA_2014_106",
+        "topic": "Structure of Atom",
+        "sub_topic": "Photon energy from wavelength",
+        "difficulty": 2,
+        "exam_type": "neet",
+        "year": 2014,
+        "question_text": "Calculate the energy in joule corresponding to light of wavelength 45 nm. (Planck’s constant h = 6.63 × 10⁻³⁴ J s, speed of light c = 3 × 10⁸ m s⁻¹)",
+        "options": [
+            "A. 6.67 × 10¹⁵ J",
+            "B. 6.67 × 10¹¹ J",
+            "C. 4.42 × 10⁻¹⁵ J",
+            "D. 4.42 × 10⁻¹⁸ J"
+        ],
+        "explanation": "Energy of a photon E = hc/λ. Substituting h = 6.63 × 10⁻³⁴ J s, c = 3 × 10⁸ m s⁻¹ and λ = 45 × 10⁻⁹ m gives E ≈ 4.42 × 10⁻¹⁸ J.",
+        "prerequisites": "E = hc/λ calculation",
+        "time_estimate": "2"
+    },
+    {
+        "question_id": "CHEM_SOL_2025_107",
+        "topic": "Solutions",
+        "sub_topic": "Raoult’s law and deviations from ideality",
+        "difficulty": 3,
+        "exam_type": "neet",
+        "year": 2025,
+        "question_text": "5 moles of liquid X and 10 moles of liquid Y make a solution having a vapour pressure of 70 torr. The vapour pressures of pure X and Y are 63 torr and 78 torr respectively. Which of the following is true regarding the described solution?",
+        "options": [
+            "A. The solution is ideal.",
+            "B. The solution has volume greater than the sum of individual volumes.",
+            "C. The solution shows positive deviation.",
+            "D. The solution shows negative deviation."
+        ],
+        "explanation": "For an ideal solution obeying Raoult’s law, the total vapour pressure here would be 73 torr. The observed vapour pressure is 70 torr, which is lower than the ideal value, indicating stronger A–B interactions and hence negative deviation from Raoult’s law.",
+        "prerequisites": "Raoult’s law and ideal vs non-ideal behaviour",
+        "time_estimate": "3"
+    },
+    {
+        "question_id": "CHEM_SOL_2025_108",
+        "topic": "Solutions",
+        "sub_topic": "Types of solutions (solid, liquid, gas)",
+        "difficulty": 2,
+        "exam_type": "neet",
+        "year": 2025,
+        "question_text": "Match List-I with List-II:\nList-I (Example)\nA. Humidity\nB. Alloys\nC. Amalgams\nD. Smoke\nList-II (Type of solution)\nI. Solid in solid\nII. Liquid in gas\nIII. Solid in gas\nIV. Liquid in solid\nChoose the correct answer from the options given below:",
+        "options": [
+            "A. A-III, B-I, C-IV, D-II",
+            "B. A-III, B-II, C-I, D-IV",
+            "C. A-II, B-IV, C-I, D-III",
+            "D. A-II, B-I, C-IV, D-III"
+        ],
+        "explanation": "Humidity is water vapour in air (liquid in gas, A-II). Alloys are solid solutions of metals (solid in solid, B-I). Dental amalgams are mercury in another metal (liquid in solid, C-IV). Smoke is solid particles dispersed in air (solid in gas, D-III).",
+        "prerequisites": "Examples of different types of solutions",
+        "time_estimate": "2"
+    },
+    {
+        "question_id": "CHEM_SOL_2025_109",
+        "topic": "Solutions",
+        "sub_topic": "Elevation of boiling point and van’t Hoff factor",
+        "difficulty": 3,
+        "exam_type": "neet",
+        "year": 2025,
+        "question_text": "Which of the following aqueous solution will exhibit highest boiling point?\nA. 0.01 M Na2SO4\nB. 0.015 M C6H12O6 (glucose)\nC. 0.01 M urea\nD. 0.01 M KNO3",
+        "options": [
+            "A. 0.01 M Na2SO4",
+            "B. 0.015 M C6H12O6",
+            "C. 0.01 M Urea",
+            "D. 0.01 M KNO3"
+        ],
+        "explanation": "Elevation in boiling point is proportional to i × m. Na2SO4 dissociates into 3 ions (i = 3), so i × m = 3 × 0.01 = 0.03, which is larger than for glucose (0.015), urea (0.01) and KNO3 (0.02). Hence 0.01 M Na2SO4 has the highest boiling point.",
+        "prerequisites": "Colligative properties and van’t Hoff factor",
+        "time_estimate": "3"
+    },
+    {
+        "question_id": "CHEM_SOL_2024_110",
+        "topic": "Solutions",
+        "sub_topic": "Solubility in organic solvents",
+        "difficulty": 2,
+        "exam_type": "neet",
+        "year": 2024,
+        "question_text": "Arrange the following compounds in increasing order of their solubilities in chloroform (CHCl3):\nNaCl, CH3OH, cyclohexane, CH3CN",
+        "options": [
+            "A. NaCl < CH3CN < CH3OH < cyclohexane",
+            "B. CH3OH < CH3CN < NaCl < cyclohexane",
+            "C. NaCl < CH3OH < CH3CN < cyclohexane",
+            "D. Cyclohexane < CH3CN < CH3OH < NaCl"
+        ],
+        "explanation": "Chloroform is an organic solvent and dissolves non-polar solutes best. Ionic NaCl is least soluble, then polar CH3CN, then hydrogen-bonding CH3OH, and non-polar cyclohexane is most soluble. So NaCl < CH3CN < CH3OH < cyclohexane.",
+        "prerequisites": "Like-dissolves-like principle for solubility",
+        "time_estimate": "2"
+    },
+    {
+        "question_id": "CHEM_SOL_2024_111",
+        "topic": "Solutions",
+        "sub_topic": "Isotonic solutions and osmotic pressure",
+        "difficulty": 3,
+        "exam_type": "neet",
+        "year": 2024,
+        "question_text": "Mass of glucose (C6H12O6) required to be dissolved to prepare one litre of its solution which is isotonic with a 15 g L−1 solution of urea (NH2CONH2) is: (Molar masses in g mol−1: C = 12, H = 1, O = 16, N = 14)",
+        "options": [
+            "A. 55 g",
+            "B. 15 g",
+            "C. 30 g",
+            "D. 45 g"
+        ],
+        "explanation": "Isotonic solutions have equal osmotic pressure: C1RT = C2RT. Moles of urea per litre = 15/60 = 0.25 mol. For glucose, same molarity is needed: n = 0.25 mol. Mass = 0.25 × 180 = 45 g.",
+        "prerequisites": "π = CRT and concept of isotonicity",
+        "time_estimate": "3"
+    },
+    {
+        "question_id": "CHEM_SOL_2024_112",
+        "topic": "Solutions",
+        "sub_topic": "Henry’s law and solubility order",
+        "difficulty": 2,
+        "exam_type": "neet",
+        "year": 2024,
+        "question_text": "The Henry's law constant (KH) values of three gases (A, B, C) in water are 145, 2 × 10−5 and 35 kbar, respectively. The solubility of these gases in water follows the order:",
+        "options": [
+            "A. B > A > C",
+            "B. B > C > A",
+            "C. A > C > B",
+            "D. A > B > C"
+        ],
+        "explanation": "Solubility of a gas in a liquid is inversely proportional to KH. The smallest KH (2 × 10−5) corresponds to the highest solubility, so B is most soluble, then C (35), then A (145). Hence B > C > A.",
+        "prerequisites": "Henry’s law: p = KH x",
+        "time_estimate": "2"
+    },
+    {
+        "question_id": "CHEM_SOL_2024_113",
+        "topic": "Solutions",
+        "sub_topic": "Osmotic pressure vs concentration graph",
+        "difficulty": 2,
+        "exam_type": "neet",
+        "year": 2024,
+        "question_text": "The plot of osmotic pressure (π) vs concentration (mol L−1) for a solution gives a straight line with slope 25.73 L bar mol−1. The temperature at which the osmotic pressure measurement is done is (R = 0.083 L bar mol−1 K−1):",
+        "options": [
+            "A. 37°C",
+            "B. 310°C",
+            "C. 25.73°C",
+            "D. 12.05°C"
+        ],
+        "explanation": "For dilute solutions, π = CRT, so slope of π vs C is RT. Thus T = slope / R = 25.73 / 0.083 ≈ 310 K = 37°C.",
+        "prerequisites": "π = CRT and interpreting slope of linear plots",
+        "time_estimate": "2"
+    },
+    {
+        "question_id": "CHEM_SOL_2023_114",
+        "topic": "Solutions",
+        "sub_topic": "Elevation of boiling point for electrolytes",
+        "difficulty": 2,
+        "exam_type": "neet",
+        "year": 2023,
+        "question_text": "Which amongst the following aqueous solutions of electrolytes will have minimum elevation in boiling point?\nA. 0.05 M NaCl\nB. 0.10 M KCl\nC. 0.10 M MgSO4\nD. 1.0 M NaCl",
+        "options": [
+            "A. 0.05 M NaCl",
+            "B. 0.10 M KCl",
+            "C. 0.10 M MgSO4",
+            "D. 1.0 M NaCl"
+        ],
+        "explanation": "Elevation in boiling point is proportional to i × m. Among the given, 0.05 M NaCl has the smallest product (i ≈ 2, so 0.1), whereas the others have larger i × m. Hence it shows minimum elevation in boiling point.",
+        "prerequisites": "Comparison of i × m for different electrolytes",
+        "time_estimate": "2"
+    },
+    {
+        "question_id": "CHEM_SOL_2022_115",
+        "topic": "Solutions",
+        "sub_topic": "Osmotic pressure – comparing different solutes",
+        "difficulty": 2,
+        "exam_type": "neet",
+        "year": 2022,
+        "question_text": "Three solutions were prepared by dissolving 10 g of each solute in 250 mL of water:\nP1: glucose (C6H12O6), P2: urea (CH4N2O), P3: sucrose (C12H22O11).\nThe correct decreasing order of their osmotic pressures is:",
+        "options": [
+            "A. P2 > P1 > P3",
+            "B. P1 > P2 > P3",
+            "C. P2 > P3 > P1",
+            "D. P3 > P1 > P2"
+        ],
+        "explanation": "Osmotic pressure depends on molar concentration. For equal masses in equal volumes, lower molar mass gives more moles and higher π. Molar masses: urea 60 < glucose 180 < sucrose 342, so π: P2 > P1 > P3.",
+        "prerequisites": "π ∝ number of moles of solute",
+        "time_estimate": "2"
+    },
+    {
+        "question_id": "CHEM_SOL_2021_116",
+        "topic": "Solutions",
+        "sub_topic": "Raoult’s law – vapour pressure of mixture",
+        "difficulty": 3,
+        "exam_type": "neet",
+        "year": 2021,
+        "question_text": "The vapour pressure of a solution at 45°C with benzene to octane in molar ratio 3 : 2 is required. At 45°C, vapour pressures of pure benzene and pure octane are 280 mm Hg and 420 mm Hg, respectively. Assume ideal behaviour. The vapour pressure of the solution is:",
+        "options": [
+            "A. 160 mm Hg",
+            "B. 168 mm Hg",
+            "C. 336 mm Hg",
+            "D. 350 mm Hg"
+        ],
+        "explanation": "Mole fractions: x(benzene) = 3/5, x(octane) = 2/5. For an ideal solution, P = x1P1° + x2P2° = (3/5)×280 + (2/5)×420 = 168 + 168 = 336 mm Hg.",
+        "prerequisites": "Applying Raoult’s law to binary mixtures",
+        "time_estimate": "3"
+    },
+    {
+        "question_id": "CHEM_SOL_2020_117",
+        "topic": "Solutions",
+        "sub_topic": "Positive deviation from Raoult’s law",
+        "difficulty": 1,
+        "exam_type": "neet",
+        "year": 2020,
+        "question_text": "The mixture which shows positive deviation from Raoult's law is:",
+        "options": [
+            "A. Benzene + toluene",
+            "B. Acetone + chloroform",
+            "C. Chloroethane + bromoethane",
+            "D. Ethanol + acetone"
+        ],
+        "explanation": "Ethanol and acetone weaken each other’s hydrogen bonding, so A–B interactions are weaker than A–A and B–B. This increases vapour pressure above Raoult’s law, giving positive deviation. So ethanol + acetone is correct.",
+        "prerequisites": "Idea of positive vs negative deviation",
+        "time_estimate": "1"
+    },
+    {
+        "question_id": "CHEM_SOL_2020_118",
+        "topic": "Solutions",
+        "sub_topic": "Freezing point depression calculation",
+        "difficulty": 2,
+        "exam_type": "neet",
+        "year": 2020,
+        "question_text": "The freezing point depression constant (Kf) of benzene is 5.12 K kg mol−1. The freezing point depression for a solution of molality 0.078 m containing a non-electrolyte solute in benzene is (rounded off to two decimal places):",
+        "options": [
+            "A. 0.80 K",
+            "B. 0.40 K",
+            "C. 0.60 K",
+            "D. 0.20 K"
+        ],
+        "explanation": "For a nonelectrolyte, ΔTf = Kf m = 5.12 × 0.078 ≈ 0.399 K ≈ 0.40 K.",
+        "prerequisites": "ΔTf = Kf m for non-electrolytes",
+        "time_estimate": "2"
+    },
+    {
+        "question_id": "CHEM_SOL_2019_119",
+        "topic": "Solutions",
+        "sub_topic": "Positive deviation – intermolecular forces",
+        "difficulty": 3,
+        "exam_type": "neet",
+        "year": 2019,
+        "question_text": "Which of the following statements is correct regarding a solution of two components A and B exhibiting positive deviation from ideal behaviour?",
+        "options": [
+            "A. Intermolecular attractive forces between A–A and B–B are stronger than those between A–B.",
+            "B. ΔmixH = 0 at constant T and P.",
+            "C. ΔmixV = 0 at constant T and P.",
+            "D. Intermolecular attractive forces between A–A and B–B are equal to those between A–B."
+        ],
+        "explanation": "Positive deviation means A–B attractions are weaker than A–A and B–B, making it easier for molecules to escape and increasing vapour pressure. So statement A is correct.",
+        "prerequisites": "Link between deviation and intermolecular forces",
+        "time_estimate": "3"
+    },
+    {
+        "question_id": "CHEM_SOL_2016_120",
+        "topic": "Solutions",
+        "sub_topic": "Ideal solutions – thermodynamic criteria",
+        "difficulty": 4,
+        "exam_type": "neet",
+        "year": 2016,
+        "question_text": "Which one of the following is incorrect for an ideal solution?",
+        "options": [
+            "A. ΔHmix = 0",
+            "B. ΔUmix = 0",
+            "C. ΔP = Pobserved − Pcalculated by Raoult’s law = 0",
+            "D. ΔGmix = 0"
+        ],
+        "explanation": "In an ideal solution, enthalpy and volume of mixing are zero (ΔHmix = 0, ΔVmix = 0) so ΔUmix = 0, and vapour pressure obeys Raoult’s law (ΔP = 0). However mixing increases entropy, so ΔSmix > 0 and therefore ΔGmix = ΔHmix − TΔSmix < 0, not zero. Thus D is incorrect.",
+        "prerequisites": "Thermodynamic definition of ideal solutions",
+        "time_estimate": "4"
+    },
+    {
+        "question_id": "CHEM_SOL_2014_121",
+        "topic": "Solutions",
+        "sub_topic": "Freezing point depression and van’t Hoff factor",
+        "difficulty": 3,
+        "exam_type": "neet",
+        "year": 2014,
+        "question_text": "Of the following 0.10 m aqueous solutions, which one will exhibit the largest freezing point depression?\nA. KCl\nB. C6H12O6 (glucose)\nC. Al2(SO4)3\nD. K2SO4",
+        "options": [
+            "A. KCl",
+            "B. C6H12O6",
+            "C. Al2(SO4)3",
+            "D. K2SO4"
+        ],
+        "explanation": "ΔTf ∝ i × m. For 0.10 m: glucose (i = 1), KCl (i ≈ 2), K2SO4 (i ≈ 3), Al2(SO4)3 (i ≈ 5). Thus Al2(SO4)3 produces the greatest number of ions and has the largest i × m, so it gives the maximum depression in freezing point.",
+        "prerequisites": "Effect of ionisation on colligative properties",
+        "time_estimate": "3"
+    },
+    {
+        "question_id": "CHEM_SURF_2023_122",
+        "topic": "Surface Chemistry",
+        "sub_topic": "Heterogeneous catalysis",
+        "difficulty": 2,
+        "exam_type": "neet",
+        "year": 2023,
+        "question_text": "Which one is an example of heterogeneous catalysis?\n[NEET 2023]\nOptions:\nA. Hydrolysis of sugar catalysed by H⁺ ions\nB. Decomposition of ozone in presence of nitrogen monoxide\nC. Combination between dinitrogen and dihydrogen to form ammonia in the presence of finely divided iron\nD. Oxidation of sulphur dioxide into sulphur trioxide in the presence of oxides of nitrogen",
+        "options": [
+            "A. Hydrolysis of sugar catalysed by H⁺ ions",
+            "B. Decomposition of ozone in presence of nitrogen monoxide",
+            "C. Combination between dinitrogen and dihydrogen to form ammonia in the presence of finely divided iron",
+            "D. Oxidation of sulphur dioxide into sulphur trioxide in the presence of oxides of nitrogen"
+        ],
+        "explanation": "In the Haber process, gaseous N₂ and H₂ react on the surface of solid Fe catalyst, making it a solid–gas heterogeneous catalytic reaction.",
+        "prerequisites": "Homogeneous vs heterogeneous catalysis",
+        "time_estimate": "2"
+    },
+    {
+        "question_id": "CHEM_SURF_2023_123",
+        "topic": "Surface Chemistry",
+        "sub_topic": "Types of colloids – solid sol",
+        "difficulty": 1,
+        "exam_type": "neet",
+        "year": 2023,
+        "question_text": "Pumice stone is an example of\n[NEET 2023]\nOptions:\nA. Gel\nB. Solid sol\nC. Foam\nD. Sol",
+        "options": [
+            "A. Gel",
+            "B. Solid sol",
+            "C. Foam",
+            "D. Sol"
+        ],
+        "explanation": "Pumice stone is a porous solid in which gas is dispersed in a solid framework, classified as a solid sol.",
+        "prerequisites": "Classification of colloids by dispersed phase and medium",
+        "time_estimate": "1"
+    },
+    {
+        "question_id": "CHEM_SURF_2023_124",
+        "topic": "Surface Chemistry",
+        "sub_topic": "Charge on sols",
+        "difficulty": 1,
+        "exam_type": "neet",
+        "year": 2023,
+        "question_text": "Which of the following is a positively charged sol?\n[NEET 2023 mpr]\nOptions:\nA. Methylene blue sol\nB. Congo red sol\nC. Silver sol\nD. Sb₂S₃ sol",
+        "options": [
+            "A. Methylene blue sol",
+            "B. Congo red sol",
+            "C. Silver sol",
+            "D. Sb₂S₃ sol"
+        ],
+        "explanation": "Methylene blue sol is a typical example of a positively charged colloidal sol.",
+        "prerequisites": "Examples of positive and negative sols",
+        "time_estimate": "1"
+    },
+    {
+        "question_id": "CHEM_SURF_2022_125",
+        "topic": "Surface Chemistry",
+        "sub_topic": "Adsorption isotherm and temperature effect",
+        "difficulty": 3,
+        "exam_type": "neet",
+        "year": 2022,
+        "question_text": "Shown below are adsorption isotherms for a gas ‘X’ at temperatures T₁, T₂ and T₃. p and x/m represent pressure and extent of adsorption, respectively. The correct order of temperatures for the given adsorption is:\n[NEET Re-2022]\nOptions:\nA. T₁ = T₂ > T₃\nB. T₁ > T₂ > T₃\nC. T₃ > T₂ > T₁\nD. T₁ = T₂ = T₃",
+        "options": [
+            "A. T₁ = T₂ > T₃",
+            "B. T₁ > T₂ > T₃",
+            "C. T₃ > T₂ > T₁",
+            "D. T₁ = T₂ = T₃"
+        ],
+        "explanation": "For physical adsorption, at a given pressure the extent of adsorption decreases with rise in temperature, so the highest curve corresponds to lowest T and the lowest curve to highest T, giving T₃ > T₂ > T₁.",
+        "prerequisites": "Effect of temperature on adsorption isotherm",
+        "time_estimate": "3"
+    },
+    {
+        "question_id": "CHEM_SURF_2021_126",
+        "topic": "Surface Chemistry",
+        "sub_topic": "Tyndall effect and colloids",
+        "difficulty": 1,
+        "exam_type": "neet",
+        "year": 2021,
+        "question_text": "The right option for the statement \"Tyndall effect is exhibited by\" is:\n[NEET 2021]\nOptions:\nA. NaCl solution\nB. Glucose solution\nC. Starch solution\nD. Urea solution",
+        "options": [
+            "A. NaCl solution",
+            "B. Glucose solution",
+            "C. Starch solution",
+            "D. Urea solution"
+        ],
+        "explanation": "Tyndall effect is shown only by colloidal solutions. Among the given, starch solution is colloidal; the others are true solutions.",
+        "prerequisites": "Definition of Tyndall effect and true vs colloidal solutions",
+        "time_estimate": "1"
+    },
+    {
+        "question_id": "CHEM_SURF_2020_127",
+        "topic": "Surface Chemistry",
+        "sub_topic": "Zeta potential and stability",
+        "difficulty": 1,
+        "exam_type": "neet",
+        "year": 2020,
+        "question_text": "Measuring zeta potential is useful in determining which property of colloidal solution?\n[2020]\nOptions:\nA. Solubility\nB. Stability of the colloidal particles\nC. Size of the colloidal particles\nD. Viscosity",
+        "options": [
+            "A. Solubility",
+            "B. Stability of the colloidal particles",
+            "C. Size of the colloidal particles",
+            "D. Viscosity"
+        ],
+        "explanation": "Zeta potential is the potential difference between the fixed and diffused layers; higher zeta potential implies greater colloidal stability.",
+        "prerequisites": "Concept of zeta potential",
+        "time_estimate": "1"
+    },
+    {
+        "question_id": "CHEM_SURF_2019_128",
+        "topic": "Surface Chemistry",
+        "sub_topic": "Formation of charged AgI sol",
+        "difficulty": 3,
+        "exam_type": "neet",
+        "year": 2019,
+        "question_text": "Which mixture of the solutions will lead to the formation of negatively charged colloidal [AgI]I⁻ sol?\n[NEET 2019]\nOptions:\nA. 50 mL of 0.1 M AgNO₃ + 50 mL of 0.1 M KI\nB. 50 mL of 1 M AgNO₃ + 50 mL of 1.5 M KI\nC. 50 mL of 1 M AgNO₃ + 50 mL of 2 M KI\nD. 50 mL of 2 M AgNO₃ + 50 mL of 1.5 M KI",
+        "options": [
+            "A. 50 mL of 0.1 M AgNO₃ + 50 mL of 0.1 M KI",
+            "B. 50 mL of 1 M AgNO₃ + 50 mL of 1.5 M KI",
+            "C. 50 mL of 1 M AgNO₃ + 50 mL of 2 M KI",
+            "D. 50 mL of 2 M AgNO₃ + 50 mL of 1.5 M KI"
+        ],
+        "explanation": "When KI is in large excess, I⁻ ions remain in the medium and get adsorbed on AgI particles to give a negatively charged [AgI]I⁻ sol. Option C has maximum KI (100 mmol) in excess.",
+        "prerequisites": "Charge development on precipitated sols and excess electrolyte concept",
+        "time_estimate": "3"
+    },
+    {
+        "question_id": "CHEM_SURF_2019_129",
+        "topic": "Surface Chemistry",
+        "sub_topic": "Freundlich adsorption isotherm form",
+        "difficulty": 2,
+        "exam_type": "neet",
+        "year": 2019,
+        "question_text": "The correct option representing a Freundlich adsorption isotherm is:\n[Odisha NEET 2019]\nOptions:\nA. x/m = k p⁰·³\nB. x/m = k p²·⁵\nC. x/m = k p⁻⁰·⁵\nD. x/m = k p⁻¹",
+        "options": [
+            "A. x/m = k p^0.3",
+            "B. x/m = k p^2.5",
+            "C. x/m = k p^-0.5",
+            "D. x/m = k p^-1"
+        ],
+        "explanation": "Freundlich adsorption isotherm is given by x/m = k p¹⁄ⁿ with 0 < 1/n < 1, so the exponent must be a positive fraction less than 1; 0.3 fits this condition.",
+        "prerequisites": "Freundlich isotherm equation and exponent range",
+        "time_estimate": "2"
+    },
+    {
+        "question_id": "CHEM_SURF_2018_130",
+        "topic": "Surface Chemistry",
+        "sub_topic": "Coagulating power of ions",
+        "difficulty": 2,
+        "exam_type": "neet",
+        "year": 2018,
+        "question_text": "On which of the following properties does the coagulating power of an ion depend?\n[NEET 2018]\nOptions:\nA. The magnitude of the charge on the ion alone.\nB. Size of the ion alone.\nC. Both magnitude and sign of the charge on the ion.\nD. The sign of charge on the ion alone.",
+        "options": [
+            "A. The magnitude of the charge on the ion alone.",
+            "B. Size of the ion alone.",
+            "C. Both magnitude and sign of the charge on the ion.",
+            "D. The sign of charge on the ion alone."
+        ],
+        "explanation": "According to Hardy–Schulze rule, coagulating power depends on both the magnitude and sign of the charge on the effective ion.",
+        "prerequisites": "Hardy–Schulze rule for coagulation",
+        "time_estimate": "2"
+    },
+    {
+        "question_id": "CHEM_SURF_2016_131",
+        "topic": "Surface Chemistry",
+        "sub_topic": "Thermodynamics of adsorption",
+        "difficulty": 3,
+        "exam_type": "neet",
+        "year": 2016,
+        "question_text": "Which one of the following characteristics is associated with adsorption?\n[NEET-I 2016]\nOptions:\nA. ΔG and ΔH are negative but ΔS is positive.\nB. ΔG and ΔS are negative but ΔH is positive.\nC. ΔG is negative but ΔH and ΔS are positive.\nD. ΔG, ΔH and ΔS all are negative.",
+        "options": [
+            "A. ΔG and ΔH are negative but ΔS is positive.",
+            "B. ΔG and ΔS are negative but ΔH is positive.",
+            "C. ΔG is negative but ΔH and ΔS are positive.",
+            "D. ΔG, ΔH and ΔS all are negative."
+        ],
+        "explanation": "Adsorption is spontaneous (ΔG < 0), exothermic (ΔH < 0) and leads to decreased randomness at the surface (ΔS < 0), so all three are negative.",
+        "prerequisites": "Signs of ΔG, ΔH, ΔS for adsorption",
+        "time_estimate": "3"
+    },
+    {
+        "question_id": "CHEM_SURF_2015_132",
+        "topic": "Surface Chemistry",
+        "sub_topic": "Properties independent of charge",
+        "difficulty": 1,
+        "exam_type": "neet",
+        "year": 2015,
+        "question_text": "Which property of colloidal solution is independent of charge on the colloidal particles?\n[2015 Cancelled]\nOptions:\nA. Electro-osmosis\nB. Tyndall effect\nC. Coagulation\nD. Electrophoresis",
+        "options": [
+            "A. Electro-osmosis",
+            "B. Tyndall effect",
+            "C. Coagulation",
+            "D. Electrophoresis"
+        ],
+        "explanation": "Tyndall effect depends on scattering of light by colloidal particles and not on the charge on the particles.",
+        "prerequisites": "Charge-dependent vs independent colloid properties",
+        "time_estimate": "1"
+    },
+    {
+        "question_id": "CHEM_SURF_2012_133",
+        "topic": "Surface Chemistry",
+        "sub_topic": "Enzyme catalysis properties",
+        "difficulty": 2,
+        "exam_type": "neet",
+        "year": 2012,
+        "question_text": "Which one of the following statements is incorrect about enzyme catalysis?\n[2012]\nOptions:\nA. Enzymes are mostly proteinaceous in nature.\nB. Enzyme action is specific.\nC. Enzymes are denatured by ultraviolet rays and at high temperature.\nD. Enzymes are least reactive at optimum temperature.",
+        "options": [
+            "A. Enzymes are mostly proteinaceous in nature.",
+            "B. Enzyme action is specific.",
+            "C. Enzymes are denatured by ultraviolet rays and at high temperature.",
+            "D. Enzymes are least reactive at optimum temperature."
+        ],
+        "explanation": "Enzymes show maximum activity at an optimum temperature, not least activity, so statement D is incorrect; others are correct.",
+        "prerequisites": "Basic features of enzyme-catalysed reactions",
+        "time_estimate": "2"
+    },
+    {
+        "question_id": "CHEM_SURF_2012_134",
+        "topic": "Surface Chemistry",
+        "sub_topic": "Protective colloids – gold number",
+        "difficulty": 2,
+        "exam_type": "neet",
+        "year": 2012,
+        "question_text": "The protecting power of a lyophilic colloidal sol is expressed in terms of\n[2012]\nOptions:\nA. coagulation value\nB. gold number\nC. critical micelle concentration\nD. oxidation number",
+        "options": [
+            "A. coagulation value",
+            "B. gold number",
+            "C. critical micelle concentration",
+            "D. oxidation number"
+        ],
+        "explanation": "Gold number is defined as the minimum mass of a protective colloid required to just prevent coagulation of a standard gold sol, hence measures protecting power.",
+        "prerequisites": "Definition of gold number",
+        "time_estimate": "2"
+    },
+    {
+        "question_id": "CHEM_SURF_1996_135",
+        "topic": "Surface Chemistry",
+        "sub_topic": "Size range of colloidal particles",
+        "difficulty": 1,
+        "exam_type": "neet",
+        "year": 1996,
+        "question_text": "A colloidal system has particles of which of the following size?\n[1996]\nOptions:\nA. 10⁻⁹ m to 10⁻¹² m\nB. 10⁻⁶ m to 10⁻⁹ m\nC. 10⁻⁴ m to 10⁻¹⁰ m\nD. 10⁻⁵ m to 10⁻⁷ m",
+        "options": [
+            "A. 10^-9 m to 10^-12 m",
+            "B. 10^-6 m to 10^-9 m",
+            "C. 10^-4 m to 10^-10 m",
+            "D. 10^-5 m to 10^-7 m"
+        ],
+        "explanation": "Colloidal particles have size roughly between 10⁻⁶ m and 10⁻⁹ m, intermediate between true solutions and suspensions.",
+        "prerequisites": "Definition of colloidal size range",
+        "time_estimate": "1"
+    },
+    {
+        "question_id": "CHEM_SURF_1996_136",
+        "topic": "Surface Chemistry",
+        "sub_topic": "Dialysis",
+        "difficulty": 1,
+        "exam_type": "neet",
+        "year": 1996,
+        "question_text": "When a few typical solutes are separated by a particular selective membrane such as protein particles, blood corpuscles, this process is called\n[1996]\nOptions:\nA. transpiration\nB. endosmosis\nC. dialysis\nD. diffusion",
+        "options": [
+            "A. transpiration",
+            "B. endosmosis",
+            "C. dialysis",
+            "D. diffusion"
+        ],
+        "explanation": "Dialysis is the separation of colloids from crystalloids by diffusion through a suitable semipermeable membrane.",
+        "prerequisites": "Definition and purpose of dialysis",
+        "time_estimate": "1"
+    }
+]
