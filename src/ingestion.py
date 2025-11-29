@@ -7,34 +7,24 @@ from qdrant_client import QdrantClient
 from qdrant_client.http import models
 from sentence_transformers import SentenceTransformer
 
+from .config import Config
+
 # Load environment variables
 load_dotenv()
-
-class Config:
-    """Configuration settings loaded from environment variables."""
-    
-    def __init__(self):
-        self.QDRANT_URL: str = os.getenv("QDRANT_URL", "")
-        self.QDRANT_API_KEY: str = os.getenv("QDRANT_API_KEY", "")
-        self.COLLECTION_NAME: str = os.getenv("QDRANT_COLLECTION_NAME", "questions")
-        self.EMBEDDING_MODEL: str = "all-MiniLM-L6-v2"  # Local sentence-transformer model
-        self.VECTOR_SIZE: int = 384  # Dimension for all-MiniLM-L6-v2
-
-    def validate(self):
-        if not self.QDRANT_URL:
-            raise ValueError("QDRANT_URL is not set in environment variables.")
-        if not self.QDRANT_API_KEY:
-            raise ValueError("QDRANT_API_KEY is not set in environment variables.")
 
 class VectorDBManager:
     """Manages interactions with the Qdrant Vector Database."""
     
     def __init__(self, config: Config):
         self.config = config
-        self.client = QdrantClient(
-            url=self.config.QDRANT_URL,
-            api_key=self.config.QDRANT_API_KEY,
-        )
+        if self.config.QDRANT_URL.startswith("path:"):
+            path = self.config.QDRANT_URL.split(":", 1)[1]
+            self.client = QdrantClient(path=path)
+        else:
+            self.client = QdrantClient(
+                url=self.config.QDRANT_URL,
+                api_key=self.config.QDRANT_API_KEY,
+            )
 
     def ensure_collection_exists(self) -> None:
         """Creates the collection if it does not already exist."""
@@ -66,6 +56,66 @@ class VectorDBManager:
                 points=batch
             )
         print("Upsert complete.")
+
+    def create_indexes(self) -> None:
+        """Creates payload indexes for efficient filtering."""
+        print("=" * 80)
+        print("CREATING PAYLOAD INDEXES")
+        print("=" * 80)
+        
+        indexes = [
+            {
+                "field_name": "subject",
+                "field_schema": models.PayloadSchemaType.KEYWORD,
+                "description": "Subject name"
+            },
+            {
+                "field_name": "topic",
+                "field_schema": models.PayloadSchemaType.KEYWORD,
+                "description": "Topic name"
+            },
+            {
+                "field_name": "sub_topic",
+                "field_schema": models.PayloadSchemaType.KEYWORD,
+                "description": "Sub-topic name"
+            },
+            {
+                "field_name": "difficulty",
+                "field_schema": models.PayloadSchemaType.INTEGER,
+                "description": "Difficulty level (1-5)"
+            },
+            {
+                "field_name": "exam_type",
+                "field_schema": models.PayloadSchemaType.KEYWORD,
+                "description": "Exam type"
+            },
+            {
+                "field_name": "year",
+                "field_schema": models.PayloadSchemaType.INTEGER,
+                "description": "Question year"
+            }
+        ]
+        
+        for idx in indexes:
+            field_name = idx["field_name"]
+            field_schema = idx["field_schema"]
+            description = idx["description"]
+            
+            try:
+                print(f"Creating index on '{field_name}' ({description})...")
+                self.client.create_payload_index(
+                    collection_name=self.config.COLLECTION_NAME,
+                    field_name=field_name,
+                    field_schema=field_schema
+                )
+                print(f"  ✅ Index created successfully")
+            except Exception as e:
+                error_msg = str(e)
+                if "already exists" in error_msg.lower():
+                    print(f"  ℹ️  Index already exists, skipping")
+                else:
+                    print(f"  ❌ Error: {error_msg}")
+        print("=" * 80)
 
 class DataProcessor:
     """Handles data loading and processing with local embeddings."""
@@ -185,6 +235,7 @@ def main():
     # Execution Flow
     try:
         db_manager.ensure_collection_exists()
+        db_manager.create_indexes()  # Create indexes before upserting
         
         data = processor.load_data('data/data.json')
         points = processor.prepare_points(data)

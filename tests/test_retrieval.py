@@ -1,10 +1,14 @@
 """
 Test the retrieval pipeline with various scenarios.
 """
+import time
+from typing import List, Dict, Any
 
-from retrieval_pipeline import (
-    RetrievalPipeline, Config, UserProfile, ChatMessage, RecentPerformance
+from src.retrieval import (
+    RetrievalPipeline, UserProfile, ChatMessage, 
+    RecentPerformance
 )
+from src.config import Config
 
 
 def test_case_1_struggling_beginner():

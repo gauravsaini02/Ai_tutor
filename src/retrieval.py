@@ -13,7 +13,7 @@ import os
 import time
 from typing import List, Dict, Any, Optional, Tuple
 from collections import Counter
-from dataclasses import dataclass
+
 
 from dotenv import load_dotenv
 from qdrant_client import QdrantClient
@@ -24,86 +24,56 @@ from openai import OpenAI  # Still needed for optional LLM ranking
 load_dotenv()
 
 
-@dataclass
 class UserProfile:
     """Student profile information."""
-    grade: str
-    exam_target: str
-    subject: str
-    expertise_level: float  # 1-5 scale
-    weak_topics: List[str]
-    strong_topics: List[str]
+    def __init__(self, grade: str, exam_target: str, subject: str, expertise_level: float, weak_topics: List[str], strong_topics: List[str]):
+        self.grade = grade
+        self.exam_target = exam_target
+        self.subject = subject
+        self.expertise_level = expertise_level
+        self.weak_topics = weak_topics
+        self.strong_topics = strong_topics
 
 
-@dataclass
 class RecentPerformance:
     """Recent performance metrics."""
-    topic: str
-    questions_attempted: int
-    correct: int
-    avg_time_seconds: float
-    confidence_score: float  # 1-5 scale
+    def __init__(self, topic: str, questions_attempted: int, correct: int, avg_time_seconds: float, confidence_score: float):
+        self.topic = topic
+        self.questions_attempted = questions_attempted
+        self.correct = correct
+        self.avg_time_seconds = avg_time_seconds
+        self.confidence_score = confidence_score
 
 
-@dataclass
 class ChatMessage:
     """Chat history message."""
-    role: str  # 'student' or 'tutor'
-    message: str
+    def __init__(self, role: str, message: str):
+        self.role = role
+        self.message = message
 
 
-@dataclass
 class RetrievalResult:
     """Single retrieved question with scores."""
-    question_id: str
-    topic: str
-    subtopic: str
-    difficulty_score: float
-    question_text: str
-    options: List[str]
-    source: str
-    explanation: str
-    time_estimate_seconds: int
-    relevance_score: float
-    reasoning: str
-    # Detailed scoring breakdown
-    vector_similarity: float
-    difficulty_match_score: float
-    personalization_score: float
-    diversity_score: float
-    final_score: float
+    def __init__(self, question_id: str, topic: str, subtopic: str, difficulty_score: float, question_text: str, options: List[str], source: str, explanation: str, time_estimate_seconds: int, relevance_score: float, reasoning: str, vector_similarity: float, difficulty_match_score: float, personalization_score: float, diversity_score: float, final_score: float):
+        self.question_id = question_id
+        self.topic = topic
+        self.subtopic = subtopic
+        self.difficulty_score = difficulty_score
+        self.question_text = question_text
+        self.options = options
+        self.source = source
+        self.explanation = explanation
+        self.time_estimate_seconds = time_estimate_seconds
+        self.relevance_score = relevance_score
+        self.reasoning = reasoning
+        self.vector_similarity = vector_similarity
+        self.difficulty_match_score = difficulty_match_score
+        self.personalization_score = personalization_score
+        self.diversity_score = diversity_score
+        self.final_score = final_score
 
 
-class Config:
-    """Pipeline configuration."""
-    
-    def __init__(self):
-        self.QDRANT_URL = os.getenv("QDRANT_URL", "")
-        self.QDRANT_API_KEY = os.getenv("QDRANT_API_KEY", "")
-        self.COLLECTION_NAME = os.getenv("QDRANT_COLLECTION_NAME", "questions")
-        self.EMBEDDING_MODEL = "all-MiniLM-L6-v2"  # Local sentence-transformer model
-        self.OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "")  # Only for optional LLM ranking
-        
-        # Retrieval parameters
-        self.CANDIDATE_LIMIT = 50  # Stage 1: candidate generation
-        self.FINAL_RESULTS_LIMIT = 10  # Final top-K to return
-        self.RECENT_YEAR_THRESHOLD = 2  # Prioritize questions from last N years
-        
-        # Ranking weights (must sum to 1.0)
-        self.RELEVANCE_WEIGHT = 0.30
-        self.DIFFICULTY_WEIGHT = 0.35
-        self.PERSONALIZATION_WEIGHT = 0.20
-        self.DIVERSITY_WEIGHT = 0.15
-        
-        # LLM ranking
-        self.ENABLE_LLM_RANKING = False  # Toggle for optional Stage 3
-        self.LLM_MODEL = "gpt-4o-mini"  # Fast model for ranking
-        
-        # Latency constraints (ms)
-        self.MAX_RETRIEVAL_LATENCY_MS = 200
-        self.MAX_RANKING_LATENCY_MS = 200
-        self.MAX_LLM_RANKING_LATENCY_MS = 100
-        self.MAX_TOTAL_LATENCY_MS = 500
+from .config import Config
 
 
 class ChatHistoryParser:
@@ -210,13 +180,23 @@ class RetrievalPipeline:
     
     def __init__(self, config: Config):
         self.config = config
-        self.qdrant_client = QdrantClient(
-            url=config.QDRANT_URL,
-            api_key=config.QDRANT_API_KEY
-        )
-        print(f"Loading local embedding model: {config.EMBEDDING_MODEL}...")
-        self.embedding_model = SentenceTransformer(config.EMBEDDING_MODEL)
-        print(f"✅ Embedding model loaded!")
+        if config.QDRANT_URL.startswith("path:"):
+            path = config.QDRANT_URL.split(":", 1)[1]
+            self.qdrant_client = QdrantClient(path=path)
+        else:
+            self.qdrant_client = QdrantClient(
+                url=config.QDRANT_URL,
+                api_key=config.QDRANT_API_KEY
+            )
+        device = "cpu"
+        print(f"Loading local embedding model: {config.EMBEDDING_MODEL} on {device}...")
+        self.embedding_model = SentenceTransformer(config.EMBEDDING_MODEL, device=device)
+        print(f"✅ Embedding model loaded on {device}!")
+        
+        # Warmup to reduce first-inference latency
+        print("Warming up model...")
+        self.embedding_model.encode("warmup", device=device)
+        print("✅ Model warmed up!")
         
         # Only initialize OpenAI if LLM ranking is enabled
         if config.ENABLE_LLM_RANKING and config.OPENAI_API_KEY:
@@ -250,7 +230,10 @@ class RetrievalPipeline:
         )
         
         # Generate query embedding
+        embed_start = time.time()
         query_embedding = self._get_embedding(query_text)
+        embed_time = (time.time() - embed_start) * 1000
+        print(f"  - Embedding generation: {embed_time:.2f}ms")
         
         # Build metadata filters
         must_conditions = []
@@ -274,6 +257,7 @@ class RetrievalPipeline:
             )
         
         # Search with filters using query_points
+        search_start = time.time()
         search_results = self.qdrant_client.query_points(
             collection_name=self.config.COLLECTION_NAME,
             query=query_embedding,
@@ -282,6 +266,8 @@ class RetrievalPipeline:
             with_payload=True,
             with_vectors=False
         )
+        search_time = (time.time() - search_start) * 1000
+        print(f"  - Qdrant search: {search_time:.2f}ms")
         
         # Convert to dict format
         candidates = []

@@ -1,0 +1,204 @@
+{
+  "recommended_questions": [
+    {
+      "question_id": "BIO_PH_2024_04",
+      "topic": "Photosynthesis",
+      "subtopic": "Products of light reaction",
+      "difficulty_score": 1,
+      "question_text": "Which one of the following products diffuses out of the chloroplast during photosynthesis?",
+      "options": [
+        "A. ADP",
+        "B. NADPH",
+        "C. O2",
+        "D. ATP"
+      ],
+      "source": "NEET 2024",
+      "explanation": "ATP and NADPH remain in the chloroplast for the Calvin cycle, whereas O2 diffuses out.",
+      "time_estimate_seconds": 1,
+      "relevance_score": 0.827,
+      "reasoning": "Foundation-building question to strengthen basics; Addresses your weak area: Photosynthesis; Recent NEET question (2024)"
+    },
+    {
+      "question_id": "BIO_PH_2024_03",
+      "topic": "Photosynthesis",
+      "subtopic": "Light reaction requirements",
+      "difficulty_score": 1,
+      "question_text": "Which of the following are required for the light reaction of photosynthesis?",
+      "options": [
+        "A. A, C, D and E only",
+        "B. C, D and E only",
+        "C. A and B only",
+        "D. A, C and E only"
+      ],
+      "source": "NEET 2024",
+      "explanation": "Light reaction needs water, chlorophyll and light. CO2 is not required; O2 is released as a product.",
+      "time_estimate_seconds": 1,
+      "relevance_score": 0.803,
+      "reasoning": "Foundation-building question to strengthen basics; Addresses your weak area: Photosynthesis; Recent NEET question (2024)"
+    },
+    {
+      "question_id": "BIO_PH_2025_02",
+      "topic": "Photosynthesis",
+      "subtopic": "Calvin cycle enzyme (RuBisCO)",
+      "difficulty_score": 2,
+      "question_text": "Which of the following statements about RuBisCO is true?",
+      "options": [
+        "A. It is an enzyme involved in the photolysis of water",
+        "B. It catalyzes the carboxylation of RuBP",
+        "C. It is active only in the dark",
+        "D. It has higher affinity for oxygen than carbon dioxide"
+      ],
+      "source": "NEET 2025",
+      "explanation": "Carboxylation is the most crucial step of the Calvin cycle where CO2 is utilised for carboxylation of RuBP. This reaction is catalysed by RuBP carboxylase (RuBisCO). RuBisCO actually has higher affinity for CO2 than for O2 under normal conditions.",
+      "time_estimate_seconds": 2,
+      "relevance_score": 0.77,
+      "reasoning": "Challenging question (2/5) to push your growth; Addresses your weak area: Photosynthesis; Highly relevant to your study context; Recent NEET question (2025)"
+    },
+    {
+      "question_id": "BIO_PH_2024_07",
+      "topic": "Photosynthesis",
+      "subtopic": "Dark reaction requirements",
+      "difficulty_score": 2,
+      "question_text": "Which of the following are required for the dark reaction of photosynthesis?",
+      "options": [
+        "A. A, B and C only",
+        "B. B, C and D only",
+        "C. C, D and E only",
+        "D. D and E only"
+      ],
+      "source": "NEET 2024",
+      "explanation": "Dark reaction (Calvin cycle) requires CO2 as carbon source and ATP and NADPH produced in the light reaction. Light and chlorophyll are not directly required for these enzymatic steps.",
+      "time_estimate_seconds": 2,
+      "relevance_score": 0.756,
+      "reasoning": "Challenging question (2/5) to push your growth; Addresses your weak area: Photosynthesis; Recent NEET question (2024)"
+    },
+    {
+      "question_id": "BIO_PH_2024_05",
+      "topic": "Photosynthesis",
+      "subtopic": "Calvin cycle stages",
+      "difficulty_score": 3,
+      "question_text": "Observe the given figure of the Calvin cycle. Identify the different stages labelled with alphabets A, B and C.",
+      "options": [
+        "A. A-Carboxylation, B-Regeneration, C-Reduction",
+        "B. A-Reduction, B-Decarboxylation, C-Regeneration",
+        "C. A-Carboxylation, B-Reduction, C-Regeneration",
+        "D. A-Reduction, B-Carboxylation, C-Regeneration"
+      ],
+      "source": "NEET 2024",
+      "explanation": "The Calvin cycle has three stages: A \u2014 Carboxylation, B \u2014 Reduction, C \u2014 Regeneration of RuBP.",
+      "time_estimate_seconds": 3,
+      "relevance_score": 0.67,
+      "reasoning": "Challenging question (3/5) to push your growth; Addresses your weak area: Photosynthesis; Highly relevant to your study context; Recent NEET question (2024)"
+    },
+    {
+      "question_id": "BIO_PH_2025_01",
+      "topic": "Photosynthesis",
+      "subtopic": "Leaf pigments",
+      "difficulty_score": 2,
+      "question_text": "Match List-I with List-II.\nList-I: (A) Chlorophyll a, (B) Chlorophyll b, (C) Xanthophylls, (D) Carotenoids\nList-II: (I) Yellow-green, (II) Yellow, (III) Blue-green, (IV) Yellow to Yellow-orange\nChoose the option with all correct matches.",
+      "options": [
+        "A. A-I, B-II, C-IV, D-III",
+        "B. A-I, B-IV, C-III, D-II",
+        "C. A-III, B-IV, C-II, D-I",
+        "D. A-III, B-I, C-II, D-IV"
+      ],
+      "source": "NEET 2025",
+      "explanation": "Chromatographic separation of leaf pigments shows four main pigments. Chlorophyll a appears blue-green, chlorophyll b yellow-green, xanthophylls yellow, and carotenoids yellow to yellow-orange. Thus the correct matching is A-III, B-I, C-II, D-IV.",
+      "time_estimate_seconds": 2,
+      "relevance_score": 0.668,
+      "reasoning": "Challenging question (2/5) to push your growth; Addresses your weak area: Photosynthesis; Recent NEET question (2025)"
+    },
+    {
+      "question_id": "BIO_PH_2023_10",
+      "topic": "Photosynthesis",
+      "subtopic": "Photosystems",
+      "difficulty_score": 2,
+      "question_text": "The reaction centre in PS II has an absorption maxima at",
+      "options": [
+        "A. 700 nm",
+        "B. 660 nm",
+        "C. 780 nm",
+        "D. 680 nm"
+      ],
+      "source": "NEET 2023",
+      "explanation": "PS II reaction centre is P680, absorbing light at 680 nm.",
+      "time_estimate_seconds": 1,
+      "relevance_score": 0.646,
+      "reasoning": "Challenging question (2/5) to push your growth; Addresses your weak area: Photosynthesis; Recent NEET question (2023)"
+    },
+    {
+      "question_id": "BIO_PH_2024_06",
+      "topic": "Photosynthesis",
+      "subtopic": "Energy requirement per CO2 (Calvin cycle)",
+      "difficulty_score": 3,
+      "question_text": "How many molecules of ATP and NADPH are required for every molecule of CO2 fixed in the Calvin cycle?",
+      "options": [
+        "A. 2 molecules of ATP and 3 molecules of NADPH",
+        "B. 2 molecules of ATP and 2 molecules of NADPH",
+        "C. 3 molecules of ATP and 3 molecules of NADPH",
+        "D. 3 molecules of ATP and 2 molecules of NADPH"
+      ],
+      "source": "NEET 2024",
+      "explanation": "For fixation of 1 molecule of CO2 in the Calvin cycle, 3 molecules of ATP and 2 molecules of NADPH are required.",
+      "time_estimate_seconds": 2,
+      "relevance_score": 0.637,
+      "reasoning": "Challenging question (3/5) to push your growth; Addresses your weak area: Photosynthesis; Highly relevant to your study context; Recent NEET question (2024)"
+    },
+    {
+      "question_id": "BIO_RP_2022_38",
+      "topic": "Respiration in Plants",
+      "subtopic": "ATP yield in glycolysis",
+      "difficulty_score": 1,
+      "question_text": "What is the net gain of ATP when each molecule of glucose is converted to two molecules of pyruvic acid during glycolysis?",
+      "options": [
+        "A. Four",
+        "B. Six",
+        "C. Two",
+        "D. Eight"
+      ],
+      "source": "NEET 2022",
+      "explanation": "Glycolysis produces 4 ATP directly but consumes 2 ATP in the early phosphorylation steps, giving a net gain of 2 ATP per glucose.",
+      "time_estimate_seconds": 1,
+      "relevance_score": 0.618,
+      "reasoning": "Foundation-building question to strengthen basics"
+    },
+    {
+      "question_id": "BIO_BC_2012_30",
+      "topic": "Biological Classification",
+      "subtopic": "Cyanobacteria \u2013 common name",
+      "difficulty_score": 1,
+      "question_text": "The cyanobacteria are also referred to as",
+      "options": [
+        "A. Protists",
+        "B. Golden algae",
+        "C. Slime moulds",
+        "D. Blue-green algae"
+      ],
+      "source": "NEET 2012",
+      "explanation": "Cyanobacteria are photosynthetic prokaryotes historically called blue-green algae due to their colour and aquatic habit, although they are now known to be bacteria, not true algae.",
+      "time_estimate_seconds": 1,
+      "relevance_score": 0.61,
+      "reasoning": "Foundation-building question to strengthen basics"
+    }
+  ],
+  "tutor_context": {
+    "identified_gaps": [
+      "photosynthesis",
+      "calvin cycle"
+    ],
+    "recommended_study_sequence": [
+      "build_foundation",
+      "practice_basics",
+      "solve_direct_problems",
+      "focus_on_photosynthesis"
+    ],
+    "estimated_session_duration_minutes": 5,
+    "next_milestone": "Build strong foundation in photosynthesis for NEET"
+  },
+  "pipeline_metadata": {
+    "retrieval_latency_ms": 57.89,
+    "ranking_latency_ms": 0.35,
+    "llm_ranking_latency_ms": 0.0,
+    "total_latency_ms": 58.29
+  }
+}
