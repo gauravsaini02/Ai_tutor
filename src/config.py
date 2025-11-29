@@ -14,11 +14,12 @@ class Config:
         # Qdrant Configuration
         # self.QDRANT_URL: str = os.getenv("QDRANT_URL", "")
         # self.QDRANT_URL: str = ":memory:"  # Volatile
-        self.QDRANT_URL: str = "path:./qdrant_data"  # Persistent local storage
+        self.QDRANT_URL: str = os.getenv("QDRANT_URL", "http://localhost:6333")
         self.QDRANT_API_KEY: str = os.getenv("QDRANT_API_KEY", "")
         self.COLLECTION_NAME: str = os.getenv("QDRANT_COLLECTION_NAME", "questions")
         
         # Embedding Configuration
+        self.EMBEDDING_SERVICE_URL: str = os.getenv("EMBEDDING_SERVICE_URL", "http://localhost:7997")
         self.EMBEDDING_MODEL: str = "all-MiniLM-L6-v2"  # Local sentence-transformer model
         self.VECTOR_SIZE: int = 384  # Dimension for all-MiniLM-L6-v2
         
@@ -48,5 +49,5 @@ class Config:
         """Validate critical configuration."""
         if not self.QDRANT_URL:
             raise ValueError("QDRANT_URL is not set in environment variables.")
-        if not (self.QDRANT_URL == ":memory:" or self.QDRANT_URL.startswith("path:")) and not self.QDRANT_API_KEY:
-            raise ValueError("QDRANT_API_KEY is not set in environment variables.")
+        if not self.QDRANT_URL:
+            raise ValueError("QDRANT_URL is not set.")

@@ -77,7 +77,7 @@ async def get_recommendations(request: RecommendationRequest):
         recent_performance_dict = request.recent_performance.dict() if request.recent_performance else None
         
         # Get recommendations
-        result = orchestrator.recommend(
+        result = await orchestrator.recommend(
             user_profile_dict,
             chat_history_dict,
             recent_performance_dict

@@ -199,7 +199,7 @@ class TutorOrchestrator:
         
         return questions
     
-    def recommend(
+    async def recommend(
         self,
         user_profile_dict: Dict[str, Any],
         chat_history_dict: List[Dict[str, str]],
@@ -229,7 +229,7 @@ class TutorOrchestrator:
             recent_performance = RecentPerformance(**recent_performance_dict)
         
         # Run retrieval pipeline
-        results, latency_metadata = self.pipeline.retrieve(
+        results, latency_metadata = await self.pipeline.retrieve(
             user_profile, chat_history, recent_performance
         )
         
@@ -269,7 +269,9 @@ class TutorOrchestrator:
         return output
 
 
-def main():
+import asyncio
+
+async def main():
     """Example usage of the tutor orchestrator."""
     
     # Initialize orchestrator
@@ -313,7 +315,7 @@ def main():
     print(f"Weak Topics: {', '.join(user_profile['weak_topics'])}")
     print("="*80)
     
-    result = orchestrator.recommend(user_profile, chat_history, recent_performance)
+    result = await orchestrator.recommend(user_profile, chat_history, recent_performance)
     
     # Display output
     print(f"\n📚 RECOMMENDED QUESTIONS ({len(result['recommended_questions'])} total)")
@@ -347,4 +349,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    asyncio.run(main())
