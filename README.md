@@ -751,7 +751,7 @@ The following limitations are primarily driven by the strict **<500ms latency bu
    - **Alternative Considered**: 
      - **GPU Acceleration**: Could reduce embedding latency to **<5ms** with CUDA-enabled transformers
      - **Local LLM Hosting**: Self-host `llama-3.1-8b` on GPU to eliminate Groq API dependency and reduce costs
-   - **Trade-off**: Development was conducted on CPU-only hardware. With access to GPU infrastructure (e.g., A10G, T4), both embedding speed and API costs could be significantly improved while maintaining sub-500ms performance.
+   - **Trade-off**: Development was conducted on CPU-only hardware. With access to GPU infrastructure (e.g., A10G, T4), embedding speed could be significantly improved while maintaining sub-500ms performance.
 
 5. **Limited Dataset**
    - **Current**: Demo dataset consists of ~136 questions across 3 subjects.
