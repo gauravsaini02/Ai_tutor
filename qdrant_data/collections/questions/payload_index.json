@@ -1,1 +1,1 @@
-{"schema":{"subject":"keyword","topic":"keyword","difficulty":"integer","year":"integer","sub_topic":"keyword","exam_type":"keyword"}}
+{"schema":{"topic":"text","year":"integer","exam_type":"keyword","subject":"keyword","difficulty":"integer","sub_topic":"keyword"}}

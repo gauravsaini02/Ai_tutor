@@ -23,10 +23,17 @@ class Config:
         self.EMBEDDING_MODEL: str = "all-MiniLM-L6-v2"  # Local sentence-transformer model
         self.VECTOR_SIZE: int = 384  # Dimension for all-MiniLM-L6-v2
         
+        # Redis Configuration
+        self.REDIS_HOST: str = os.getenv("REDIS_HOST", "localhost")
+        self.REDIS_PORT: int = int(os.getenv("REDIS_PORT", 6379))
+        self.CACHE_TTL: int = 3600  # 1 hour
+        
         # Optional LLM Configuration
-        self.OPENAI_API_KEY: str = os.getenv("OPENAI_API_KEY", "")
         self.ENABLE_LLM_RANKING: bool = False
-        self.LLM_MODEL: str = "gpt-4o-mini"
+        
+        # Groq Configuration (Fast Signal Detection)
+        self.GROQ_API_KEY: str = os.getenv("GROQ_API_KEY", "")
+        self.GROQ_MODEL: str = "llama-3.1-8b-instant"
         
         # Retrieval Parameters
         self.CANDIDATE_LIMIT: int = 50

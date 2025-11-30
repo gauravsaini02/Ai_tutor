@@ -1,5 +1,8 @@
+sentence-transformers
+groq
+fastapi
+uvicorn
+pydantic
+redis
 qdrant-client
-openai
 python-dotenv
-
-httpx

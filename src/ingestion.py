@@ -8,6 +8,9 @@ from qdrant_client.http import models
 from sentence_transformers import SentenceTransformer
 
 from .config import Config
+from .logger import setup_logger
+
+logger = setup_logger(__name__)
 
 # Load environment variables
 load_dotenv()
@@ -31,37 +34,36 @@ class VectorDBManager:
         collections = self.client.get_collections()
         collection_names = [c.name for c in collections.collections]
         
-        if self.config.COLLECTION_NAME not in collection_names:
-            print(f"Creating collection: {self.config.COLLECTION_NAME}")
-            self.client.create_collection(
-                collection_name=self.config.COLLECTION_NAME,
-                vectors_config=models.VectorParams(
-                    size=self.config.VECTOR_SIZE,
-                    distance=models.Distance.COSINE
-                )
+        if self.config.COLLECTION_NAME in collection_names:
+            logger.info(f"Deleting existing collection: {self.config.COLLECTION_NAME}")
+            self.client.delete_collection(self.config.COLLECTION_NAME)
+        
+        logger.info(f"Creating collection: {self.config.COLLECTION_NAME}")
+        self.client.create_collection(
+            collection_name=self.config.COLLECTION_NAME,
+            vectors_config=models.VectorParams(
+                size=self.config.VECTOR_SIZE,
+                distance=models.Distance.COSINE
             )
-        else:
-            print(f"Collection '{self.config.COLLECTION_NAME}' already exists.")
+        )
 
     def upsert_points(self, points: List[models.PointStruct], batch_size: int = 100) -> None:
         """Upserts points into the collection in batches."""
         total_points = len(points)
-        print(f"Starting upsert of {total_points} points...")
+        logger.info(f"Starting upsert of {total_points} points...")
         
         for i in range(0, total_points, batch_size):
             batch = points[i:i+batch_size]
-            print(f"Upserting batch {i//batch_size + 1}/{(total_points + batch_size - 1)//batch_size}...")
+            logger.info(f"Upserting batch {i//batch_size + 1}/{(total_points + batch_size - 1)//batch_size}...")
             self.client.upsert(
                 collection_name=self.config.COLLECTION_NAME,
                 points=batch
             )
-        print("Upsert complete.")
+        logger.info("Upsert complete.")
 
     def create_indexes(self) -> None:
         """Creates payload indexes for efficient filtering."""
-        print("=" * 80)
-        print("CREATING PAYLOAD INDEXES")
-        print("=" * 80)
+        logger.info("CREATING PAYLOAD INDEXES")
         
         indexes = [
             {
@@ -71,7 +73,7 @@ class VectorDBManager:
             },
             {
                 "field_name": "topic",
-                "field_schema": models.PayloadSchemaType.KEYWORD,
+                "field_schema": models.PayloadSchemaType.TEXT,
                 "description": "Topic name"
             },
             {
@@ -102,30 +104,39 @@ class VectorDBManager:
             description = idx["description"]
             
             try:
-                print(f"Creating index on '{field_name}' ({description})...")
+                logger.info(f"Creating index on '{field_name}' ({description})...")
                 self.client.create_payload_index(
                     collection_name=self.config.COLLECTION_NAME,
                     field_name=field_name,
                     field_schema=field_schema
                 )
-                print(f"  ✅ Index created successfully")
+                logger.info(f"  ✅ Index created successfully")
             except Exception as e:
                 error_msg = str(e)
                 if "already exists" in error_msg.lower():
-                    print(f"  ℹ️  Index already exists, skipping")
+                    logger.info(f"  ℹ️  Index already exists, skipping")
                 else:
-                    print(f"  ❌ Error: {error_msg}")
-        print("=" * 80)
+                    logger.error(f"  ❌ Error: {error_msg}")
+        logger.info("Index creation complete.")
 
 class DataProcessor:
     """Handles data loading and processing with local embeddings."""
     
     def __init__(self, model_name: str):
-        print(f"Loading local embedding model: {model_name}...")
+        logger.info(f"Loading local embedding model: {model_name}...")
         self.model = SentenceTransformer(model_name)
         self.model_name = model_name
-        print(f"✅ Model loaded successfully!")
+        logger.info(f"✅ Model loaded successfully!")
     
+    SUBJECT_MAPPING = {
+        'BIO': 'Biology',
+        'PHY': 'Physics',
+        'CHE': 'Chemistry',
+        'CHEM': 'Chemistry',
+        'MAT': 'Mathematics',
+        'MATH': 'Mathematics'
+    }
+
     @staticmethod
     def extract_subject_from_id(question_id: str) -> str:
         """Extracts subject name from question_id prefix.
@@ -142,17 +153,7 @@ class DataProcessor:
         # Extract prefix before first underscore
         prefix = question_id.split('_')[0].upper()
         
-        # Map prefix to full subject name
-        subject_mapping = {
-            'BIO': 'Biology',
-            'PHY': 'Physics',
-            'CHE': 'Chemistry',
-            'CHEM': 'Chemistry',
-            'MAT': 'Mathematics',
-            'MATH': 'Mathematics'
-        }
-        
-        return subject_mapping.get(prefix, "")
+        return DataProcessor.SUBJECT_MAPPING.get(prefix, "")
 
     def load_data(self, file_path: str) -> List[Dict[str, Any]]:
         """Loads JSON data from a file."""
@@ -216,7 +217,7 @@ class DataProcessor:
 
     def prepare_points(self, data: List[Dict[str, Any]]) -> List[models.PointStruct]:
         """Converts raw data into a list of PointStructs."""
-        print(f"Processing {len(data)} items...")
+        logger.info(f"Processing {len(data)} items...")
         return [self.process_item(item) for item in data]
 
 def main():
@@ -225,7 +226,7 @@ def main():
     try:
         config.validate()
     except ValueError as e:
-        print(f"Configuration Error: {e}")
+        logger.error(f"Configuration Error: {e}")
         return
 
     # Initialize Components
@@ -242,10 +243,12 @@ def main():
         
         db_manager.upsert_points(points)
         
-        print("Ingestion pipeline finished successfully.")
+        db_manager.upsert_points(points)
+        
+        logger.info("Ingestion pipeline finished successfully.")
         
     except Exception as e:
-        print(f"An error occurred during ingestion: {e}")
+        logger.error(f"An error occurred during ingestion: {e}", exc_info=True)
 
 if __name__ == "__main__":
     main()

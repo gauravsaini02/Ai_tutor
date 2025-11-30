@@ -1,132 +1,218 @@
-import time
 import asyncio
-from src.orchestrator import TutorOrchestrator
-from src.retrieval import UserProfile, ChatMessage, RecentPerformance
+import httpx
+import json
+import time
+import os
 
-async def run_test_case(orchestrator, name, profile_dict, chat_list, perf_dict):
+API_URL = "http://localhost:8000/recommend"
+
+async def run_test_case(client, name, profile_dict, chat_list, perf_dict):
     print(f"\n{'#'*80}")
     print(f"TEST CASE: {name}")
     print(f"{'#'*80}")
     
-    # Convert dicts to objects for display (orchestrator handles conversion internally too)
     print(f"User: Grade {profile_dict['grade']}, {profile_dict['exam_target']}, {profile_dict['subject']}")
     print(f"Expertise: {profile_dict['expertise_level']}/5 | Weak: {profile_dict['weak_topics']}")
     print(f"Chat Context: \"{chat_list[-1]['message']}\"")
     
+    payload = {
+        "user_profile": profile_dict,
+        "chat_history": chat_list,
+        "recent_performance": perf_dict
+    }
+    
     start = time.time()
-    result = await orchestrator.recommend(profile_dict, chat_list, perf_dict)
-    latency = (time.time() - start) * 1000
-    
-    print(f"\n📚 Top 3 Recommendations:")
-    for i, q in enumerate(result['recommended_questions'][:3], 1):
-        print(f"{i}. [{q['difficulty_score']}/5] {q['topic']} - {q['subtopic']}")
-        print(f"   Reasoning: {q['reasoning']}")
-    
-    print(f"\n⚡ Latency: {result['pipeline_metadata']['total_latency_ms']}ms")
-    return result
+    try:
+        response = await client.post(API_URL, json=payload, timeout=30.0)
+        response.raise_for_status()
+        result = response.json()
+        latency = (time.time() - start) * 1000
+        
+        print(f"\n📚 Top 3 Recommendations:")
+        for i, q in enumerate(result['recommended_questions'][:3], 1):
+            print(f"{i}. [{q['difficulty_score']}/5] {q['topic']} - {q['subtopic']}")
+            print(f"   Reasoning: {q['reasoning']}")
+        
+        print(f"\n🧠 Identified Gaps: {result['tutor_context']['identified_gaps']}")
+        
+        pm = result.get('pipeline_metadata', {})
+        print(f"⚡ Pipeline Metadata:")
+        print(f"   Retrieval Latency: {pm.get('retrieval_latency_ms', 0):.2f}ms")
+        print(f"   Ranking Latency: {pm.get('ranking_latency_ms', 0):.2f}ms")
+        print(f"   Total Latency: {pm.get('total_latency_ms', 0):.2f}ms")
+        print(f"   Retriever: {pm.get('retriever_used', 'unknown')}")
+        print(f"   Ranker: {pm.get('ranker_used', 'unknown')}")
+        
+        # Add test case name to result for clarity in JSON
+        result['test_case_name'] = name
+        return result
+        
+    except httpx.HTTPStatusError as e:
+        print(f"❌ API Error: {e.response.status_code} - {e.response.text}")
+    except httpx.RequestError as e:
+        print(f"❌ Connection Error: {e}")
+    except Exception as e:
+        print(f"❌ Error: {e}")
+    return None
 
 async def main():
-    print("Initializing Orchestrator (loading models)...")
-    orchestrator = TutorOrchestrator()
-    print("Orchestrator ready!\n")
+    print(f"Connecting to AI Tutor API at {API_URL}...")
+    
+    # Create outputs directory if it doesn't exist
+    os.makedirs("outputs", exist_ok=True)
+    
+    results = []
+    
+    async with httpx.AsyncClient() as client:
+        # Check if server is up
+        try:
+            resp = await client.get("http://localhost:8000/")
+            print(f"Server Status: {resp.json()}")
+        except Exception:
+            print("❌ Could not connect to server. Make sure 'uvicorn src.api:app' is running!")
+            return
 
-    # Case 1: Struggling Beginner (Biological Classification)
-    case1_profile = {
-        "grade": "11",
-        "exam_target": "neet",
-        "subject": "Biology",
-        "expertise_level": 1.5,
-        "weak_topics": ["Biological Classification", "Monera"],
-        "strong_topics": []
-    }
-    case1_chat = [{"role": "student", "message": "I'm confused about the 5 kingdoms. Can we start easy?"}]
-    case1_perf = {
-        "topic": "Biological Classification",
-        "questions_attempted": 3,
-        "correct": 1,
-        "avg_time_seconds": 120,
-        "confidence_score": 1.2
-    }
+        # 1. Struggling Beginner (Biology - Classification)
+        res1 = await run_test_case(
+            client,
+            "Struggling Beginner (Bio Classification)",
+            {
+                "grade": "11",
+                "exam_target": "neet",
+                "subject": "Biology",
+                "expertise_level": 1.5,
+                "weak_topics": ["Biological Classification", "Monera"],
+                "strong_topics": []
+            },
+            [
+                {"role": "tutor", "message": "Let's start with the basics of classification."},
+                {"role": "student", "message": "I tried reading the NCERT chapter yesterday."},
+                {"role": "student", "message": "But I'm confused about the 5 kingdoms. Can we start easy?"}
+            ],
+            {
+                "topic": "Biological Classification",
+                "questions_attempted": 3,
+                "correct": 1,
+                "avg_time_seconds": 120,
+                "confidence_score": 1.2
+            }
+        )
+        if res1: results.append(res1)
 
-    # Case 2: Advanced Student (Photosynthesis Challenge)
-    case2_profile = {
-        "grade": "12",
-        "exam_target": "neet",
-        "subject": "Biology",
-        "expertise_level": 4.5,
-        "weak_topics": [],
-        "strong_topics": ["Photosynthesis", "Plant Physiology"]
-    }
-    case2_chat = [{"role": "student", "message": "I want harder problems on Calvin Cycle. Push me."}]
-    case2_perf = {
-        "topic": "Photosynthesis",
-        "questions_attempted": 10,
-        "correct": 9,
-        "avg_time_seconds": 300,
-        "confidence_score": 4.8
-    }
+        # 2. Advanced Student (Biology - Photosynthesis)
+        res2 = await run_test_case(
+            client,
+            "Advanced Challenge (Photosynthesis)",
+            {
+                "grade": "12",
+                "exam_target": "neet",
+                "subject": "Biology",
+                "expertise_level": 4.5,
+                "weak_topics": [],
+                "strong_topics": ["Photosynthesis", "Plant Physiology"]
+            },
+            [
+                {"role": "tutor", "message": "Here is a standard question on C3 plants."},
+                {"role": "student", "message": "Solved it. That was trivial."},
+                {"role": "student", "message": "I want harder problems on Calvin Cycle. Push me."}
+            ],
+            {
+                "topic": "Photosynthesis",
+                "questions_attempted": 10,
+                "correct": 9,
+                "avg_time_seconds": 300,
+                "confidence_score": 4.8
+            }
+        )
+        if res2: results.append(res2)
 
-    # Case 3: Chemistry Concept (Structure of Atom)
-    case3_profile = {
-        "grade": "11",
-        "exam_target": "neet",
-        "subject": "Chemistry",
-        "expertise_level": 2.5,
-        "weak_topics": ["Structure of Atom"],
-        "strong_topics": []
-    }
-    case3_chat = [
-        {"role": "student", "message": "I keep getting the Bohr radius and energy formulas mixed up for ions like He+."}
-    ]
-    case3_perf = {
-        "topic": "Structure of Atom",
-        "questions_attempted": 6,
-        "correct": 2,
-        "avg_time_seconds": 180,
-        "confidence_score": 2.0
-    }
+        # 3. Chemistry Concept (Structure of Atom)
+        res3 = await run_test_case(
+            client,
+            "Chemistry Concept (Structure of Atom)",
+            {
+                "grade": "11",
+                "exam_target": "neet",
+                "subject": "Chemistry",
+                "expertise_level": 2.5,
+                "weak_topics": ["Structure of Atom"],
+                "strong_topics": []
+            },
+            [
+                {"role": "tutor", "message": "Do you remember the formula for Hydrogen atom radius?"},
+                {"role": "student", "message": "Yes, for Hydrogen it's simple."},
+                {"role": "student", "message": "But I keep getting the Bohr radius and energy formulas mixed up for ions like He+."}
+            ],
+            {
+                "topic": "Structure of Atom",
+                "questions_attempted": 6,
+                "correct": 2,
+                "avg_time_seconds": 180,
+                "confidence_score": 2.0
+            }
+        )
+        if res3: results.append(res3)
 
-    # Case 4: Physics Challenge (Gravitation)
-    case4_profile = {
-        "grade": "11",
-        "exam_target": "neet",
-        "subject": "Physics",
-        "expertise_level": 3.5,
-        "weak_topics": ["Gravitation"],
-        "strong_topics": ["Kinematics"]
-    }
-    case4_chat = [{"role": "student", "message": "I keep getting confused with the variation of g with height and depth."}]
-    case4_perf = {
-        "topic": "Gravitation",
-        "questions_attempted": 8,
-        "correct": 4,
-        "avg_time_seconds": 200,
-        "confidence_score": 2.5
-    }
+        # 4. Physics Challenge (Gravitation)
+        res4 = await run_test_case(
+            client,
+            "Physics Challenge (Gravitation)",
+            {
+                "grade": "11",
+                "exam_target": "neet",
+                "subject": "Physics",
+                "expertise_level": 3.5,
+                "weak_topics": ["Gravitation"],
+                "strong_topics": ["Kinematics"]
+            },
+            [
+                {"role": "tutor", "message": "Let's move on to Gravitation."},
+                {"role": "student", "message": "The basic formula F=GmM/r^2 is fine."},
+                {"role": "student", "message": "I keep getting confused with the variation of g with height and depth."}
+            ],
+            {
+                "topic": "Gravitation",
+                "questions_attempted": 8,
+                "correct": 4,
+                "avg_time_seconds": 200,
+                "confidence_score": 2.5
+            }
+        )
+        if res4: results.append(res4)
 
-    # Case 5: Chemistry Practice (Solutions)
-    case5_profile = {
-        "grade": "12",
-        "exam_target": "neet",
-        "subject": "Chemistry",
-        "expertise_level": 4.0,
-        "strong_topics": ["Solutions", "Electrochemistry"],
-        "weak_topics": []
-    }
-    case5_chat = [{"role": "student", "message": "Let's solve some numericals on Colligative Properties."}]
-    case5_perf = {
-        "topic": "Solutions",
-        "questions_attempted": 12,
-        "correct": 10,
-        "avg_time_seconds": 250,
-        "confidence_score": 4.0
-    }
+        # 5. Chemistry Practice (Solutions)
+        res5 = await run_test_case(
+            client,
+            "Chemistry Practice (Solutions)",
+            {
+                "grade": "12",
+                "exam_target": "neet",
+                "subject": "Chemistry",
+                "expertise_level": 4.0,
+                "weak_topics": [],
+                "strong_topics": ["Solutions", "Electrochemistry"]
+            },
+            [
+                {"role": "tutor", "message": "We have covered the theory of Colligative Properties."},
+                {"role": "student", "message": "Okay, the concepts are clear."},
+                {"role": "student", "message": "Let's solve some numericals on Colligative Properties."}
+            ],
+            {
+                "topic": "Solutions",
+                "questions_attempted": 12,
+                "correct": 10,
+                "avg_time_seconds": 250,
+                "confidence_score": 4.0
+            }
+        )
+        if res5: results.append(res5)
 
-    await run_test_case(orchestrator, "Struggling Beginner (Bio Classification)", case1_profile, case1_chat, case1_perf)
-    await run_test_case(orchestrator, "Advanced Challenge (Photosynthesis)", case2_profile, case2_chat, case2_perf)
-    await run_test_case(orchestrator, "Chemistry Concept (Structure of Atom)", case3_profile, case3_chat, case3_perf)
-    await run_test_case(orchestrator, "Physics Challenge (Gravitation)", case4_profile, case4_chat, case4_perf)
-    await run_test_case(orchestrator, "Chemistry Practice (Solutions)", case5_profile, case5_chat, case5_perf)
+    # Save results to file
+    output_path = os.path.join("outputs", "output.json")
+    with open(output_path, "w") as f:
+        json.dump(results, f, indent=2)
+    
+    print(f"\n✅ All results saved to: {output_path}")
 
 if __name__ == "__main__":
     asyncio.run(main())

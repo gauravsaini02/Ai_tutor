@@ -8,27 +8,35 @@ from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, Field
 from typing import List, Optional, Dict, Any
 import uvicorn
-import os
 
 from .orchestrator import TutorOrchestrator
+from .logger import setup_logger
+
+logger = setup_logger(__name__)
+
+from contextlib import asynccontextmanager
+
+# Initialize Orchestrator (Global singleton to keep model in memory)
+orchestrator = None
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    """Manage application lifecycle."""
+    global orchestrator
+    logger.info("Initializing Tutor Orchestrator...")
+    orchestrator = TutorOrchestrator()
+    logger.info("✅ Tutor Orchestrator ready!")
+    yield
+    # Clean up resources if needed
+    logger.info("Shutting down Tutor Orchestrator...")
 
 # Initialize FastAPI app
 app = FastAPI(
     title="AI Tutor API",
     description="Adaptive RAG-based tutoring system API",
-    version="1.0.0"
+    version="1.0.0",
+    lifespan=lifespan
 )
-
-# Initialize Orchestrator (Global singleton to keep model in memory)
-# We initialize it on startup to avoid reloading the model for every request
-orchestrator = None
-
-@app.on_event("startup")
-async def startup_event():
-    global orchestrator
-    print("Initializing Tutor Orchestrator...")
-    orchestrator = TutorOrchestrator()
-    print("✅ Tutor Orchestrator ready!")
 
 # --- Request Models ---
 
@@ -86,7 +94,7 @@ async def get_recommendations(request: RecommendationRequest):
         return result
         
     except Exception as e:
-        print(f"Error processing request: {e}")
+        logger.error(f"Error processing request: {e}", exc_info=True)
         raise HTTPException(status_code=500, detail=str(e))
 
 if __name__ == "__main__":

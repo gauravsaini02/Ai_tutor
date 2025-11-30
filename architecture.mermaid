@@ -1,0 +1,30 @@
+graph TD
+    User[Student/Client] -->|1. Profile + Chat History| API[FastAPI / Orchestrator]
+    API -->|2. Context| Pipeline[Retrieval Pipeline]
+    
+    subgraph "Stage 0: Context Understanding"
+        Pipeline -->|3. Chat History| SignalDetector[Groq LLM Signal Detector]
+        SignalDetector -->|4. Performance Signals| Ranker
+    end
+    
+    subgraph "Stage 1: Candidate Generation (Fast)"
+        Pipeline -->|5. Check Cache| RedisCache[(Redis LRU Cache)]
+        RedisCache -->|Hit| Ranker
+        RedisCache -.->|Miss| VectorDB[(Qdrant Vector DB)]
+        VectorDB -->|6. Candidates (Top 50)| Ranker
+    end
+    
+    subgraph "Stage 2: Intelligent Ranking (Precise)"
+        Ranker[Multi-Signal Ranker] -->|7. Relevance Score| Scored[Scored Candidates]
+        Ranker -->|8. Difficulty Calibration| Scored
+        Ranker -->|9. Personalization| Scored
+        Ranker -->|10. Diversity| Scored
+    end
+    
+    subgraph "Stage 3: LLM Refinement (Optional)"
+        Scored -->|11. Top 10 Candidates| LLMRanker[Groq LLM Re-ranker]
+        LLMRanker -->|12. Final Recommendations| Output
+    end
+    
+    Output -->|13. JSON Response| API
+    API -->|14. Response| User
