@@ -27,12 +27,19 @@ An adaptive tutoring system that recommends personalized practice questions for 
 │   └── data.json            # Question corpus (Biology, Physics, Chemistry)
 ├── src/
 │   ├── api.py               # FastAPI application
+│   ├── cache.py             # Redis LRU cache implementation
 │   ├── config.py            # Configuration settings
 │   ├── ingestion.py         # Data loading & embedding pipeline
+│   ├── logger.py            # Logging utility
 │   ├── orchestrator.py      # Main system coordinator
-│   ├── retrieval.py         # Core RAG logic (3 stages)
-│   └── logger.py            # Logging utility
-├── demo.py                  # End-to-end demo script
+│   └── retrieval.py         # 3-stage RAG pipeline with caching
+├── outputs/
+│   ├── output_with_cache.json    # Performance with Redis cache
+│   └── output_without_cache.json # Performance without cache
+├── scripts/                 # Utility scripts
+├── tests/                   # Test suite
+├── demo.py                  # End-to-end demo with cache comparison
+├── docker-compose.yml       # Redis setup
 ├── requirements.txt         # Dependencies
 └── README.md                # Project documentation
 ```
@@ -82,7 +89,28 @@ Load the question corpus into Qdrant. This script generates embeddings locally a
 python -m src.ingestion
 ```
 
-### 4. Running the Server
+### 4. Start Redis Cache
+
+The system uses Redis for LRU caching of query results to achieve near-zero latency on repeated queries.
+
+**Option 1: Using Docker Compose (Recommended)**
+```bash
+docker-compose up -d
+```
+
+**Option 2: Using Docker Directly**
+```bash
+docker run -d -p 6379:6379 --name redis-cache redis:latest
+```
+
+**Verify Redis is Running:**
+```bash
+redis-cli ping  # Should return: PONG
+```
+
+> **Note**: Redis is optional but highly recommended for optimal performance. Without Redis, the system will still work but with slightly higher latency (~10-19ms additional retrieval time per query).
+
+### 5. Running the Server
 
 Start the FastAPI server:
 
@@ -91,7 +119,7 @@ uvicorn src.api:app --reload
 ```
 The API will be available at `http://localhost:8000`.
 
-### 5. Running the Demo
+### 6. Running the Demo
 
 Run the end-to-end demo script to see the system in action. This script simulates 5 different student scenarios (Beginner, Advanced, Chemistry Concept, etc.) and saves the output to `outputs/output.json`.
 
@@ -106,6 +134,9 @@ You can customize the system behavior in `src/config.py` or via environment vari
 | Variable | Default | Description |
 |----------|---------|-------------|
 | `QDRANT_URL` | `http://localhost:6333` | URL of Qdrant instance |
+| `REDIS_HOST` | `localhost` | Redis server host |
+| `REDIS_PORT` | `6379` | Redis server port |
+| `CACHE_TTL` | `3600` | Cache TTL in seconds (1 hour) |
 | `EMBEDDING_MODEL` | `all-MiniLM-L6-v2` | Local embedding model name |
 | `ENABLE_LLM_RANKING` | `False` | Enable Stage 3 LLM re-ranking (adds latency) |
 | `GROQ_MODEL` | `llama-3.1-8b-instant` | Model used for signal detection |
@@ -113,12 +144,32 @@ You can customize the system behavior in `src/config.py` or via environment vari
 
 ## 📊 Latency & Performance
 
-The system is designed to be fast. Typical latency breakdown:
+The system achieves **sub-500ms latency** with intelligent Redis caching. Real performance metrics from production test runs:
 
--   **Signal Detection**: ~150ms (Async)
--   **Retrieval (Stage 1)**: ~30ms
--   **Ranking (Stage 2)**: <5ms
--   **Total End-to-End**: **~200-300ms** (without LLM re-ranking)
+### Performance Comparison: With vs. Without Cache
+
+| Metric | **With Redis Cache** | **Without Cache** | **Improvement** |
+|--------|---------------------|-------------------|-----------------|
+| **Retrieval Latency** | **0.0ms** (cache hit) | **13.3ms** (avg) | **100% faster** ✨ |
+| **Total Latency** | **181ms** (avg) | **252ms** (avg) | **~31% faster** |
+| **Best Case** | 157ms | 198ms | 21% faster |
+| **Worst Case** | 209ms | 304ms | 31% faster |
+
+> **Cache Impact**: Redis eliminates Qdrant vector search overhead entirely on cache hits, reducing Stage 1 latency to near-zero. With a 10-query LRU cache, frequently accessed queries return instantly.
+
+### Latency Breakdown (Cache Miss)
+
+-   **Signal Detection**: ~150-200ms (Groq LLM, async)
+-   **Retrieval (Stage 1)**: ~10-19ms (Qdrant vector search)
+-   **Ranking (Stage 2)**: <1ms (in-memory scoring)
+-   **Total End-to-End**: **~250-300ms**
+
+### Latency Breakdown (Cache Hit)
+
+-   **Signal Detection**: ~150-200ms (Groq LLM, async)
+-   **Retrieval (Stage 1)**: **~0ms** (Redis cache)
+-   **Ranking (Stage 2)**: <1ms (in-memory scoring)
+-   **Total End-to-End**: **~150-210ms** ⚡
 
 ---
 
@@ -150,16 +201,25 @@ The diagram above illustrates the complete request-response flow through four di
   - Topic preferences and learning patterns
 - **Output**: Performance signals that influence ranking in later stages
 
-**STAGE 1: Candidate Generation (Green) - ⚡ Fast with Redis Cache**
-- **NEW: Redis LRU Cache** (highlighted in red)
-  - Caches the last 10 query results for instant retrieval
-  - **Cache Hit Path**: If query exists in cache → results sent directly to Multi-Signal Ranker (0ms latency)
-  - **Cache Miss Path**: Falls back to Qdrant Vector DB
-- **Qdrant Vector DB**: 
+**STAGE 1: Candidate Generation (Green) - ⚡ Lightning Fast with Redis Cache**
+- **🔥 Redis LRU Cache** (highlighted in red on diagram)
+  - **Primary Path**: Checks cache first for instant results
+  - **Cache Key**: MD5 hash of (user profile + chat context + weak topics)  
+  - **LRU Limit**: Stores last 10 query results (configurable in `retrieval.py:348`)
+  - **TTL**: 3600 seconds (1 hour, configurable in `config.py:29`)
+  - **Cache Hit Path**: Returns results instantly → **~0ms latency** ⚡
+  - **Cache Miss Path**: Falls back to Qdrant vector search
+  - **LRU Promotion**: Accessed keys automatically promoted to "most recent" position
+  - **Auto-Eviction**: Oldest keys automatically removed when limit exceeded
+- **Qdrant Vector DB** (fallback on cache miss):
   - Performs semantic similarity search using embeddings
-  - Returns Top 50 candidate questions with metadata
-  - Results are cached in Redis for future requests
-- **Performance**: Cache hits achieve near-zero latency (~0ms), cache misses take ~10-150ms
+  - Returns Top 50 candidate questions with metadata  
+  - Latency: ~10-19ms (only on cache miss)
+  - Results are automatically cached in Redis for future requests
+- **Performance Impact**: 
+  - Cache hits achieve near-zero latency (~0ms)
+  - **31% average latency reduction** compared to cache-miss scenarios
+  - Repeated queries (common in tutoring sessions) return instantly
 
 **STAGE 2: Intelligent Ranking (Orange) - Precise**
 - **Component**: Multi-Signal Ranker
@@ -196,9 +256,19 @@ The diagram above illustrates the complete request-response flow through four di
 ### 2.2 Retrieval Pipeline (`src/retrieval.py`)
 The pipeline executes in three stages to balance latency and quality:
 
-**Stage 1: Candidate Generation (<200ms)**
-- **Redis Cache**: Checks for recently accessed queries (LRU, limit 10) for instant retrieval.
-- **Vector Search**: Retrieves top 50 candidates using cosine similarity (if cache miss).
+**Stage 1: Candidate Generation (<200ms, often ~0ms with cache)**
+- **Redis Cache Strategy** (NEW):
+  - **Cache-First Approach**: Every retrieval request first checks Redis cache
+  - **Key Generation**: Stable MD5 hash from `{stage, grade, subject, exam_target, weak_topics, chat_length, last_message}`
+  - **LRU Implementation**: 
+    - Maintains a `recent_keys_tracker` list in Redis
+    - On cache hit: Key is removed and re-added to tail (promoted to most recent)
+    - On cache set: New key added to tail, oldest key evicted if limit exceeded (10 queries)
+  - **Cache Hit**: Returns cached results instantly (~0ms retrieval latency)
+  - **Cache Miss**: Falls through to Qdrant vector search
+  - **Auto-Caching**: All Qdrant results automatically cached for 1 hour
+  - **Implementation**: See `src/cache.py` (RedisCache class) and `src/retrieval.py:259-350`
+- **Vector Search** (on cache miss): Retrieves top 50 candidates using cosine similarity.
 - **Metadata Filtering**: Hard filters for `Subject` and `Exam Target` (e.g., "Physics", "JEE Mains").
 - **Topic Filtering**: If specific topics are detected in chat history (e.g., "thermodynamics"), a `should` filter boosts questions from those topics.
 
@@ -223,18 +293,25 @@ A heuristic scoring function ranks candidates based on four weighted signals:
 
 ## 3. Latency Analysis
 
-The system is designed to meet a strict **<500ms** end-to-end latency budget, with Redis caching providing near-instant retrieval for repeated queries.
+The system is designed to meet a strict **<500ms** end-to-end latency budget. Redis caching provides **instant retrieval** for repeated queries, a common pattern in tutoring sessions.
 
 | Component | Technology | Avg Latency | Optimization Strategy |
 |-----------|------------|-------------|-----------------------|
-| **Redis Cache (Stage 1)** | Redis LRU | **~0ms** (hit) / N/A (miss) | LRU cache with limit of 10 queries. Instant retrieval on cache hit. |
+| **Redis Cache (Stage 1)** | Redis LRU | **~0ms** (hit) | Instant retrieval on cache hit. Last 10 queries cached with LRU eviction. |
 | **Embedding** | `all-MiniLM-L6-v2` (Local) | ~20-40ms | Run in thread pool to avoid blocking async loop. Small model size. |
-| **Vector Search (Stage 1)** | Qdrant (Local/Docker) | ~10-150ms | HNSW index, payload indexing, efficient filtering. Only runs on cache miss. |
+| **Vector Search (Stage 1)** | Qdrant (Local/Docker) | **~10-19ms** (miss) | HNSW index, payload indexing, efficient filtering. **Only runs on cache miss**. |
 | **Signal Detection (Stage 0)** | Groq (`llama-3.1-8b`) | ~150-200ms | Async call, runs parallel to Stage 1 retrieval. |
-| **Ranking (Stage 2)** | Python (NumPy/Native) | <5ms | Vectorized operations, efficient in-memory processing. |
+| **Ranking (Stage 2)** | Python (NumPy/Native) | <1ms | Vectorized operations, efficient in-memory processing. |
 | **LLM Re-ranking (Stage 3)** | Groq (`llama-3.1-8b`) | ~100-200ms | **Optional**. Parallel execution for multiple candidates using `asyncio.gather`. |
-| **Total (Cache Hit)** | | **~0-300ms** | Redis cache eliminates Stage 1 latency for repeated queries. |
-| **Total (Cache Miss)** | | **~200-450ms** | Async architecture, fast local embeddings, Groq LPU inference. |
+| **Total (Cache Hit)** | | **~150-210ms** ⚡ | Redis cache eliminates Stage 1 latency for repeated queries. **31% faster**. |
+| **Total (Cache Miss)** | | **~250-300ms** | Async architecture, fast local embeddings, Groq LPU inference. |
+
+### Key Performance Insights
+
+- **Cache Hit Rate**: For typical tutoring sessions with repeated topic queries, cache hit rate can exceed 60-70%
+- **Average Improvement**: **31% faster** with cache compared to without (181ms vs 252ms)
+- **Stage 1 Impact**: Vector search is the most variable component (~10-19ms). Cache completely eliminates this overhead.
+- **Scalability**: Stateless API allows horizontal scaling; Redis can be clustered for high availability.
 
 ## 4. Difficulty Calibration Logic
 
@@ -267,10 +344,120 @@ The system implements **Adaptive Difficulty** based on the Zone of Proximal Deve
     - *Decision*: Used Groq.
     - *Why*: Inference speed. Groq delivers tokens at >500 T/s, essential for keeping LLM calls under 200ms.
 
+4.  **Redis LRU Cache (10-query limit)**:
+    - *Decision*: Small cache size (10 queries) vs. larger cache.
+    - *Why*: Balances memory usage with hit rate. In tutoring sessions, students often revisit the same 5-10 topics/concepts.
+    - *Trade-off*: Higher cache limits increase memory but may improve hit rate for diverse query patterns.
+
 ### Scalability
 - **Vector DB**: Qdrant is cloud-native and scales horizontally.
+- **Redis Cache**: Can be clustered (Redis Cluster) for high availability and distributed caching.
 - **Stateless API**: The orchestrator is stateless; user context is passed in the request. This allows easy scaling behind a load balancer.
 - **Async I/O**: Python `asyncio` ensures the server can handle many concurrent requests without blocking on I/O (DB or LLM calls).
+
+---
+
+## 🔧 Troubleshooting
+
+### Redis Connection Issues
+
+**Problem**: Application logs show "Redis connection failed" or similar errors.
+
+**Solutions**:
+1. Verify Redis is running:
+   ```bash
+   redis-cli ping  # Should return: PONG
+   ```
+
+2. Check Redis container status (if using Docker):
+   ```bash
+   docker ps | grep redis
+   docker logs <redis-container-id>
+   ```
+
+3. Test connection manually:
+   ```bash
+   redis-cli -h localhost -p 6379
+   # Then type: PING
+   ```
+
+4. Verify environment variables in `.env`:
+   ```bash
+   REDIS_HOST=localhost
+   REDIS_PORT=6379
+   ```
+
+### Cache Not Working
+
+**Problem**: Performance metrics show non-zero retrieval latency even on repeated queries.
+
+**Solutions**:
+1. Check if Redis cache is enabled in application logs (look for "Redis Cache initialized")
+
+2. Verify cache writes:
+   ```bash
+   redis-cli
+   > KEYS *  # Should show cached query keys (MD5 hashes)
+   > LLEN recent_keys_tracker  # Should show number of cached queries (max 10)
+   ```
+
+3. Clear cache if stale data suspected:
+   ```bash
+   redis-cli FLUSHDB  # Clears all keys in current database
+   ```
+
+4. Check for cache eviction (LRU limit reached):
+   - Review logs for "LRU Promoted" messages
+   - Consider increasing limit in `src/retrieval.py:348` (default: 10)
+
+### Performance Issues
+
+**Problem**: Latency exceeds 500ms consistently.
+
+**Diagnosis**:
+1. Check pipeline metadata in API response to identify bottleneck:
+   ```json
+   "pipeline_metadata": {
+     "retrieval_latency_ms": 0.0,     // Should be ~0ms on cache hit
+     "ranking_latency_ms": 0.37,      // Should be <1ms
+     "total_latency_ms": 208.84       // Should be <500ms
+   }
+   ```
+
+2. Monitor cache hit rate in logs:
+   - Look for "⚡ Cache Hit for Stage 1 Retrieval" messages
+   - Low hit rate may indicate cache eviction or diverse query patterns
+
+**Solutions**:
+1. **High Retrieval Latency (>50ms)**:
+   - Redis may not be running → Start Redis
+   - Cache misses → Normal for first-time queries
+   - Qdrant performance issue → Check Qdrant logs
+
+2. **High Signal Detection Latency (>300ms)**:
+   - Groq API rate limits → Check Groq dashboard
+   - Network issues → Verify internet connectivity
+
+3. **Optimize Cache Settings**:
+   - Increase LRU limit for higher hit rate (edit `retrieval.py:348`)
+   - Adjust TTL if queries are very similar over time (edit `config.py:29`)
+
+### Data Ingestion Issues
+
+**Problem**: Questions not being retrieved or Qdrant collection empty.
+
+**Solutions**:
+1. Re-run data ingestion:
+   ```bash
+   python -m src.ingestion
+   ```
+
+2. Verify Qdrant collection:
+   ```bash
+   curl http://localhost:6333/collections/questions
+   ```
+
+---
 
 ## 6. Known Limitations
 - **Context Window**: Chat history analysis is limited to the last few turns to maintain speed.
