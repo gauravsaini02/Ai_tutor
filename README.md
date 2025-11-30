@@ -173,6 +173,227 @@ The system achieves **sub-500ms latency** with intelligent Redis caching. Real p
 
 ---
 
+# 🚧 Development Journey: Building a Sub-500ms RAG System
+
+This section chronicles the technical decisions, experiments, and optimizations undertaken to build an intelligent tutoring system that meets strict latency constraints while maintaining high accuracy.
+
+## 1. Data Collection & Curation
+
+### The Challenge
+Building an effective AI tutor required a comprehensive question bank spanning multiple subjects (Biology, Physics, Chemistry) with rich metadata for intelligent retrieval.
+
+### The Process
+- **Source**: Downloaded NEET previous year papers from [selfstudys.com](https://www.selfstudys.com/books/neet-previous-year-paper), categorizing questions by:
+  - **Subjects**: Biology, Physics, Chemistry
+  - **Topics**: Each subject divided into 10-15 major topics (e.g., Photosynthesis, Respiration, Cell Cycle for Biology; see [`data/data.json`](data/data.json) for the complete taxonomy)
+  - **Sub-topics**: Granular categorization (e.g., "Calvin cycle stages," "RuBisCO mechanism")
+  - **Difficulty levels**: 1-5 scale for adaptive difficulty calibration
+  
+- **Data Enrichment with LLMs**: Raw questions lacked pedagogical metadata. I used LLMs to generate:
+  - **Explanations**: Detailed solutions with step-by-step reasoning
+  - **Prerequisites**: Foundational concepts needed (e.g., "Proton gradient across thylakoid")
+  - **Time estimates**: Expected solving time (1-4 minutes per question)
+
+- **Dataset Scale**: Collected **15 questions per topic** with varying difficulty (1-5), totaling **~200 questions** for the demo. Each question includes:
+  - Question text, 4 options, correct answer
+  - Detailed explanation
+  - Metadata: `subject`, `topic`, `sub_topic`, `difficulty`, `exam_type`, `year`, `time_estimate`, `prerequisites`
+
+### Ingestion Pipeline
+The [`src/ingestion.py`](src/ingestion.py) script:
+1. Loads questions from `data/data.json`
+2. Generates embeddings for: `question_text + options + explanation + topic + sub_topic`
+3. Indexes metadata fields (`subject`, `topic`, `difficulty`, `exam_type`, `year`) in Qdrant for **metadata-first filtering**
+4. Stores 384-dimensional vectors with full payloads
+
+> **Key Insight**: By filtering on metadata *first* (e.g., `subject=Physics AND difficulty=3-4`), the vector search operates on a much smaller candidate set (~20-30 questions instead of 200), significantly reducing retrieval time.
+
+---
+
+## 2. Embedding Model: The Quest for Speed
+
+### Experiment 1: OpenAI `text-embedding-3-large` ❌
+- **Latency**: ~1.4 seconds per query
+- **Verdict**: Excellent semantic understanding, but **3x over budget**. Even with async calls, network latency was unpredictable.
+
+### Experiment 2: OpenAI `text-embedding-3-small` ⚠️
+- **Latency**: ~700ms per query
+- **Verdict**: Faster, but still **40% over the 500ms target**. Quality was comparable to the large model for this domain.
+
+### Experiment 3: Local Transformer Model ✅
+- **Model**: [`sentence-transformers/all-MiniLM-L6-v2`](https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2)
+- **Latency**: **20-40ms** (local CPU inference, no network calls)
+- **Vector size**: 384 dimensions (compact yet effective)
+- **Verdict**: **Winner!** Sacrificed marginal semantic quality for 97% latency reduction. For educational Q&A with structured metadata, the tradeoff was worth it.
+
+> **Technical Detail**: Running the model in a thread pool (`asyncio.to_thread`) avoids blocking the event loop during inference.
+
+---
+
+## 3. Vector Database: From Cloud to Local Docker
+
+### Experiment 1: Qdrant Cloud ❌
+- **Performance**: ~800ms per search
+- **Issue**: Network latency to cloud instance dominated the budget
+- **Verdict**: Cloud is great for production scale, but unacceptable for sub-500ms demos
+
+### Experiment 2: Qdrant Embedded (In-Process) ⚠️
+- **Performance**: ~50-70ms per search
+- **Issue**: Synchronous blocking calls in the Python process caused unpredictable latency spikes under load
+- **Verdict**: Better, but not production-ready for async workloads
+
+### Experiment 3: Qdrant in Docker (localhost) ✅
+- **Setup**: `docker run -p 6333:6333 qdrant/qdrant`
+- **Performance**: **10-19ms per search** (cache miss)
+- **Why it works**:
+  - **HNSW indexing**: Approximate nearest neighbor search scales logarithmically
+  - **Payload indexes**: Pre-indexed `subject`, `topic`, `difficulty` enable fast metadata filtering
+  - **Local network**: Sub-millisecond latency to localhost:6333
+- **Verdict**: **Winner!** Combines speed of local deployment with isolation of a separate process.
+
+> **Scaling Note**: For production, Qdrant Cloud with replicas would be preferred. For demo/dev constraints, local Docker is optimal.
+
+---
+
+## 4. LLM Selection: Balancing Accuracy and Speed
+
+### Use Cases for LLM
+1. **Signal Detection** (Stage 0): Analyze chat history to detect performance signals (struggling, bored, gaps)
+2. **LLM Re-ranking** (Stage 3, optional): Deep contextual reasoning for final question selection
+
+### Experiment 1: OpenAI GPT-4o-mini ❌
+- **Latency**: ~1.4 seconds per call
+- **Accuracy**: Excellent (near-perfect signal detection)
+- **Verdict**: Too slow. Even for a single LLM call, this alone exceeds the 500ms budget.
+
+### Experiment 2: Transformer-based Semantic Similarity (No LLM) ⚠️
+- **Approach**: Built a pool of anchor phrases for each signal category (`struggling`, `bored`, `ready_for_challenge`) and used `all-MiniLM-L6-v2` embeddings to compute semantic similarity.
+  - Example anchors for `struggling`: *"I don't understand," "This is confusing," "Can you explain again?"*
+- **Accuracy**: **~86%**
+- **Latency**: ~15ms
+- **Verdict**: Fast but **not accurate enough**. Misclassifying student signals leads to poor recommendations.
+
+### Experiment 3: Groq `llama-3.1-8b-instant` ✅
+- **Latency**: **150-200ms** per call (Groq's LPU delivers >500 tokens/second)
+- **Accuracy**: Matches GPT-4o-mini for this task (~98% on test cases)
+- **API**: Currently using **Groq free tier** (30 req/min limit) for demo. Production would use paid tier for higher rate limits.
+- **Verdict**: **Winner!** Small language models (8B parameters) are surprisingly effective for structured tasks like signal detection when paired with fast inference infrastructure.
+
+> **Why Groq?** Their Language Processing Unit (LPU) architecture delivers deterministic low latency, unlike traditional GPUs. For latency-critical applications, this consistency is crucial.
+
+---
+
+## 5. Production Engineering: Async, Logging, and Caching
+
+### Asynchronous Architecture
+- **Why**: Python's `asyncio` allows concurrent I/O operations (Qdrant search + Groq LLM call) without blocking.
+- **Implementation**: All external calls (`qdrant_client.search`, Groq API) are wrapped in async functions. The orchestrator uses `asyncio.gather` to parallelize Stage 0 (signal detection) and Stage 1 (retrieval).
+- **Impact**: Reduces total latency by ~40% compared to sequential execution.
+
+### Logging
+- **Library**: Python's built-in `logging` module with custom formatter (see [`src/logger.py`](src/logger.py))
+- **Levels**: INFO for pipeline stages, DEBUG for embedding/search details, ERROR for failures
+- **Output**: Includes timestamps, latency measurements, and cache hit/miss indicators
+
+### Error Handling
+- **Strategy**: Every external call is wrapped in `try-except` blocks
+- **Fallbacks**:
+  - Qdrant search fails → return empty candidate list (graceful degradation)
+  - LLM signal detection fails → use default profile (expertise level only)
+  - Redis unavailable → bypass cache, fallback to direct Qdrant
+
+---
+
+## 6. Redis Caching: The Final 31% Speedup
+
+### Motivation
+In tutoring sessions, students often ask about the **same topics repeatedly** (e.g., "give me more photosynthesis questions"). Vector search is fast (~10-19ms), but **eliminating it entirely** would unlock significant gains.
+
+### LRU Cache Design
+- **Key Strategy**: MD5 hash of `{grade, subject, exam_target, weak_topics, chat_length, last_message}`
+  - Ensures cache hits for semantically identical queries
+  - Invalidates cache when user context changes
+- **Capacity**: Last 10 queries (configurable in [`src/retrieval.py:348`](src/retrieval.py#L348))
+- **Eviction**: Least Recently Used (LRU) with automatic promotion on access
+- **TTL**: 1 hour (see [`src/config.py:29`](src/config.py#L29))
+
+### Implementation
+- **Storage**: Redis (running in Docker via `docker-compose.yml`)
+- **Structure**:
+  - **Key**: `stage1_cache:{md5_hash}`
+  - **Value**: Serialized list of top 50 candidate question IDs + scores
+  - **Tracker**: `recent_keys_tracker` list maintains insertion order for LRU eviction
+
+### Performance Impact
+| Scenario | Retrieval Latency | Total Latency | Output File |
+|----------|-------------------|---------------|-------------|
+| **Cache Miss** | 10-19ms (Qdrant) | ~252ms avg | [`outputs/output_without_cache.json`](outputs/output_without_cache.json) |
+| **Cache Hit** | **~0ms** (Redis) | **~181ms avg** | [`outputs/output_with_cache.json`](outputs/output_with_cache.json) |
+| **Improvement** | **100% faster retrieval** | **31% faster end-to-end** | — |
+
+> **Test Details**: Both outputs run 5 test cases (Biology, Physics, Chemistry with varying profiles). Cache hits achieve **0.0ms retrieval latency**, completely eliminating the vector search overhead.
+
+### Why LRU + TTL?
+- **LRU**: Students revisit the same 5-10 topics in a session. Small cache (10 queries) captures most repeats.
+- **TTL**: Prevents stale caching if question bank is updated. 1 hour balances freshness and hit rate.
+
+---
+
+## 7. Metadata Filtering: Smarter Before Searching
+
+### The Problem
+Searching 200 questions with vectors is fast (~15ms), but **filtering first reduces the search space**:
+- Filter: `subject=Physics AND exam_type=NEET` → ~60 candidates
+- Now vector search operates on 60 instead of 200 → **~40% faster**
+
+### Implementation
+Qdrant's payload indexes enable **pre-filtering** without loading vectors:
+1. **Hard Filters** (Stage 1): `subject`, `exam_type` (must match user profile)
+2. **Should Filters** (Stage 1): `topic` (boost if mentioned in chat history)
+3. **Post-Filtering** (Stage 2): `difficulty` range (based on user expertise ± ZPD)
+
+### Indexed Fields (see [`src/ingestion.py:64-99`](src/ingestion.py#L64-L99))
+- `subject` (KEYWORD): Exact match
+- `topic` (TEXT): Fuzzy match for topic filtering
+- `sub_topic` (KEYWORD): Exact match
+- `difficulty` (INTEGER): Range queries (e.g., `3 ≤ difficulty ≤ 4`)
+- `exam_type` (KEYWORD): NEET vs JEE
+- `year` (INTEGER): Boost recent questions (last 2 years)
+
+> **Key Insight**: Filter → Search → Rank is faster than Search → Filter → Rank because vector operations are more expensive than integer/keyword comparisons.
+
+---
+
+## 8. Putting It All Together: The <500ms Pipeline
+
+### Latency Breakdown (Cache Hit)
+| Stage | Component | Latency | Running Total |
+|-------|-----------|---------|---------------|
+| **Stage 0** | Groq LLM (signal detection) | ~150-200ms | 200ms |
+| **Stage 1** | Redis cache lookup | **~0ms** | 200ms |
+| **Stage 2** | Ranking (NumPy) | <1ms | 201ms |
+| **Total** | | | **~181ms** ✅ |
+
+### Latency Breakdown (Cache Miss)
+| Stage | Component | Latency | Running Total |
+|-------|-----------|---------|---------------|
+| **Stage 0** | Groq LLM (signal detection) | ~150-200ms | 200ms |
+| **Stage 1** | Embedding (local model) | ~20-40ms | 230ms |
+| | Qdrant search (Docker) | ~10-19ms | 250ms |
+| **Stage 2** | Ranking (NumPy) | <1ms | 251ms |
+| **Total** | | | **~252ms** ✅ |
+
+### Why This Matters
+Every optimization compounded:
+- Local embeddings: **1400ms → 40ms** (97% reduction)
+- Local Qdrant: **800ms → 15ms** (98% reduction)
+- Groq LLM: **1400ms → 180ms** (87% reduction)
+- Redis cache: **15ms → 0ms** (100% reduction on hits)
+
+**Final result**: From an estimated **3+ seconds** to a consistent **<300ms**, with cache-hit cases at **<200ms**. 🎉
+
+---
+
 # System Design & Architecture
 
 ## 1. System Overview
