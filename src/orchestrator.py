@@ -10,7 +10,7 @@ from typing import List, Dict, Any, Optional
 
 from .retrieval import (
     RetrievalPipeline, UserProfile, ChatMessage, 
-    RecentPerformance, RetrievalResult
+    RecentPerformance, RetrievalResult, RevisionRecord
 )
 from .config import Config
 from .logger import setup_logger
@@ -173,7 +173,8 @@ class TutorOrchestrator:
         self,
         user_profile_dict: Dict[str, Any],
         chat_history_dict: List[Dict[str, str]],
-        recent_performance_dict: Optional[Dict[str, Any]] = None
+        recent_performance_dict: Optional[Dict[str, Any]] = None,
+        revision_history_dict: Optional[List[Dict[str, Any]]] = None
     ) -> Dict[str, Any]:
         """
         Main orchestration method - returns complete tutor recommendation.
@@ -182,6 +183,7 @@ class TutorOrchestrator:
             user_profile_dict: User profile as dict
             chat_history_dict: Chat history as list of dicts
             recent_performance_dict: Recent performance as dict (optional)
+            revision_history_dict: Spaced repetition history as list of dicts (optional)
         
         Returns:
             Complete recommendation with questions, context, and metadata
@@ -198,9 +200,15 @@ class TutorOrchestrator:
         if recent_performance_dict:
             recent_performance = RecentPerformance(**recent_performance_dict)
         
-        # Run retrieval pipeline
+        revision_history = None
+        if revision_history_dict:
+            revision_history = [
+                RevisionRecord(**record) for record in revision_history_dict
+            ]
+        
+        # Run retrieval pipeline (with SR support)
         results, latency_metadata, performance_signals = await self.pipeline.retrieve(
-            user_profile, chat_history, recent_performance
+            user_profile, chat_history, recent_performance, revision_history
         )
         
         # Generate tutor context

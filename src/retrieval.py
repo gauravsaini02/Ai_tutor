@@ -12,6 +12,7 @@ Target latency: <500ms end-to-end
 import os
 import time
 import asyncio
+from datetime import datetime, timedelta
 import json
 import re
 from typing import List, Dict, Any, Optional, Tuple
@@ -59,6 +60,16 @@ class ChatMessage:
     """Chat history message."""
     role: str
     message: str
+
+
+@dataclass
+class RevisionRecord:
+    """Spaced repetition tracking for a subtopic."""
+    subtopic: str
+    last_revised_date: str  # ISO format: "2025-11-28"
+    repetition_count: int
+    easiness_factor: float  # SM-2 E-factor (1.3 - 2.5+)
+    last_interval_days: int
 
 
 @dataclass
@@ -151,6 +162,69 @@ class DifficultyCalibrator:
         """Score how well a question's difficulty matches the target."""
         difficulty_gap = abs(question_difficulty - target_difficulty)
         return 1.0 / (1.0 + difficulty_gap)
+
+
+class SpacedRepetitionCalculator:
+    """SM-2 based spaced repetition penalty calculator."""
+    
+    @staticmethod
+    def calculate_sr_penalty(
+        subtopic: str,
+        revision_history: Optional[List[RevisionRecord]],
+        today: datetime
+    ) -> float:
+        """
+        Calculate spaced repetition penalty (0.2 = strong suppression, 1.0 = due for review).
+        
+        Uses simplified SM-2 algorithm:
+        - Repetition 1: 1 day interval
+        - Repetition 2: 6 days interval  
+        - Repetition 3+: previous_interval × easiness_factor
+        """
+        if not revision_history:
+            return 1.0  # No history, no penalty
+        
+        # Find this subtopic in revision history
+        revision = None
+        for record in revision_history:
+            if record.subtopic.lower() == subtopic.lower():
+                revision = record
+                break
+        
+        if not revision:
+            return 1.0  # Never studied, no penalty
+        
+        # Parse last revised date
+        try:
+            last_date = datetime.fromisoformat(revision.last_revised_date)
+        except (ValueError, TypeError):
+            return 1.0  # Invalid date, no penalty
+        
+        # Calculate next interval using SM-2 formula
+        repetition_count = revision.repetition_count
+        easiness_factor = revision.easiness_factor
+        last_interval = revision.last_interval_days
+        
+        if repetition_count == 1:
+            next_interval = 1  # 1 day
+        elif repetition_count == 2:
+            next_interval = 6  # 6 days
+        else:
+            next_interval = int(last_interval * easiness_factor)
+        
+        # Calculate days since last review
+        days_since = (today - last_date).days
+        
+        # Calculate penalty based on time progress
+        time_ratio = days_since / max(next_interval, 1)
+        
+        if time_ratio >= 1.0:
+            # Due for review or overdue
+            return 1.0
+        else:
+            # Not yet time - apply penalty
+            # Gradual recovery from 0.2 → 1.0
+            return 0.2 + (0.8 * time_ratio)
 
 
 class RetrievalPipeline:
@@ -357,7 +431,8 @@ class RetrievalPipeline:
         target_difficulty: float,
         performance_signals: Dict[str, Any],
         recent_performance: Optional[RecentPerformance],
-        subtopic_counts: Counter
+        subtopic_counts: Counter,
+        revision_history: Optional[List[RevisionRecord]] = None
     ) -> RetrievalResult:
         """Calculate scores for a single candidate."""
         try:
@@ -428,13 +503,20 @@ class RetrievalPipeline:
                 diversity_score *= 1.1
             diversity_score = min(1.0, diversity_score)
             
-            # Final Score
+            # 5. Spaced Repetition Penalty (NEW)
+            sr_penalty = SpacedRepetitionCalculator.calculate_sr_penalty(
+                subtopic=candidate.subtopic,
+                revision_history=revision_history,
+                today=datetime.now()
+            )
+            
+            # Final Score (with SR penalty multiplier)
             final_score = (
                 self.config.RELEVANCE_WEIGHT * relevance_score +
                 self.config.DIFFICULTY_WEIGHT * difficulty_score +
                 self.config.PERSONALIZATION_WEIGHT * personalization_score +
                 self.config.DIVERSITY_WEIGHT * diversity_score
-            )
+            ) * sr_penalty  # Apply SR penalty as multiplier
             
             reasoning = self._generate_reasoning(
                 candidate, target_difficulty, user_profile, 
@@ -461,10 +543,11 @@ class RetrievalPipeline:
         user_profile: UserProfile,
         chat_history: List[ChatMessage],
         recent_performance: Optional[RecentPerformance],
-        performance_signals: Optional[Dict[str, Any]] = None
+        performance_signals: Optional[Dict[str, Any]] = None,
+        revision_history: Optional[List[RevisionRecord]] = None
     ) -> Tuple[List[RetrievalResult], float]:
         """
-        Stage 2: Multi-signal ranking.
+        Stage 2: Multi-signal ranking with spaced repetition.
         (CPU-bound but fast, so kept synchronous for now, wrapped in async pipeline)
         """
         start_time = time.time()
@@ -482,7 +565,7 @@ class RetrievalPipeline:
         for candidate in candidates:
             result = self._calculate_candidate_score(
                 candidate, user_profile, chat_topics, target_difficulty,
-                performance_signals, recent_performance, subtopic_counts
+                performance_signals, recent_performance, subtopic_counts, revision_history
             )
             scored_results.append(result)
         
@@ -603,10 +686,11 @@ class RetrievalPipeline:
         self, 
         user_profile: UserProfile, 
         chat_history: List[ChatMessage],
-        recent_performance: Optional[RecentPerformance] = None
+        recent_performance: Optional[RecentPerformance] = None,
+        revision_history: Optional[List[RevisionRecord]] = None
     ) -> Tuple[List[RetrievalResult], Dict[str, Any], Dict[str, Any]]:
         """
-        Main retrieval method.
+        Main retrieval method with spaced repetition support.
         Returns: (results, latency_metadata, performance_signals)
         """
         start_total = time.time()
@@ -621,9 +705,10 @@ class RetrievalPipeline:
             user_profile, chat_history, recent_performance
         )
         
-        # Stage 2: Intelligent Ranking
+        # Stage 2: Intelligent Ranking (with SR)
         ranked_candidates, ranking_latency = self._stage2_intelligent_ranking(
-            candidates, user_profile, chat_history, recent_performance, performance_signals
+            candidates, user_profile, chat_history, recent_performance, 
+            performance_signals, revision_history
         )
         
         # Stage 3: LLM Re-ranking

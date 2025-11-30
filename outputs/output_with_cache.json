@@ -198,8 +198,8 @@
     },
     "pipeline_metadata": {
       "retrieval_latency_ms": 0.0,
-      "ranking_latency_ms": 0.3669261932373047,
-      "total_latency_ms": 208.83512496948242,
+      "ranking_latency_ms": 0.3757476806640625,
+      "total_latency_ms": 199.56111907958984,
       "retriever_used": "vector_search",
       "ranker_used": "heuristic_scoring"
     },
@@ -400,12 +400,12 @@
     },
     "pipeline_metadata": {
       "retrieval_latency_ms": 0.0,
-      "ranking_latency_ms": 0.2028942108154297,
-      "total_latency_ms": 175.48418045043945,
+      "ranking_latency_ms": 0.225067138671875,
+      "total_latency_ms": 180.4940700531006,
       "retriever_used": "vector_search",
       "ranker_used": "heuristic_scoring"
     },
-    "test_case_name": "Advanced Challenge (Photosynthesis)"
+    "test_case_name": "Advanced Challenge (Photosynthesis) - WITH SR"
   },
   {
     "recommended_questions": [
@@ -606,8 +606,8 @@
     },
     "pipeline_metadata": {
       "retrieval_latency_ms": 0.0,
-      "ranking_latency_ms": 0.2548694610595703,
-      "total_latency_ms": 181.73885345458984,
+      "ranking_latency_ms": 0.25010108947753906,
+      "total_latency_ms": 180.46903610229492,
       "retriever_used": "vector_search",
       "ranker_used": "heuristic_scoring"
     },
@@ -811,8 +811,8 @@
     },
     "pipeline_metadata": {
       "retrieval_latency_ms": 0.0,
-      "ranking_latency_ms": 0.2560615539550781,
-      "total_latency_ms": 184.87286567687988,
+      "ranking_latency_ms": 0.2548694610595703,
+      "total_latency_ms": 211.40599250793457,
       "retriever_used": "vector_search",
       "ranker_used": "heuristic_scoring"
     },
@@ -1013,8 +1013,8 @@
     },
     "pipeline_metadata": {
       "retrieval_latency_ms": 0.0,
-      "ranking_latency_ms": 0.2167224884033203,
-      "total_latency_ms": 156.59403800964355,
+      "ranking_latency_ms": 0.22602081298828125,
+      "total_latency_ms": 166.89205169677734,
       "retriever_used": "vector_search",
       "ranker_used": "heuristic_scoring"
     },

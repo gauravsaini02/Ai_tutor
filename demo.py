@@ -6,7 +6,7 @@ import os
 
 API_URL = "http://localhost:8000/recommend"
 
-async def run_test_case(client, name, profile_dict, chat_list, perf_dict):
+async def run_test_case(client, name, profile_dict, chat_list, perf_dict, revision_history=None):
     print(f"\n{'#'*80}")
     print(f"TEST CASE: {name}")
     print(f"{'#'*80}")
@@ -15,11 +15,18 @@ async def run_test_case(client, name, profile_dict, chat_list, perf_dict):
     print(f"Expertise: {profile_dict['expertise_level']}/5 | Weak: {profile_dict['weak_topics']}")
     print(f"Chat Context: \"{chat_list[-1]['message']}\"")
     
+    if revision_history:
+        print(f"📅 Revision History: {len(revision_history)} subtopics tracked")
+    
     payload = {
         "user_profile": profile_dict,
         "chat_history": chat_list,
         "recent_performance": perf_dict
     }
+    
+    # Add revision history if provided
+    if revision_history:
+        payload["revision_history"] = revision_history
     
     start = time.time()
     try:
@@ -97,10 +104,11 @@ async def run_all_test_cases(client):
     )
     if res1: results.append(res1)
 
-    # 2. Advanced Student (Biology - Photosynthesis)
+    # 2. Advanced Student (Biology - Photosynthesis) WITH REVISION HISTORY
+    # Photosynthesis subtopics were reviewed recently - should be suppressed by SR penalty
     res2 = await run_test_case(
         client,
-        "Advanced Challenge (Photosynthesis)",
+        "Advanced Challenge (Photosynthesis) - WITH SR",
         {
             "grade": "12",
             "exam_target": "neet",
@@ -120,7 +128,23 @@ async def run_all_test_cases(client):
             "correct": 9,
             "avg_time_seconds": 300,
             "confidence_score": 4.8
-        }
+        },
+        revision_history=[
+            {
+                "subtopic": "Calvin Cycle",
+                "last_revised_date": "2025-11-29",  # Just reviewed yesterday!
+                "repetition_count": 3,
+                "easiness_factor": 2.5,
+                "last_interval_days": 6
+            },
+            {
+                "subtopic": "Light Reactions",
+                "last_revised_date": "2025-11-29",  # Just reviewed yesterday!
+                "repetition_count": 2,
+                "easiness_factor": 2.3,
+                "last_interval_days": 6
+            }
+        ]
     )
     if res2: results.append(res2)
 
