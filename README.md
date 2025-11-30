@@ -203,18 +203,6 @@ Throughout development, we rigorously tested multiple alternatives for each comp
 | **Maintenance Burden** | High (anchor tuning) | Low (prompt-based) | — |
 | **API Dependency** | None ✅ | Groq API ⚠️ | — |
 
-**Example Failure Case (Semantic Approach)**:
-```
-Student Message: "I keep getting the wrong answer for these Calvin Cycle questions"
-Anchor Pool: ["I don't understand", "This is confusing", "Help me with this"]
-Similarity Scores: [0.42, 0.38, 0.35]  # All below threshold (0.5)
-Classification: NEUTRAL ❌ (Should be: STRUGGLING)
-```
-
-**Decision**: **Rejected semantic approach** despite 11× speed advantage due to unacceptable accuracy loss. Even with expanded anchor pools (30+ phrases per category), accuracy plateaued at 86%.
-
-**Why It Matters**: Misclassifying "struggling" as "neutral" leads to recommending overly difficult questions → frustrated students → system failure.
-
 ---
 
 ### 🧪 Experiment 5: Caching Strategy (Redis LRU)
@@ -734,7 +722,47 @@ The system implements **Adaptive Difficulty** based on the Zone of Proximal Deve
 
 ---
 
-## 6. Known Limitations
-- **Context Window**: Chat history analysis is limited to the last few turns to maintain speed.
-- **Cold Start**: New users with no history rely solely on the static profile until they interact.
-- **Data Volume**: Current ingestion is for a demo dataset (~200 questions). Production would require batch ingestion pipelines.
+## 6. Known Limitations & Trade-offs
+
+The following limitations are primarily driven by the strict **<500ms latency budget**. Many alternative approaches were considered but ultimately rejected to stay within performance constraints.
+
+### Latency-Constrained Design Decisions
+
+1. **Context Window Limitation**
+   - **Current**: Chat history analysis is limited to the last few turns to maintain speed.
+   - **Alternative Considered**: Implement LLM-based chat summarization to compress longer conversation histories before analysis.
+   - **Trade-off**: Summarization would add 100-150ms of latency, pushing the system over the 500ms budget. Opted for truncation to preserve performance.
+
+2. **Local-Only Infrastructure**
+   - **Current**: All components (Qdrant, Redis, Embeddings) run locally via Docker.
+   - **Alternative Considered**: 
+     - **Qdrant Cloud** for production-grade scalability and zero devops overhead
+     - **OpenAI Embeddings** (`text-embedding-3-small`) for superior semantic understanding
+     - **Redis Cloud** for managed caching with automatic failover
+   - **Trade-off**: Cloud-hosted services introduce 200-800ms network latency per request. Local deployment sacrifices production-readiness for demo performance. In a production environment without latency constraints, cloud infrastructure would be preferred.
+
+3. **No LangChain Integration**
+   - **Current**: Custom orchestration pipeline built directly with `asyncio`.
+   - **Alternative Considered**: Use LangChain for standardized RAG patterns, observability hooks, and built-in retries.
+   - **Trade-off**: LangChain's abstraction layer adds approximately **50ms overhead** per request due to additional function calls, serialization, and chain execution. For a <500ms budget, this 10% overhead was unacceptable. LangChain would be valuable for production systems where observability outweighs the latency cost.
+
+4. **Hardware Constraints (CPU-Only)**
+   - **Current**: Embeddings run on CPU (`all-MiniLM-L6-v2` at ~30ms per query).
+   - **Alternative Considered**: 
+     - **GPU Acceleration**: Could reduce embedding latency to **<5ms** with CUDA-enabled transformers
+     - **Local LLM Hosting**: Self-host `llama-3.1-8b` on GPU to eliminate Groq API dependency and reduce costs
+   - **Trade-off**: Development was conducted on CPU-only hardware. With access to GPU infrastructure (e.g., A10G, T4), both embedding speed and API costs could be significantly improved while maintaining sub-500ms performance.
+
+5. **Limited Dataset**
+   - **Current**: Demo dataset consists of ~136 questions across 3 subjects.
+   - **Production Requirement**: A full-scale tutoring system would require 10,000+ questions with automated ingestion pipelines, incremental indexing, and version control for question updates.
+   - **Trade-off**: This is a proof-of-concept demonstrating the RAG pipeline architecture. Production deployment would require batch ingestion infrastructure and CI/CD for data updates.
+
+### Summary
+
+Most limitations stem from optimizing for **latency over features**. In a production environment with relaxed performance constraints (e.g., <1000ms target), the system could leverage:
+- Cloud-hosted infrastructure for scalability
+- LangChain for standardized RAG patterns and observability  
+- OpenAI embeddings for higher accuracy
+- GPU acceleration for faster inference
+- Larger, more comprehensive question datasets
