@@ -2,12 +2,6 @@
 
 An adaptive tutoring system that recommends personalized practice questions for competitive exams (JEE, NEET) using Retrieval-Augmented Generation (RAG). The system understands student context, learns from interaction patterns, and dynamically calibrates question difficulty.
 
-## 🎯 System Architecture
-
-![AI Tutor Architecture](architecture_diagram.png)
-
-*The system uses a 4-stage pipeline with Redis caching for fast retrieval, Groq LLM for context understanding, and intelligent ranking for personalized recommendations.*
-
 ## 🚀 Features
 
 -   **Intelligent Retrieval**: 3-stage pipeline (Vector Search -> Multi-Signal Ranking -> LLM Refinement).
