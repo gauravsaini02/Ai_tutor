@@ -2,166 +2,94 @@
   {
     "recommended_questions": [
       {
-        "question_id": "BIO_BC_2015_28",
-        "topic": "Biological Classification",
+        "question_id": "BIO_PH_2024_05",
+        "topic": "Photosynthesis",
         "subtopic": null,
         "difficulty_score": 3.0,
-        "question_text": "Pick up the wrong statement.",
+        "question_text": "Observe the given figure of the Calvin cycle. Identify the different stages labelled with alphabets A, B and C.",
         "options": [
-          "A. Some fungi are edible.",
-          "B. Nuclear membrane is present in Monera.",
-          "C. Cell wall is absent in Animalia.",
-          "D. Protists have photosynthetic and heterotrophic modes of nutrition."
+          "A. A-Carboxylation, B-Regeneration, C-Reduction",
+          "B. A-Reduction, B-Decarboxylation, C-Regeneration",
+          "C. A-Carboxylation, B-Reduction, C-Regeneration",
+          "D. A-Reduction, B-Carboxylation, C-Regeneration"
         ],
         "source": null,
-        "explanation": "Monerans are prokaryotes and lack a true nucleus and nuclear membrane. Some fungi are edible, animals lack a cell wall, and protists show both photosynthetic and heterotrophic nutrition. Hence statement B is wrong.",
+        "explanation": "The Calvin cycle has three stages: A \u2014 Carboxylation, B \u2014 Reduction, C \u2014 Regeneration of RuBP.",
         "time_estimate_seconds": 120,
-        "relevance_score": 0.563,
-        "reasoning": "Challenging question (3.0/5)"
+        "relevance_score": 0.572,
+        "reasoning": "Optimally calibrated difficulty (3.0/5)"
       },
       {
-        "question_id": "BIO_BC_2024_19",
-        "topic": "Biological Classification",
+        "question_id": "BIO_PH_2023_13",
+        "topic": "Photosynthesis",
         "subtopic": null,
         "difficulty_score": 3.0,
-        "question_text": "Which one of the following is NOT a criterion for classification of fungi?",
+        "question_text": "Which out of the following statements is incorrect?",
         "options": [
-          "A. Morphology of mycelium",
-          "B. Mode of nutrition",
-          "C. Mode of spore formation",
-          "D. Fruiting body"
+          "A. Grana lamellae have both PS I and PS II",
+          "B. Cyclic photophosphorylation involves both PS I and PS II",
+          "C. Both ATP and NADPH + H+ are synthesised during non-cyclic photophosphorylation",
+          "D. Stroma lamellae lack PS II and NADP reductase"
         ],
         "source": null,
-        "explanation": "Fungal classes are primarily differentiated on the basis of mycelial morphology, mode of spore formation and the nature of fruiting bodies. Mode of nutrition is not a key criterion for fungal classification in this context, so option B is incorrect.",
+        "explanation": "Cyclic photophosphorylation involves only PSI \u2014 not PSII \u2014 making option B incorrect.",
         "time_estimate_seconds": 120,
-        "relevance_score": 0.505,
-        "reasoning": "Challenging question (3.0/5)"
+        "relevance_score": 0.521,
+        "reasoning": "Optimally calibrated difficulty (3.0/5)"
       },
       {
-        "question_id": "BIO_BC_2021_23",
-        "topic": "Biological Classification",
+        "question_id": "BIO_RP_2024_32",
+        "topic": "Respiration in Plants",
         "subtopic": null,
         "difficulty_score": 3.0,
-        "question_text": "Which of the following statements is correct?",
+        "question_text": "Match List I with List II:\nList I\nA. Citric acid cycle\nB. Glycolysis\nC. Electron transport system\nD. Proton gradient\nList II\nI. Cytoplasm\nII. Mitochondrial matrix\nIII. Intermembrane space of mitochondria\nIV. Inner mitochondrial membrane\nChoose the correct answer from the options given below:",
         "options": [
-          "A. Cyanobacteria are a group of autotrophic organisms classified under kingdom Monera.",
-          "B. Bacteria are exclusively heterotrophic organisms.",
-          "C. Slime moulds are saprophytic organisms classified under kingdom Monera.",
-          "D. Mycoplasma have DNA, ribosome and cell wall."
-        ],
-        "source": null,
-        "explanation": "Cyanobacteria are photosynthetic (autotrophic) prokaryotes placed in kingdom Monera, so option A is correct. Bacteria can be autotrophic as well as heterotrophic, slime moulds belong to Protista, and Mycoplasma lack a cell wall.",
-        "time_estimate_seconds": 120,
-        "relevance_score": 0.469,
-        "reasoning": "Challenging question (3.0/5)"
-      },
-      {
-        "question_id": "BIO_BC_2024_18",
-        "topic": "Biological Classification",
-        "subtopic": null,
-        "difficulty_score": 3.0,
-        "question_text": "Match List-I with List-II:\nList-I\nA. Rhizopus\nB. Ustilago\nC. Puccinia\nD. Agaricus\nList-II\nI. Mushroom\nII. Smut fungus\nIII. Bread mould\nIV. Rust fungus\nChoose the correct answer from the options given below:",
-        "options": [
-          "A. A-III, B-II, C-IV, D-I",
-          "B. A-I, B-III, C-II, D-IV",
-          "C. A-III, B-II, C-I, D-IV",
+          "A. A-I, B-II, C-III, D-IV",
+          "B. A-II, B-I, C-IV, D-III",
+          "C. A-III, B-IV, C-I, D-II",
           "D. A-IV, B-III, C-II, D-I"
         ],
         "source": null,
-        "explanation": "Rhizopus is a bread mould (A-III). Ustilago is a smut fungus (B-II). Puccinia is a rust fungus (C-IV). Agaricus is commonly called mushroom (D-I). So A-III, B-II, C-IV, D-I is correct.",
+        "explanation": "Citric acid cycle occurs in the mitochondrial matrix (A-II), glycolysis in cytoplasm (B-I), the electron transport system on the inner mitochondrial membrane (C-IV), and the proton gradient accumulates in the intermembrane space (D-III). So A-II, B-I, C-IV, D-III is correct.",
         "time_estimate_seconds": 120,
-        "relevance_score": 0.438,
-        "reasoning": "Challenging question (3.0/5)"
+        "relevance_score": 0.491,
+        "reasoning": "Optimally calibrated difficulty (3.0/5)"
       },
       {
-        "question_id": "BIO_BC_2022_21",
-        "topic": "Biological Classification",
+        "question_id": "BIO_PR_2024_08",
+        "topic": "Photorespiration",
         "subtopic": null,
         "difficulty_score": 3.0,
-        "question_text": "Given below are two statements:\nStatement I: Mycoplasma can pass through less than 1 micron filter size.\nStatement II: Mycoplasma are bacteria with cell wall.\nIn the light of the above statements, choose the most appropriate answer:",
+        "question_text": "Given below are two statements:\nStatement I: In C3 plants, some O2 binds to RuBisCO, hence CO2 fixation is decreased.\nStatement II: In C4 plants, mesophyll cells show very little photorespiration while bundle sheath cells do not show photorespiration.\nChoose the correct option.",
         "options": [
-          "A. Both Statement I and Statement II are correct",
-          "B. Both Statement I and Statement II are incorrect",
-          "C. Statement I is correct but Statement II is incorrect",
-          "D. Statement I is incorrect but Statement II is correct"
+          "A. Both Statement I and Statement II are true",
+          "B. Both Statement I and Statement II are false",
+          "C. Statement I is true but Statement II is false",
+          "D. Statement I is false but Statement II is true"
         ],
         "source": null,
-        "explanation": "Mycoplasma are very small (about 0.3 \u03bcm), so they can pass through filters of less than 1 \u03bcm pore size (Statement I true). They are unique prokaryotes that lack a cell wall; hence saying they are bacteria with cell wall is wrong (Statement II false).",
+        "explanation": "RuBisCO in C3 plants binds O2 causing photorespiration. In C4 plants RuBisCO is absent in mesophyll cells, so the description in Statement II is incorrect.",
         "time_estimate_seconds": 120,
-        "relevance_score": 0.422,
-        "reasoning": "Challenging question (3.0/5)"
+        "relevance_score": 0.471,
+        "reasoning": "Optimally calibrated difficulty (3.0/5)"
       },
       {
-        "question_id": "BIO_BC_2025_16",
-        "topic": "Biological Classification",
+        "question_id": "BIO_RP_2023_34",
+        "topic": "Respiration in Plants",
         "subtopic": null,
         "difficulty_score": 3.0,
-        "question_text": "Each of the following characteristics represent a Kingdom proposed by Whittaker.\nA. Multicellular heterotrophs with cell wall made of chitin.\nB. Heterotrophs with tissue/organ/organ system level of body organization.\nC. Prokaryotes with cell wall made of polysaccharides and amino acids.\nD. Eukaryotic autotrophs with tissue/organ level of body organization.\nE. Eukaryotes with cellular body organization.\nArrange the above in increasing order of complexity of body organization.",
+        "question_text": "Assertion (A): ATP is used at two steps in glycolysis.\nReason (R): First ATP is used in converting glucose into glucose-6-phosphate and second ATP is used in conversion of fructose-6-phosphate into fructose-1,6-bisphosphate.\nIn the light of the above statements, choose the correct answer:",
         "options": [
-          "A. A, C, E, D, B",
-          "B. C, E, A, B, D",
-          "C. A, C, E, B, D",
-          "D. C, E, A, D, B"
+          "A. Both A and R are true but R is NOT the correct explanation of A.",
+          "B. A is true but R is false.",
+          "C. A is false but R is true.",
+          "D. Both A and R are true and R is the correct explanation of A."
         ],
         "source": null,
-        "explanation": "Whittaker\u2019s kingdoms in increasing order of body complexity: Monera (C, prokaryotes) \u2192 Protista (E, unicellular eukaryotes) \u2192 Fungi (A, multicellular with chitinous wall) \u2192 Plantae (D, tissue/organ level autotrophs) \u2192 Animalia (B, tissue/organ/organ system level heterotrophs). Thus the correct sequence is C, E, A, D, B, i.e. option D.",
+        "explanation": "In glycolysis, ATP is consumed in two phosphorylation steps: glucose \u2192 glucose-6-phosphate and fructose-6-phosphate \u2192 fructose-1,6-bisphosphate. This exactly explains why ATP is used at two steps, so both A and R are true and R correctly explains A.",
         "time_estimate_seconds": 120,
-        "relevance_score": 0.409,
-        "reasoning": "Challenging question (3.0/5)"
-      },
-      {
-        "question_id": "BIO_BC_2015_26",
-        "topic": "Biological Classification",
-        "subtopic": null,
-        "difficulty_score": 3.0,
-        "question_text": "Select the wrong statement.",
-        "options": [
-          "A. The term \u2018contagium vivum fluidum\u2019 was coined by M. W. Beijerinck.",
-          "B. Mosaic disease in tobacco and AIDS in human beings are caused by viruses.",
-          "C. The viroids were discovered by D. J. Ivanowsky.",
-          "D. W. M. Stanley showed that viruses could be crystallised."
-        ],
-        "source": null,
-        "explanation": "Beijerinck coined the term \u2018contagium vivum fluidum\u2019 for viruses, mosaic disease of tobacco and AIDS are viral diseases, and Stanley crystallised viruses. Viroids, however, were discovered by T. O. Diener, not by Ivanowsky, so statement C is wrong.",
-        "time_estimate_seconds": 120,
-        "relevance_score": 0.388,
-        "reasoning": "Challenging question (3.0/5)"
-      },
-      {
-        "question_id": "BIO_BC_2024_17",
-        "topic": "Biological Classification",
-        "subtopic": null,
-        "difficulty_score": 3.0,
-        "question_text": "Match List-I with List-II:\nList-I (Organisms)\nA. Euglenoid\nB. Dinoflagellate\nC. Slime mould\nD. Plasmodium\nList-II (Mode of Nutrition)\nI. Parasitic\nII. Saprophytic\nIII. Photosynthetic\nIV. Switching between photosynthetic and heterotrophic mode\nChoose the correct answer from the options given below:",
-        "options": [
-          "A. A-III, B-IV, C-II, D-I",
-          "B. A-IV, B-II, C-I, D-III",
-          "C. A-IV, B-III, C-II, D-I",
-          "D. A-IV, B-II, C-III, D-I"
-        ],
-        "source": null,
-        "explanation": "Euglenoids are photosynthetic in light and heterotrophic in dark (A-IV). Dinoflagellates are mostly photosynthetic (B-III). Slime moulds are saprophytic protists (C-II). Plasmodium is a malarial parasite (D-I). Thus A-IV, B-III, C-II, D-I is correct.",
-        "time_estimate_seconds": 120,
-        "relevance_score": 0.363,
-        "reasoning": "Challenging question (3.0/5)"
-      },
-      {
-        "question_id": "BIO_BC_2020_24",
-        "topic": "Biological Classification",
-        "subtopic": null,
-        "difficulty_score": 3.0,
-        "question_text": "Which of the following is correct about viroids?",
-        "options": [
-          "A. They have free RNA without protein coat.",
-          "B. They have DNA with protein coat.",
-          "C. They have free DNA without protein coat.",
-          "D. They have RNA with protein coat."
-        ],
-        "source": null,
-        "explanation": "Viroids are infectious agents made up of a short, circular, low molecular weight RNA without any protein coat. They cause several plant diseases. Thus the correct option is that they have free RNA without protein coat.",
-        "time_estimate_seconds": 120,
-        "relevance_score": 0.358,
-        "reasoning": "Challenging question (3.0/5)"
+        "relevance_score": 0.458,
+        "reasoning": "Optimally calibrated difficulty (3.0/5)"
       },
       {
         "question_id": "BIO_PR_2023_12",
@@ -178,33 +106,104 @@
         "source": null,
         "explanation": "RuBisCO is the most abundant enzyme globally and C4 plants suppress photorespiration through CO2 concentration in bundle sheath cells. So both statements are correct.",
         "time_estimate_seconds": 120,
-        "relevance_score": 0.355,
-        "reasoning": "Challenging question (3.0/5)"
+        "relevance_score": 0.447,
+        "reasoning": "Optimally calibrated difficulty (3.0/5)"
+      },
+      {
+        "question_id": "BIO_PH_2022_14",
+        "topic": "Photosynthesis",
+        "subtopic": null,
+        "difficulty_score": 3.0,
+        "question_text": "Identify the correct statements regarding chemiosmotic hypothesis:\n(a) Splitting of the water molecule takes place on the inner side of the membrane.\n(b) Protons accumulate within the lumen of the thylakoids.\n(c) Primary acceptor of electron transfers electrons to an electron carrier.\n(d) NADP reductase enzyme is located on the stroma side of the membrane.\n(e) Protons increase in number in stroma.\nChoose the correct answer.",
+        "options": [
+          "A. (b), (c) and (e)",
+          "B. (a), (b) and (e)",
+          "C. (a), (b) and (d)",
+          "D. (b), (c) and (d)"
+        ],
+        "source": null,
+        "explanation": "Correct statements are (a), (b) and (d). Protons accumulate in lumen, not in stroma.",
+        "time_estimate_seconds": 120,
+        "relevance_score": 0.439,
+        "reasoning": "Optimally calibrated difficulty (3.0/5)"
+      },
+      {
+        "question_id": "BIO_RP_2023_36",
+        "topic": "Respiration in Plants",
+        "subtopic": null,
+        "difficulty_score": 3.0,
+        "question_text": "How many times does decarboxylation occur during each TCA (Krebs) cycle?",
+        "options": [
+          "A. Thrice",
+          "B. Many",
+          "C. Once",
+          "D. Twice"
+        ],
+        "source": null,
+        "explanation": "In one turn of the TCA cycle, CO\u2082 is released when isocitrate is converted to \u03b1-ketoglutarate and again when \u03b1-ketoglutarate becomes succinyl-CoA. Hence there are two decarboxylation steps per cycle.",
+        "time_estimate_seconds": 120,
+        "relevance_score": 0.433,
+        "reasoning": "Optimally calibrated difficulty (3.0/5)"
+      },
+      {
+        "question_id": "BIO_RP_2024_33",
+        "topic": "Respiration in Plants",
+        "subtopic": null,
+        "difficulty_score": 3.0,
+        "question_text": "Identify the step in tricarboxylic acid (TCA) cycle which does NOT involve oxidation of substrate:",
+        "options": [
+          "A. Malic acid \u27f6 Oxaloacetic acid",
+          "B. Succinic acid \u27f6 Fumaric acid \u27f6 Malic acid",
+          "C. Succinyl-CoA \u27f6 Succinic acid",
+          "D. Isocitrate \u27f6 \u03b1-ketoglutaric acid"
+        ],
+        "source": null,
+        "explanation": "Succinyl-CoA to succinic acid is a substrate-level phosphorylation step where GTP is produced but no oxidation of the substrate occurs. All the other listed steps involve oxidation reactions.",
+        "time_estimate_seconds": 120,
+        "relevance_score": 0.428,
+        "reasoning": "Optimally calibrated difficulty (3.0/5)"
+      },
+      {
+        "question_id": "BIO_BC_2021_23",
+        "topic": "Biological Classification",
+        "subtopic": null,
+        "difficulty_score": 3.0,
+        "question_text": "Which of the following statements is correct?",
+        "options": [
+          "A. Cyanobacteria are a group of autotrophic organisms classified under kingdom Monera.",
+          "B. Bacteria are exclusively heterotrophic organisms.",
+          "C. Slime moulds are saprophytic organisms classified under kingdom Monera.",
+          "D. Mycoplasma have DNA, ribosome and cell wall."
+        ],
+        "source": null,
+        "explanation": "Cyanobacteria are photosynthetic (autotrophic) prokaryotes placed in kingdom Monera, so option A is correct. Bacteria can be autotrophic as well as heterotrophic, slime moulds belong to Protista, and Mycoplasma lack a cell wall.",
+        "time_estimate_seconds": 120,
+        "relevance_score": 0.417,
+        "reasoning": "Optimally calibrated difficulty (3.0/5)"
       }
     ],
     "tutor_context": {
       "identified_gaps": [
-        "5 kingdoms",
-        "Biological Classification",
-        "Monera"
+        "duration of each phase of mitosis",
+        "Cell Cycle"
       ],
       "recommended_study_sequence": [
-        "build_foundation",
-        "practice_basics",
-        "solve_direct_problems",
-        "focus_on_5_kingdoms"
+        "build_confidence",
+        "strengthen_fundamentals",
+        "tackle_application_problems",
+        "focus_on_duration_of_each_phase_of_mitosis"
       ],
       "estimated_session_duration_minutes": 20,
-      "next_milestone": "Build strong foundation in 5 kingdoms for NEET"
+      "next_milestone": "Close knowledge gaps in duration of each phase of mitosis, Cell Cycle for NEET cutoff"
     },
     "pipeline_metadata": {
       "retrieval_latency_ms": 0.0,
-      "ranking_latency_ms": 0.2551078796386719,
-      "total_latency_ms": 189.439058303833,
+      "ranking_latency_ms": 0.3669261932373047,
+      "total_latency_ms": 208.83512496948242,
       "retriever_used": "vector_search",
       "ranker_used": "heuristic_scoring"
     },
-    "test_case_name": "Struggling Beginner (Bio Classification)"
+    "test_case_name": "Biology Cell Cycle Basics"
   },
   {
     "recommended_questions": [
@@ -401,8 +400,8 @@
     },
     "pipeline_metadata": {
       "retrieval_latency_ms": 0.0,
-      "ranking_latency_ms": 0.4642009735107422,
-      "total_latency_ms": 196.87223434448242,
+      "ranking_latency_ms": 0.2028942108154297,
+      "total_latency_ms": 175.48418045043945,
       "retriever_used": "vector_search",
       "ranker_used": "heuristic_scoring"
     },
@@ -607,8 +606,8 @@
     },
     "pipeline_metadata": {
       "retrieval_latency_ms": 0.0,
-      "ranking_latency_ms": 0.2620220184326172,
-      "total_latency_ms": 183.96902084350586,
+      "ranking_latency_ms": 0.2548694610595703,
+      "total_latency_ms": 181.73885345458984,
       "retriever_used": "vector_search",
       "ranker_used": "heuristic_scoring"
     },
@@ -812,8 +811,8 @@
     },
     "pipeline_metadata": {
       "retrieval_latency_ms": 0.0,
-      "ranking_latency_ms": 0.21505355834960938,
-      "total_latency_ms": 198.26602935791016,
+      "ranking_latency_ms": 0.2560615539550781,
+      "total_latency_ms": 184.87286567687988,
       "retriever_used": "vector_search",
       "ranker_used": "heuristic_scoring"
     },
@@ -1014,8 +1013,8 @@
     },
     "pipeline_metadata": {
       "retrieval_latency_ms": 0.0,
-      "ranking_latency_ms": 0.23484230041503906,
-      "total_latency_ms": 185.18829345703125,
+      "ranking_latency_ms": 0.2167224884033203,
+      "total_latency_ms": 156.59403800964355,
       "retriever_used": "vector_search",
       "ranker_used": "heuristic_scoring"
     },

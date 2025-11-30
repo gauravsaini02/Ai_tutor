@@ -70,29 +70,29 @@ async def run_all_test_cases(client):
     """Run all 5 test cases and return results"""
     results = []
     
-    # 1. Struggling Beginner (Biology - Classification)
+    # 1. Biology Cell Cycle (Moderate Difficulty)
     res1 = await run_test_case(
         client,
-        "Struggling Beginner (Bio Classification)",
+        "Biology Cell Cycle Basics",
         {
             "grade": "11",
             "exam_target": "neet",
             "subject": "Biology",
-            "expertise_level": 1.5,
-            "weak_topics": ["Biological Classification", "Monera"],
+            "expertise_level": 2.0,
+            "weak_topics": ["Cell Cycle"],
             "strong_topics": []
         },
         [
-            {"role": "tutor", "message": "Let's start with the basics of classification."},
-            {"role": "student", "message": "I tried reading the NCERT chapter yesterday."},
-            {"role": "student", "message": "But I'm confused about the 5 kingdoms. Can we start easy?"}
+            {"role": "tutor", "message": "Let's discuss the phases of cell division."},
+            {"role": "student", "message": "I understand mitosis happens in stages."},
+            {"role": "student", "message": "But I need practice on the duration of each phase."}
         ],
         {
-            "topic": "Biological Classification",
-            "questions_attempted": 3,
-            "correct": 1,
-            "avg_time_seconds": 120,
-            "confidence_score": 1.2
+            "topic": "Cell Cycle",
+            "questions_attempted": 5,
+            "correct": 3,
+            "avg_time_seconds": 90,
+            "confidence_score": 2.0
         }
     )
     if res1: results.append(res1)
@@ -221,6 +221,30 @@ async def main():
         except Exception:
             print("❌ Could not connect to server. Make sure 'uvicorn src.api:app' is running!")
             return
+
+        # === WARMUP REQUEST (Trigger Cold Start) ===
+        print("\n" + "="*80)
+        print("WARMUP: Triggering cold start overhead...")
+        print("="*80)
+        
+        warmup_payload = {
+            "user_profile": {
+                "grade": "11",
+                "exam_target": "neet",
+                "subject": "Biology",
+                "expertise_level": 2.0,
+                "weak_topics": [],
+                "strong_topics": []
+            },
+            "chat_history": [{"role": "student", "message": "Test warmup query"}],
+            "recent_performance": {"topic": "Test", "questions_attempted": 1, "correct": 1, "avg_time_seconds": 60, "confidence_score": 2.0}
+        }
+        
+        try:
+            warmup_response = await client.post(API_URL, json=warmup_payload, timeout=30.0)
+            print(f"✅ Warmup complete - Cold start overhead absorbed")
+        except Exception as e:
+            print(f"⚠️  Warmup failed: {e}")
 
         # === RUN 1: WITHOUT CACHE ===
         print("\n" + "="*80)
