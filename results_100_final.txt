@@ -1,0 +1,108 @@
+Loading model: all-MiniLM-L6-v2...
+Model loaded.
+Testing Semantic Signal Detection (100 Cases)
+------------------------------------------------------------
+Input Message                                      | Expected        | Detected        | Result
+------------------------------------------------------------
+I am completely lost.                              | struggling      | struggling      | ✅
+This is going over my head.                        | struggling      | struggling      | ✅
+I don't have a clue what's happening.              | struggling      | struggling      | ✅
+Can you break this down simpler?                   | struggling      | struggling      | ✅
+I'm stuck on the first step.                       | struggling      | struggling      | ✅
+This is gibberish to me.                           | struggling      | struggling      | ✅
+I keep getting the wrong answer.                   | struggling      | struggling      | ✅
+Why is this so hard?                               | struggling      | struggling      | ✅
+I'm about to give up.                              | struggling      | struggling      | ✅
+My mind is blank.                                  | struggling      | struggling      | ✅
+I don't get the logic here.                        | struggling      | struggling      | ✅
+This is too advanced for me.                       | struggling      | struggling      | ✅
+I need a hint, please.                             | struggling      | struggling      | ✅
+I'm confused by the formula.                       | struggling      | struggling      | ✅
+It's not sinking in.                               | struggling      | struggling      | ✅
+I feel dumb right now.                             | struggling      | struggling      | ✅
+Can we go back to basics?                          | struggling      | struggling      | ✅
+I'm drowning in these equations.                   | struggling      | struggling      | ✅
+Nothing makes sense.                               | struggling      | struggling      | ✅
+I'm hitting a brick wall.                          | struggling      | struggling      | ✅
+I can't wrap my head around this.                  | struggling      | struggling      | ✅
+This is frustratingly difficult.                   | struggling      | struggling      | ✅
+I'm lost in the details.                           | struggling      | struggling      | ✅
+Can you explain it like I'm 5?                     | struggling      | struggling      | ✅
+I'm struggling to keep up.                         | struggling      | struggling      | ✅
+This concept is alien to me.                       | struggling      | struggling      | ✅
+I'm not getting anywhere with this.                | struggling      | struggling      | ✅
+Help, I'm stuck.                                   | struggling      | struggling      | ✅
+I don't know where to start.                       | struggling      | struggling      | ✅
+This is way above my pay grade.                    | struggling      | struggling      | ✅
+This is too easy, honestly.                        | bored           | bored           | ✅
+I learned this in 5th grade.                       | bored           | bored           | ✅
+Can we skip to the good part?                      | bored           | bored           | ✅
+Boring.                                            | bored           | bored           | ✅
+I'm falling asleep here.                           | bored           | bored           | ✅
+Give me something I don't know.                    | bored           | bored           | ✅
+This is trivial.                                   | bored           | bored           | ✅
+Waste of time.                                     | bored           | bored           | ✅
+Next topic, please.                                | bored           | bored           | ✅
+I'm not learning anything new.                     | bored           | bored           | ✅
+This is basic stuff.                               | bored           | bored           | ✅
+I've done this a thousand times.                   | bored           | bored           | ✅
+Can we move faster?                                | bored           | bored           | ✅
+This is too slow.                                  | bored           | bored           | ✅
+I'm bored out of my mind.                          | bored           | bored           | ✅
+Is this a joke? It's so easy.                      | bored           | bored           | ✅
+Tell me something I don't know.                    | bored           | bored           | ✅
+This is elementary.                                | bored           | bored           | ✅
+Let's skip the basics.                             | bored           | bored           | ✅
+I'm way past this level.                           | bored           | bored           | ✅
+This is not challenging at all.                    | bored           | bored           | ✅
+Yawn.                                              | bored           | bored           | ✅
+Can we do something else?                          | bored           | bored           | ✅
+This is repetitive.                                | bored           | bored           | ✅
+I'm checking out, this is dull.                    | bored           | bored           | ✅
+Hit me with a hard one.                            | ready_for_more  | ready_for_more  | ✅
+I want to test my mastery.                         | ready_for_more  | ready_for_more  | ✅
+Give me a JEE Advanced level question.             | ready_for_more  | ready_for_more  | ✅
+Too simple, increase the level.                    | ready_for_more  | ready_for_more  | ✅
+I need a challenge.                                | ready_for_more  | ready_for_more  | ✅
+Let's do something complex.                        | ready_for_more  | ready_for_more  | ✅
+Show me the toughest problem you have.             | ready_for_more  | ready_for_more  | ✅
+I'm ready for the next level.                      | ready_for_more  | ready_for_more  | ✅
+Challenge me.                                      | ready_for_more  | ready_for_more  | ✅
+This is child's play, give me real work.           | ready_for_more  | ready_for_more  | ✅
+I want to sweat.                                   | ready_for_more  | ready_for_more  | ✅
+Give me a brain teaser.                            | ready_for_more  | ready_for_more  | ✅
+I want to push my limits.                          | ready_for_more  | ready_for_more  | ✅
+Let's ramp it up.                                  | ready_for_more  | ready_for_more  | ✅
+Give me the hardest one.                           | ready_for_more  | ready_for_more  | ✅
+I'm bored of easy questions, give me hard ones.    | ready_for_more  | ready_for_more  | ✅
+Test me.                                           | ready_for_more  | ready_for_more  | ✅
+I want to go deeper.                               | ready_for_more  | ready_for_more  | ✅
+Give me a complex scenario.                        | ready_for_more  | ready_for_more  | ✅
+I'm ready to level up.                             | ready_for_more  | ready_for_more  | ✅
+Throw everything you've got at me.                 | ready_for_more  | ready_for_more  | ✅
+Make it difficult.                                 | ready_for_more  | ready_for_more  | ✅
+I want to solve the impossible.                    | ready_for_more  | ready_for_more  | ✅
+Give me an Olympiad level problem.                 | ready_for_more  | ready_for_more  | ✅
+I want to struggle (in a good way).                | ready_for_more  | ready_for_more  | ✅
+What is the atomic weight of Carbon?               | neutral         | neutral         | ✅
+Explain the second law of thermodynamics.          | neutral         | neutral         | ✅
+I have a test on Monday.                           | neutral         | neutral         | ✅
+Let's solve this.                                  | neutral         | neutral         | ✅
+Okay.                                              | neutral         | neutral         | ✅
+Thanks.                                            | neutral         | neutral         | ✅
+How many questions are left?                       | neutral         | neutral         | ✅
+Is the answer 42?                                  | neutral         | neutral         | ✅
+Wait a minute.                                     | neutral         | neutral         | ✅
+I am writing this down.                            | neutral         | neutral         | ✅
+Can you repeat the question?                       | neutral         | neutral         | ✅
+I think the answer is B.                           | neutral         | neutral         | ✅
+What topic is this?                                | neutral         | neutral         | ✅
+Let me think.                                      | neutral         | neutral         | ✅
+Hold on.                                           | neutral         | neutral         | ✅
+Interesting.                                       | neutral         | neutral         | ✅
+Go on.                                             | neutral         | neutral         | ✅
+I see.                                             | neutral         | neutral         | ✅
+Got it.                                            | neutral         | neutral         | ✅
+Next.                                              | neutral         | neutral         | ✅
+------------------------------------------------------------
+Accuracy: 100/100 (100.0%)

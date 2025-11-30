@@ -1,0 +1,58 @@
+Loading model: all-MiniLM-L6-v2...
+Model loaded.
+Testing Semantic Signal Detection (50 New Cases)
+------------------------------------------------------------
+Input Message                                      | Expected        | Detected        | Result
+------------------------------------------------------------
+I am completely lost.                              | struggling      | struggling      | ✅
+This is going over my head.                        | struggling      | neutral         | ❌
+I don't have a clue what's happening.              | struggling      | struggling      | ✅
+Can you break this down simpler?                   | struggling      | bored           | ❌
+I'm stuck on the first step.                       | struggling      | struggling      | ✅
+This is gibberish to me.                           | struggling      | neutral         | ❌
+I keep getting the wrong answer.                   | struggling      | struggling      | ✅
+Why is this so hard?                               | struggling      | ready_for_more  | ❌
+I'm about to give up.                              | struggling      | neutral         | ❌
+My mind is blank.                                  | struggling      | struggling      | ✅
+I don't get the logic here.                        | struggling      | struggling      | ✅
+This is too advanced for me.                       | struggling      | bored           | ❌
+I need a hint, please.                             | struggling      | neutral         | ❌
+I'm confused by the formula.                       | struggling      | neutral         | ❌
+It's not sinking in.                               | struggling      | neutral         | ❌
+I feel dumb right now.                             | struggling      | neutral         | ❌
+Can we go back to basics?                          | struggling      | neutral         | ❌
+I'm drowning in these equations.                   | struggling      | neutral         | ❌
+Nothing makes sense.                               | struggling      | struggling      | ✅
+I'm hitting a brick wall.                          | struggling      | struggling      | ✅
+This is too easy, honestly.                        | bored           | bored           | ✅
+I learned this in 5th grade.                       | bored           | neutral         | ❌
+Can we skip to the good part?                      | bored           | neutral         | ❌
+Boring.                                            | bored           | bored           | ✅
+I'm falling asleep here.                           | bored           | bored           | ✅
+Give me something I don't know.                    | bored           | ready_for_more  | ❌
+This is trivial.                                   | bored           | bored           | ✅
+Waste of time.                                     | bored           | neutral         | ❌
+Next topic, please.                                | bored           | ready_for_more  | ❌
+I'm not learning anything new.                     | bored           | bored           | ✅
+Hit me with a hard one.                            | ready_for_more  | ready_for_more  | ✅
+I want to test my mastery.                         | ready_for_more  | ready_for_more  | ✅
+Give me a JEE Advanced level question.             | ready_for_more  | neutral         | ❌
+Too simple, increase the level.                    | ready_for_more  | ready_for_more  | ✅
+I need a challenge.                                | ready_for_more  | ready_for_more  | ✅
+Let's do something complex.                        | ready_for_more  | neutral         | ❌
+Show me the toughest problem you have.             | ready_for_more  | ready_for_more  | ✅
+I'm ready for the next level.                      | ready_for_more  | ready_for_more  | ✅
+Challenge me.                                      | ready_for_more  | ready_for_more  | ✅
+This is child's play, give me real work.           | ready_for_more  | bored           | ❌
+What is the atomic weight of Carbon?               | neutral         | neutral         | ✅
+Explain the second law of thermodynamics.          | neutral         | neutral         | ✅
+I have a test on Monday.                           | neutral         | neutral         | ✅
+Let's solve this.                                  | neutral         | neutral         | ✅
+Okay.                                              | neutral         | neutral         | ✅
+Thanks.                                            | neutral         | neutral         | ✅
+How many questions are left?                       | neutral         | ready_for_more  | ❌
+Is the answer 42?                                  | neutral         | neutral         | ✅
+Wait a minute.                                     | neutral         | neutral         | ✅
+I am writing this down.                            | neutral         | neutral         | ✅
+------------------------------------------------------------
+Accuracy: 29/50 (58.0%)

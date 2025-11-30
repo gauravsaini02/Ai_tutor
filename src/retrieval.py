@@ -18,7 +18,7 @@ from collections import Counter
 from dotenv import load_dotenv
 from qdrant_client import AsyncQdrantClient
 from qdrant_client.http import models
-from sentence_transformers import SentenceTransformer
+from sentence_transformers import SentenceTransformer, util
 from openai import AsyncOpenAI
 
 load_dotenv()
@@ -109,6 +109,119 @@ class ChatHistoryParser:
                 elif any(word in text for word in ["harder", "challenge", "push me"]):
                     signals["performance"] = "ready_for_more"
         return signals
+
+    @staticmethod
+    async def detect_performance_signals_llm(chat_history: List[ChatMessage], client: AsyncOpenAI, model: str) -> Dict[str, str]:
+        """Detect performance indicators using LLM."""
+        if not client or not chat_history:
+            return {}
+
+        recent_chat = chat_history[-3:]
+        chat_text = "\n".join([f"{msg.role}: {msg.message}" for msg in recent_chat])
+        
+        prompt = f"""Analyze the student's messages in this chat history for performance signals.
+                    Chat:
+                    {chat_text}
+
+                    Classify the student's state into exactly one of these categories:
+                    - struggling (if they are confused, getting things wrong, asking for help)
+                    - bored (if they find it too easy, unengaging)
+                    - ready_for_more (if they explicitly ask for harder questions or challenge)
+                    - neutral (default)
+
+                    Output only the category name."""
+
+        try:
+            response = await client.chat.completions.create(
+                model=model,
+                messages=[{"role": "user", "content": prompt}],
+                max_tokens=10,
+                temperature=0.0
+            )
+            signal = response.choices[0].message.content.strip().lower()
+            if signal in ["struggling", "bored", "ready_for_more"]:
+                return {"performance": signal}
+            return {}
+        except Exception as e:
+            print(f"Signal detection error: {e}")
+            return {}
+
+    @staticmethod
+    def detect_performance_signals_semantic(chat_history: List[ChatMessage], embedding_model: SentenceTransformer) -> Dict[str, str]:
+        """Detect performance indicators using semantic similarity (Fast Local)."""
+        if not chat_history:
+            return {}
+
+        # Anchor phrases for each category
+        anchors = {
+            "struggling": [
+                "I don't understand", "I am confused", "I keep getting it wrong", 
+                "Explain it again", "I'm lost", "I am stuck", "I don't know the answer",
+                "This makes no sense", "I'm failing", "It's too complicated", "I can't follow",
+                "I'm hitting a wall", "It's not clicking", "Like speaking another language", "Going in circles",
+                "Going over my head", "Break it down simpler", "Gibberish", "Why is this so hard",
+                "About to give up", "Too advanced", "Need a hint", "Not sinking in", "Feel dumb",
+                "Back to basics", "Drowning in equations", "My mind is blank", "Confused by the formula",
+                "Frustratingly difficult", "Explain like I'm 5", "Concept is alien", "Don't know where to start",
+                "Above my pay grade", "I can't wrap my head around this", "Lost in details", "Struggling to keep up",
+                "Not getting anywhere", "Help I'm stuck", "I don't have a clue"
+            ],
+            "bored": [
+                "This is boring", "Can we move on", "I already know this", 
+                "Not challenging enough", "This is too easy", "Seen this before", 
+                "Repetitive", "Yawn", "Too basic",
+                "I could do this in my sleep", "Nothing new here", "Skip this",
+                "Learned this in grade school", "Skip to the good part", "Waste of time",
+                "Next topic please", "Trivial", "Basic stuff", "Done this a thousand times",
+                "Move faster", "Too slow", "Bored out of my mind", "Is this a joke",
+                "Tell me something I don't know", "Elementary", "Skip the basics",
+                "Way past this level", "Not challenging at all", "Can we do something else",
+                "Checking out dull", "Give me something I don't know"
+            ],
+            "ready_for_more": [
+                "Give me a challenge", "I want harder questions", "Push me", "Test my limits", 
+                "Next level please", "Something more advanced", "Give me something hard",
+                "Make it difficult", "I want to sweat", "Is that all you got", "Crank up the difficulty",
+                "JEE Advanced level", "Something complex", "Real work", "Toughest problem",
+                "This is child's play give me real work", "Brain teaser", "Push my limits",
+                "Ramp it up", "Hardest one", "Bored of easy give me hard", "Test me",
+                "Go deeper", "Complex scenario", "Ready to level up", "Throw everything at me",
+                "Solve the impossible", "Olympiad level", "Struggle in a good way", "Test my mastery"
+            ],
+            "neutral": [
+                "What is the answer", "Explain this concept", "I have a test", "Let's solve this",
+                "Okay", "Thanks", "How many questions left", "Is the answer X", "Wait a minute",
+                "Writing this down", "Repeat the question", "I think the answer is", "What topic is this",
+                "Let me think", "Hold on", "Interesting", "Go on", "I see", "Got it", "Next",
+                "Hello", "How are you"
+            ]
+        }
+        
+        last_msg = chat_history[-1].message
+        
+        # Encode user message and anchors
+        user_emb = embedding_model.encode(last_msg, convert_to_tensor=True)
+        
+        best_score = 0.0
+        best_signal = None
+        
+        for signal, phrases in anchors.items():
+            anchor_embs = embedding_model.encode(phrases, convert_to_tensor=True)
+            scores = util.cos_sim(user_emb, anchor_embs)[0]
+            scores = util.cos_sim(user_emb, anchor_embs)[0]
+            max_score = float(scores.max())
+            
+            if max_score > best_score:
+                best_score = max_score
+                best_signal = signal
+        
+        # Threshold to avoid false positives
+        if best_score > 0.35:  # Slightly lowered threshold since we have explicit neutral
+            if best_signal == "neutral":
+                return {}
+            return {"performance": best_signal}
+            
+        return {}
     
     @staticmethod
     def build_context_query(user_profile: UserProfile, chat_history: List[ChatMessage], 
@@ -182,7 +295,7 @@ class RetrievalPipeline:
         print(f"✅ Embedding model loaded!")
         
         # Async OpenAI Client
-        if config.ENABLE_LLM_RANKING and config.OPENAI_API_KEY:
+        if config.OPENAI_API_KEY:
             self.openai_client = AsyncOpenAI(api_key=config.OPENAI_API_KEY)
         else:
             self.openai_client = None
@@ -268,7 +381,8 @@ class RetrievalPipeline:
         candidates: List[Dict[str, Any]],
         user_profile: UserProfile,
         chat_history: List[ChatMessage],
-        recent_performance: Optional[RecentPerformance]
+        recent_performance: Optional[RecentPerformance],
+        performance_signals: Optional[Dict[str, str]] = None
     ) -> Tuple[List[RetrievalResult], float]:
         """
         Stage 2: Multi-signal ranking.
@@ -277,7 +391,10 @@ class RetrievalPipeline:
         start_time = time.time()
         
         chat_topics = self.chat_parser.extract_topics(chat_history)
-        performance_signals = self.chat_parser.detect_performance_signals(chat_history)
+        # performance_signals = self.chat_parser.detect_performance_signals(chat_history) # Deprecated
+        # Use passed signals or default to empty
+        performance_signals = performance_signals or {}
+        
         target_difficulty = self.difficulty_calibrator.compute_target_difficulty(
             user_profile, recent_performance
         )
@@ -409,11 +526,11 @@ class RetrievalPipeline:
         # For simplicity, we loop (but await yields control)
         for result in results:
             prompt = f"""Score question fit (0-100) for student.
-{profile_summary}
-Chat: {chat_summary}
-Question: {result.topic} - {result.difficulty_score}/5
-{result.question_text[:200]}...
-Output only number."""
+                        {profile_summary}
+                        Chat: {chat_summary}
+                        Question: {result.topic} - {result.difficulty_score}/5
+                        {result.question_text[:200]}...
+                        Output only number."""
 
             try:
                 response = await self.openai_client.chat.completions.create(
@@ -440,15 +557,25 @@ Output only number."""
         """Main retrieval method (Async)."""
         total_start = time.time()
         
-        # Stage 1
+        # Stage 1 (Async Vector Search)
         candidates, retrieval_latency = await self._stage1_candidate_generation(
             user_profile, chat_history, recent_performance
         )
         print(f"Stage 1: Retrieved {len(candidates)} candidates in {retrieval_latency:.2f}ms")
+
+        # Signal Detection (Fast Local - Synchronous)
+        # No need for async/await or parallel task, this takes ~10ms
+        signal_start = time.time()
+        performance_signals = self.chat_parser.detect_performance_signals_semantic(
+            chat_history, self.embedding_model
+        )
+        signal_time = (time.time() - signal_start) * 1000
+        if performance_signals:
+            print(f"  - Detected signals: {performance_signals} ({signal_time:.2f}ms)")
         
         # Stage 2 (CPU bound, synchronous but fast)
         ranked_results, ranking_latency = self._stage2_intelligent_ranking(
-            candidates, user_profile, chat_history, recent_performance
+            candidates, user_profile, chat_history, recent_performance, performance_signals
         )
         print(f"Stage 2: Ranked to top {len(ranked_results)} in {ranking_latency:.2f}ms")
         
