@@ -111,6 +111,17 @@ The diagram above illustrates the complete request-response flow through four di
 - **Process**: LLM acts as a "tutor" to evaluate why each question fits the specific student profile
 - **Output**: Final top 3 recommendations with human-readable reasoning
 - **Performance**: ~100-200ms per batch (leverages Groq's LPU for speed)
+- **Latency Challenge**: 
+  - **Target**: 100ms for LLM ranking
+  - **Reality**: 4-6 seconds with small LLM (`llama-3.1-8b-instant`)
+  - **Root Cause**: Must pass complete question details for each candidate:
+    - `question_text` (full question, 100-300 words)
+    - `options` (4 options, each 10-50 words)
+    - `topic`, `subtopic`, `difficulty_score`
+    - Student profile and chat context
+  - **Context Window Impact**: 10 questions × ~800 tokens/question = ~8,000 tokens input
+  - **Bottleneck**: LLMs process large contexts slowly, even on Groq LPU
+  - **Potential Solution**: Host `llama-3.1-8b` locally on higher end GPU to reduce latency to ~500ms-1s with optimized inference.
 
 #### Return Path
 - Final recommendations flow back through the orchestrator

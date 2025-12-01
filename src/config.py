@@ -37,7 +37,7 @@ class Config:
         
         # Retrieval Parameters
         self.CANDIDATE_LIMIT: int = 50
-        self.FINAL_RESULTS_LIMIT: int = 10
+        self.FINAL_RESULTS_LIMIT: int = 5
         self.RECENT_YEAR_THRESHOLD: int = 2
         
         # Ranking Weights (Must sum to 1.0)
