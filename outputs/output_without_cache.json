@@ -4,8 +4,8 @@
       {
         "question_id": "BIO_PH_2024_05",
         "topic": "Photosynthesis",
-        "subtopic": null,
-        "difficulty_score": 3.0,
+        "subtopic": "Calvin cycle stages",
+        "difficulty_score": 3,
         "question_text": "Observe the given figure of the Calvin cycle. Identify the different stages labelled with alphabets A, B and C.",
         "options": [
           "A. A-Carboxylation, B-Regeneration, C-Reduction",
@@ -13,35 +13,35 @@
           "C. A-Carboxylation, B-Reduction, C-Regeneration",
           "D. A-Reduction, B-Carboxylation, C-Regeneration"
         ],
-        "source": null,
+        "source": "NEET 2024",
         "explanation": "The Calvin cycle has three stages: A \u2014 Carboxylation, B \u2014 Reduction, C \u2014 Regeneration of RuBP.",
-        "time_estimate_seconds": 120,
+        "time_estimate_seconds": 180,
         "relevance_score": 0.572,
-        "reasoning": "Optimally calibrated difficulty (3.0/5)"
+        "reasoning": "Optimally calibrated difficulty (3/5)"
       },
       {
-        "question_id": "BIO_PH_2023_13",
-        "topic": "Photosynthesis",
-        "subtopic": null,
-        "difficulty_score": 3.0,
-        "question_text": "Which out of the following statements is incorrect?",
+        "question_id": "BIO_RP_2023_36",
+        "topic": "Respiration in Plants",
+        "subtopic": "Decarboxylation in TCA cycle",
+        "difficulty_score": 2,
+        "question_text": "How many times does decarboxylation occur during each TCA (Krebs) cycle?",
         "options": [
-          "A. Grana lamellae have both PS I and PS II",
-          "B. Cyclic photophosphorylation involves both PS I and PS II",
-          "C. Both ATP and NADPH + H+ are synthesised during non-cyclic photophosphorylation",
-          "D. Stroma lamellae lack PS II and NADP reductase"
+          "A. Thrice",
+          "B. Many",
+          "C. Once",
+          "D. Twice"
         ],
-        "source": null,
-        "explanation": "Cyclic photophosphorylation involves only PSI \u2014 not PSII \u2014 making option B incorrect.",
+        "source": "NEET 2023",
+        "explanation": "In one turn of the TCA cycle, CO\u2082 is released when isocitrate is converted to \u03b1-ketoglutarate and again when \u03b1-ketoglutarate becomes succinyl-CoA. Hence there are two decarboxylation steps per cycle.",
         "time_estimate_seconds": 120,
-        "relevance_score": 0.521,
-        "reasoning": "Optimally calibrated difficulty (3.0/5)"
+        "relevance_score": 0.567,
+        "reasoning": "Challenging question (2/5)"
       },
       {
         "question_id": "BIO_RP_2024_32",
         "topic": "Respiration in Plants",
-        "subtopic": null,
-        "difficulty_score": 3.0,
+        "subtopic": "Cellular location of pathways",
+        "difficulty_score": 3,
         "question_text": "Match List I with List II:\nList I\nA. Citric acid cycle\nB. Glycolysis\nC. Electron transport system\nD. Proton gradient\nList II\nI. Cytoplasm\nII. Mitochondrial matrix\nIII. Intermembrane space of mitochondria\nIV. Inner mitochondrial membrane\nChoose the correct answer from the options given below:",
         "options": [
           "A. A-I, B-II, C-III, D-IV",
@@ -49,35 +49,35 @@
           "C. A-III, B-IV, C-I, D-II",
           "D. A-IV, B-III, C-II, D-I"
         ],
-        "source": null,
+        "source": "NEET 2024",
         "explanation": "Citric acid cycle occurs in the mitochondrial matrix (A-II), glycolysis in cytoplasm (B-I), the electron transport system on the inner mitochondrial membrane (C-IV), and the proton gradient accumulates in the intermembrane space (D-III). So A-II, B-I, C-IV, D-III is correct.",
-        "time_estimate_seconds": 120,
-        "relevance_score": 0.491,
-        "reasoning": "Optimally calibrated difficulty (3.0/5)"
+        "time_estimate_seconds": 180,
+        "relevance_score": 0.566,
+        "reasoning": "Optimally calibrated difficulty (3/5)"
       },
       {
-        "question_id": "BIO_PR_2024_08",
-        "topic": "Photorespiration",
-        "subtopic": null,
-        "difficulty_score": 3.0,
-        "question_text": "Given below are two statements:\nStatement I: In C3 plants, some O2 binds to RuBisCO, hence CO2 fixation is decreased.\nStatement II: In C4 plants, mesophyll cells show very little photorespiration while bundle sheath cells do not show photorespiration.\nChoose the correct option.",
+        "question_id": "BIO_RP_2024_33",
+        "topic": "Respiration in Plants",
+        "subtopic": "TCA cycle \u2013 oxidation vs substrate-level phosphorylation",
+        "difficulty_score": 2,
+        "question_text": "Identify the step in tricarboxylic acid (TCA) cycle which does NOT involve oxidation of substrate:",
         "options": [
-          "A. Both Statement I and Statement II are true",
-          "B. Both Statement I and Statement II are false",
-          "C. Statement I is true but Statement II is false",
-          "D. Statement I is false but Statement II is true"
+          "A. Malic acid \u27f6 Oxaloacetic acid",
+          "B. Succinic acid \u27f6 Fumaric acid \u27f6 Malic acid",
+          "C. Succinyl-CoA \u27f6 Succinic acid",
+          "D. Isocitrate \u27f6 \u03b1-ketoglutaric acid"
         ],
-        "source": null,
-        "explanation": "RuBisCO in C3 plants binds O2 causing photorespiration. In C4 plants RuBisCO is absent in mesophyll cells, so the description in Statement II is incorrect.",
+        "source": "NEET 2024",
+        "explanation": "Succinyl-CoA to succinic acid is a substrate-level phosphorylation step where GTP is produced but no oxidation of the substrate occurs. All the other listed steps involve oxidation reactions.",
         "time_estimate_seconds": 120,
-        "relevance_score": 0.471,
-        "reasoning": "Optimally calibrated difficulty (3.0/5)"
+        "relevance_score": 0.565,
+        "reasoning": "Challenging question (2/5)"
       },
       {
         "question_id": "BIO_RP_2023_34",
         "topic": "Respiration in Plants",
-        "subtopic": null,
-        "difficulty_score": 3.0,
+        "subtopic": "Glycolysis \u2013 ATP investment steps",
+        "difficulty_score": 3,
         "question_text": "Assertion (A): ATP is used at two steps in glycolysis.\nReason (R): First ATP is used in converting glucose into glucose-6-phosphate and second ATP is used in conversion of fructose-6-phosphate into fructose-1,6-bisphosphate.\nIn the light of the above statements, choose the correct answer:",
         "options": [
           "A. Both A and R are true but R is NOT the correct explanation of A.",
@@ -85,31 +85,31 @@
           "C. A is false but R is true.",
           "D. Both A and R are true and R is the correct explanation of A."
         ],
-        "source": null,
+        "source": "NEET 2023",
         "explanation": "In glycolysis, ATP is consumed in two phosphorylation steps: glucose \u2192 glucose-6-phosphate and fructose-6-phosphate \u2192 fructose-1,6-bisphosphate. This exactly explains why ATP is used at two steps, so both A and R are true and R correctly explains A.",
-        "time_estimate_seconds": 120,
-        "relevance_score": 0.458,
-        "reasoning": "Optimally calibrated difficulty (3.0/5)"
+        "time_estimate_seconds": 180,
+        "relevance_score": 0.558,
+        "reasoning": "Optimally calibrated difficulty (3/5)"
       }
     ],
     "tutor_context": {
       "identified_gaps": [
-        "duration of each phase in mitosis",
+        "duration of each phase of mitosis",
         "Cell Cycle"
       ],
       "recommended_study_sequence": [
         "build_confidence",
         "strengthen_fundamentals",
         "tackle_application_problems",
-        "focus_on_duration_of_each_phase_in_mitosis"
+        "focus_on_duration_of_each_phase_of_mitosis"
       ],
-      "estimated_session_duration_minutes": 10,
-      "next_milestone": "Close knowledge gaps in duration of each phase in mitosis, Cell Cycle for NEET cutoff"
+      "estimated_session_duration_minutes": 13,
+      "next_milestone": "Close knowledge gaps in duration of each phase of mitosis, Cell Cycle for NEET cutoff"
     },
     "pipeline_metadata": {
-      "retrieval_latency_ms": 10.569095611572266,
-      "ranking_latency_ms": 0.23603439331054688,
-      "total_latency_ms": 253.1287670135498,
+      "retrieval_latency_ms": 11.028051376342773,
+      "ranking_latency_ms": 0.48804283142089844,
+      "total_latency_ms": 265.4852867126465,
       "retriever_used": "vector_search",
       "ranker_used": "heuristic_scoring"
     },
@@ -118,10 +118,28 @@
   {
     "recommended_questions": [
       {
+        "question_id": "BIO_BC_2025_16",
+        "topic": "Biological Classification",
+        "subtopic": "Five kingdom classification \u2013 body organisation",
+        "difficulty_score": 5,
+        "question_text": "Each of the following characteristics represent a Kingdom proposed by Whittaker.\nA. Multicellular heterotrophs with cell wall made of chitin.\nB. Heterotrophs with tissue/organ/organ system level of body organization.\nC. Prokaryotes with cell wall made of polysaccharides and amino acids.\nD. Eukaryotic autotrophs with tissue/organ level of body organization.\nE. Eukaryotes with cellular body organization.\nArrange the above in increasing order of complexity of body organization.",
+        "options": [
+          "A. A, C, E, D, B",
+          "B. C, E, A, B, D",
+          "C. A, C, E, B, D",
+          "D. C, E, A, D, B"
+        ],
+        "source": "NEET 2025",
+        "explanation": "Whittaker\u2019s kingdoms in increasing order of body complexity: Monera (C, prokaryotes) \u2192 Protista (E, unicellular eukaryotes) \u2192 Fungi (A, multicellular with chitinous wall) \u2192 Plantae (D, tissue/organ level autotrophs) \u2192 Animalia (B, tissue/organ/organ system level heterotrophs). Thus the correct sequence is C, E, A, D, B, i.e. option D.",
+        "time_estimate_seconds": 180,
+        "relevance_score": 0.596,
+        "reasoning": "Challenging question (5/5)"
+      },
+      {
         "question_id": "BIO_PR_2024_08",
         "topic": "Photorespiration",
-        "subtopic": null,
-        "difficulty_score": 3.0,
+        "subtopic": "C3 vs C4 plants",
+        "difficulty_score": 4,
         "question_text": "Given below are two statements:\nStatement I: In C3 plants, some O2 binds to RuBisCO, hence CO2 fixation is decreased.\nStatement II: In C4 plants, mesophyll cells show very little photorespiration while bundle sheath cells do not show photorespiration.\nChoose the correct option.",
         "options": [
           "A. Both Statement I and Statement II are true",
@@ -129,35 +147,53 @@
           "C. Statement I is true but Statement II is false",
           "D. Statement I is false but Statement II is true"
         ],
-        "source": null,
+        "source": "NEET 2024",
         "explanation": "RuBisCO in C3 plants binds O2 causing photorespiration. In C4 plants RuBisCO is absent in mesophyll cells, so the description in Statement II is incorrect.",
-        "time_estimate_seconds": 120,
-        "relevance_score": 0.521,
+        "time_estimate_seconds": 180,
+        "relevance_score": 0.556,
         "reasoning": "Foundation-building question"
       },
       {
-        "question_id": "BIO_PH_2024_04",
+        "question_id": "BIO_PH_2022_14",
         "topic": "Photosynthesis",
-        "subtopic": null,
-        "difficulty_score": 3.0,
-        "question_text": "Which one of the following products diffuses out of the chloroplast during photosynthesis?",
+        "subtopic": "Chemiosmotic hypothesis (statement based)",
+        "difficulty_score": 4,
+        "question_text": "Identify the correct statements regarding chemiosmotic hypothesis:\n(a) Splitting of the water molecule takes place on the inner side of the membrane.\n(b) Protons accumulate within the lumen of the thylakoids.\n(c) Primary acceptor of electron transfers electrons to an electron carrier.\n(d) NADP reductase enzyme is located on the stroma side of the membrane.\n(e) Protons increase in number in stroma.\nChoose the correct answer.",
         "options": [
-          "A. ADP",
-          "B. NADPH",
-          "C. O2",
-          "D. ATP"
+          "A. (b), (c) and (e)",
+          "B. (a), (b) and (e)",
+          "C. (a), (b) and (d)",
+          "D. (b), (c) and (d)"
         ],
-        "source": null,
-        "explanation": "ATP and NADPH remain in the chloroplast for the Calvin cycle, whereas O2 diffuses out.",
-        "time_estimate_seconds": 120,
-        "relevance_score": 0.469,
+        "source": "NEET 2022",
+        "explanation": "Correct statements are (a), (b) and (d). Protons accumulate in lumen, not in stroma.",
+        "time_estimate_seconds": 240,
+        "relevance_score": 0.539,
+        "reasoning": "Foundation-building question"
+      },
+      {
+        "question_id": "BIO_PH_2023_13",
+        "topic": "Photosynthesis",
+        "subtopic": "Photophosphorylation (cyclic vs non-cyclic)",
+        "difficulty_score": 4,
+        "question_text": "Which out of the following statements is incorrect?",
+        "options": [
+          "A. Grana lamellae have both PS I and PS II",
+          "B. Cyclic photophosphorylation involves both PS I and PS II",
+          "C. Both ATP and NADPH + H+ are synthesised during non-cyclic photophosphorylation",
+          "D. Stroma lamellae lack PS II and NADP reductase"
+        ],
+        "source": "NEET 2023",
+        "explanation": "Cyclic photophosphorylation involves only PSI \u2014 not PSII \u2014 making option B incorrect.",
+        "time_estimate_seconds": 240,
+        "relevance_score": 0.534,
         "reasoning": "Foundation-building question"
       },
       {
         "question_id": "BIO_PR_2023_12",
         "topic": "Photorespiration",
-        "subtopic": null,
-        "difficulty_score": 3.0,
+        "subtopic": "RuBisCO and C4 plants",
+        "difficulty_score": 3,
         "question_text": "Given below are two statements:\nStatement I: RuBisCO is the most abundant enzyme in the world.\nStatement II: Photorespiration does not occur in C4 plants.\nChoose the most appropriate answer.",
         "options": [
           "A. Statement I is correct but Statement II is incorrect",
@@ -165,46 +201,10 @@
           "C. Both Statement I and Statement II are correct",
           "D. Both Statement I and Statement II are incorrect"
         ],
-        "source": null,
+        "source": "NEET 2023",
         "explanation": "RuBisCO is the most abundant enzyme globally and C4 plants suppress photorespiration through CO2 concentration in bundle sheath cells. So both statements are correct.",
-        "time_estimate_seconds": 120,
-        "relevance_score": 0.443,
-        "reasoning": "Foundation-building question"
-      },
-      {
-        "question_id": "BIO_PH_2025_02",
-        "topic": "Photosynthesis",
-        "subtopic": null,
-        "difficulty_score": 3.0,
-        "question_text": "Which of the following statements about RuBisCO is true?",
-        "options": [
-          "A. It is an enzyme involved in the photolysis of water",
-          "B. It catalyzes the carboxylation of RuBP",
-          "C. It is active only in the dark",
-          "D. It has higher affinity for oxygen than carbon dioxide"
-        ],
-        "source": null,
-        "explanation": "Carboxylation is the most crucial step of the Calvin cycle where CO2 is utilised for carboxylation of RuBP. This reaction is catalysed by RuBP carboxylase (RuBisCO). RuBisCO actually has higher affinity for CO2 than for O2 under normal conditions.",
-        "time_estimate_seconds": 120,
-        "relevance_score": 0.425,
-        "reasoning": "Foundation-building question"
-      },
-      {
-        "question_id": "BIO_PH_2024_07",
-        "topic": "Photosynthesis",
-        "subtopic": null,
-        "difficulty_score": 3.0,
-        "question_text": "Which of the following are required for the dark reaction of photosynthesis?",
-        "options": [
-          "A. A, B and C only",
-          "B. B, C and D only",
-          "C. C, D and E only",
-          "D. D and E only"
-        ],
-        "source": null,
-        "explanation": "Dark reaction (Calvin cycle) requires CO2 as carbon source and ATP and NADPH produced in the light reaction. Light and chlorophyll are not directly required for these enzymatic steps.",
-        "time_estimate_seconds": 120,
-        "relevance_score": 0.413,
+        "time_estimate_seconds": 180,
+        "relevance_score": 0.518,
         "reasoning": "Foundation-building question"
       }
     ],
@@ -215,13 +215,13 @@
         "practice_edge_cases",
         "attempt_multi_concept_questions"
       ],
-      "estimated_session_duration_minutes": 10,
+      "estimated_session_duration_minutes": 17,
       "next_milestone": "Master NEET Advanced level in Biology"
     },
     "pipeline_metadata": {
-      "retrieval_latency_ms": 13.437986373901367,
-      "ranking_latency_ms": 0.20766258239746094,
-      "total_latency_ms": 233.62207412719727,
+      "retrieval_latency_ms": 10.113000869750977,
+      "ranking_latency_ms": 0.2040863037109375,
+      "total_latency_ms": 202.0421028137207,
       "retriever_used": "vector_search",
       "ranker_used": "heuristic_scoring"
     },
@@ -230,28 +230,10 @@
   {
     "recommended_questions": [
       {
-        "question_id": "CHEM_SA_2023_92",
-        "topic": "Structure of Atom",
-        "subtopic": null,
-        "difficulty_score": 3.0,
-        "question_text": "Select the correct statements from the following:\nA. Atoms of all elements are composed of two fundamental particles.\nB. The mass of the electron is 9.10939 \u00d7 10\u207b\u00b3\u00b9 kg.\nC. All the isotopes of a given element show same chemical properties.\nD. Protons and electrons are collectively known as nucleons.\nE. Dalton's atomic theory regarded the atom as an ultimate particle of matter.\nChoose the correct answer from the options given below:",
-        "options": [
-          "A. C, D and E only",
-          "B. A and E only",
-          "C. B, C and E only",
-          "D. A, B and C only"
-        ],
-        "source": null,
-        "explanation": "Atoms actually contain three fundamental particles (e\u207b, p\u207a, n\u2070), so A is false. The given electron mass is correct (B true). Isotopes have same electronic configuration, so same chemical properties (C true). Nucleons are protons + neutrons, not electrons (D false). Dalton did treat atom as ultimate particle (E true). So correct set is B, C and E \u2192 option C.",
-        "time_estimate_seconds": 120,
-        "relevance_score": 0.668,
-        "reasoning": "Optimally calibrated difficulty (3.0/5)"
-      },
-      {
         "question_id": "CHEM_SA_2019_100",
         "topic": "Structure of Atom",
-        "subtopic": null,
-        "difficulty_score": 3.0,
+        "subtopic": "Nodes \u2013 radial and angular",
+        "difficulty_score": 3,
         "question_text": "Orbital having 3 angular nodes and 3 total nodes is:",
         "options": [
           "A. 5p",
@@ -259,35 +241,17 @@
           "C. 4f",
           "D. 6d"
         ],
-        "source": null,
+        "source": "NEET 2019",
         "explanation": "Total nodes = n \u2212 1, angular nodes = l, radial nodes = n \u2212 l \u2212 1. Given angular nodes = 3 \u21d2 l = 3 (f-orbital). Total nodes = 3 \u21d2 n \u2212 1 = 3 \u21d2 n = 4. So orbital is 4f.",
-        "time_estimate_seconds": 120,
-        "relevance_score": 0.604,
-        "reasoning": "Optimally calibrated difficulty (3.0/5)"
-      },
-      {
-        "question_id": "CHEM_SA_2022_95",
-        "topic": "Structure of Atom",
-        "subtopic": null,
-        "difficulty_score": 3.0,
-        "question_text": "Identify the correct statement from the following:",
-        "options": [
-          "A. All the five 5d orbitals are different in size when compared to the respective 4d orbitals.",
-          "B. All the five 4d orbitals have shapes similar to the respective 3d orbitals.",
-          "C. In an atom, all the five 3d orbitals are equal in energy in free state.",
-          "D. The shapes of dxy, dyz and dzx orbitals are similar to each other; and dx\u00b2\u2212y\u00b2 and dz\u00b2 are similar to each other."
-        ],
-        "source": null,
-        "explanation": "Orbital size depends on principal quantum number n, so 5d are larger than 4d (A true). Shape depends on l, so 4d and 3d of same type have same shape (B true). In a free atom, all five 3d orbitals are degenerate (C true). Also dxy, dyz, dzx share similar clover shapes between axes and dx\u00b2\u2212y\u00b2, dz\u00b2 have similar axial lobes (D true). The question key selects D as the correct highlighted statement in this context.",
-        "time_estimate_seconds": 120,
-        "relevance_score": 0.556,
-        "reasoning": "Optimally calibrated difficulty (3.0/5)"
+        "time_estimate_seconds": 180,
+        "relevance_score": 0.654,
+        "reasoning": "Optimally calibrated difficulty (3/5)"
       },
       {
         "question_id": "CHEM_SA_2023_94",
         "topic": "Structure of Atom",
-        "subtopic": null,
-        "difficulty_score": 3.0,
+        "subtopic": "Wave function vs probability density",
+        "difficulty_score": 3,
         "question_text": "Given below are two statements:\nStatement I: The value of wave function \u03a8 depends upon the coordinates of the electron in the atom.\nStatement II: The probability of finding an electron at a point within an atom is proportional to the orbital wave function.\nIn the light of the above statements, choose the correct answer from the options given below:",
         "options": [
           "A. Statement I is true but Statement II is false.",
@@ -295,17 +259,17 @@
           "C. Both Statement I and Statement II are true.",
           "D. Both Statement I and Statement II are false."
         ],
-        "source": null,
+        "source": "NEET 2023",
         "explanation": "The wave function \u03a8 is a function of spatial coordinates (r, \u03b8, \u03c6) so Statement I is true. The probability density is proportional to |\u03a8|\u00b2, not \u03a8 itself, so Statement II is false.",
-        "time_estimate_seconds": 120,
-        "relevance_score": 0.541,
-        "reasoning": "Optimally calibrated difficulty (3.0/5)"
+        "time_estimate_seconds": 180,
+        "relevance_score": 0.631,
+        "reasoning": "Optimally calibrated difficulty (3/5)"
       },
       {
         "question_id": "CHEM_SA_2019_98",
         "topic": "Structure of Atom",
-        "subtopic": null,
-        "difficulty_score": 3.0,
+        "subtopic": "(n + l) rule \u2013 orbital energy order",
+        "difficulty_score": 3,
         "question_text": "4d, 5p, 5f and 6p orbitals are arranged in the order of decreasing energy. The correct option is:",
         "options": [
           "A. 5f > 6p > 4d > 5p",
@@ -313,11 +277,47 @@
           "C. 6p > 5f > 5p > 4d",
           "D. 6p > 5f > 4d > 5p"
         ],
-        "source": null,
+        "source": "NEET 2019",
         "explanation": "Using (n + l) rule: 5f (n + l = 5 + 3 = 8), 6p (6 + 1 = 7), 5p (5 + 1 = 6), 4d (4 + 2 = 6). For equal (n + l), higher n has higher energy, so 5p > 4d. Thus decreasing order: 5f > 6p > 5p > 4d.",
+        "time_estimate_seconds": 180,
+        "relevance_score": 0.627,
+        "reasoning": "Optimally calibrated difficulty (3/5)"
+      },
+      {
+        "question_id": "CHEM_SA_2017_102",
+        "topic": "Structure of Atom",
+        "subtopic": "Postulates \u2013 Hund, Aufbau, uncertainty",
+        "difficulty_score": 3,
+        "question_text": "Which one is the wrong statement?\nA. The uncertainty principle is \u0394E \u00d7 \u0394t \u2265 h / 4\u03c0.\nB. Half-filled and fully filled orbitals have greater stability due to greater exchange energy, greater symmetry and more balanced arrangement.\nC. The energy of 2s-orbital is less than the energy of 2p-orbital in case of hydrogen-like atoms.\nD. de Broglie\u2019s wavelength is given by \u03bb = h/mv, where m = mass of the particle, v = group velocity of the particle.",
+        "options": [
+          "A. A",
+          "B. B",
+          "C. C",
+          "D. D"
+        ],
+        "source": "NEET 2017",
+        "explanation": "For hydrogen-like species, energy depends only on n, so 2s and 2p have the same energy; statement C claiming 2s < 2p is wrong. The other statements are standard results.",
+        "time_estimate_seconds": 180,
+        "relevance_score": 0.624,
+        "reasoning": "Optimally calibrated difficulty (3/5)"
+      },
+      {
+        "question_id": "CHEM_SA_2023_92",
+        "topic": "Structure of Atom",
+        "subtopic": "Fundamental particles & isotopes",
+        "difficulty_score": 2,
+        "question_text": "Select the correct statements from the following:\nA. Atoms of all elements are composed of two fundamental particles.\nB. The mass of the electron is 9.10939 \u00d7 10\u207b\u00b3\u00b9 kg.\nC. All the isotopes of a given element show same chemical properties.\nD. Protons and electrons are collectively known as nucleons.\nE. Dalton's atomic theory regarded the atom as an ultimate particle of matter.\nChoose the correct answer from the options given below:",
+        "options": [
+          "A. C, D and E only",
+          "B. A and E only",
+          "C. B, C and E only",
+          "D. A, B and C only"
+        ],
+        "source": "NEET 2023",
+        "explanation": "Atoms actually contain three fundamental particles (e\u207b, p\u207a, n\u2070), so A is false. The given electron mass is correct (B true). Isotopes have same electronic configuration, so same chemical properties (C true). Nucleons are protons + neutrons, not electrons (D false). Dalton did treat atom as ultimate particle (E true). So correct set is B, C and E \u2192 option C.",
         "time_estimate_seconds": 120,
-        "relevance_score": 0.527,
-        "reasoning": "Optimally calibrated difficulty (3.0/5)"
+        "relevance_score": 0.623,
+        "reasoning": "Foundation-building question"
       }
     ],
     "tutor_context": {
@@ -331,13 +331,13 @@
         "tackle_application_problems",
         "focus_on_Bohr_radius_formula"
       ],
-      "estimated_session_duration_minutes": 10,
+      "estimated_session_duration_minutes": 14,
       "next_milestone": "Close knowledge gaps in Bohr radius formula, Structure of Atom for NEET cutoff"
     },
     "pipeline_metadata": {
-      "retrieval_latency_ms": 12.867927551269531,
-      "ranking_latency_ms": 0.26297569274902344,
-      "total_latency_ms": 245.44000625610352,
+      "retrieval_latency_ms": 8.574962615966797,
+      "ranking_latency_ms": 0.247955322265625,
+      "total_latency_ms": 217.59796142578125,
       "retriever_used": "vector_search",
       "ranker_used": "heuristic_scoring"
     },
@@ -346,46 +346,10 @@
   {
     "recommended_questions": [
       {
-        "question_id": "PHY_GR_2025_46",
-        "topic": "Gravitation",
-        "subtopic": null,
-        "difficulty_score": 3.0,
-        "question_text": "A body weighs 48 N on the surface of the earth. The gravitational force experienced by the body due to the earth at a height equal to one-third the radius of the earth from its surface is:",
-        "options": [
-          "A. 32 N",
-          "B. 36 N",
-          "C. 16 N",
-          "D. 27 N"
-        ],
-        "source": null,
-        "explanation": "Weight is proportional to 1/(R + h)\u00b2. At height h = R/3, the distance from Earth\u2019s centre is 4R/3. So the weight becomes W \u00d7 (R\u00b2 / (4R/3)\u00b2) = 48 \u00d7 (9/16) = 27 N.",
-        "time_estimate_seconds": 120,
-        "relevance_score": 0.582,
-        "reasoning": "Foundation-building question"
-      },
-      {
-        "question_id": "PHY_GR_2024_50",
-        "topic": "Gravitation",
-        "subtopic": null,
-        "difficulty_score": 3.0,
-        "question_text": "The mass of a planet is 1/10th that of the earth and its diameter is half that of the earth. The acceleration due to gravity on that planet is:",
-        "options": [
-          "A. 19.6 m s\u207b\u00b2",
-          "B. 9.8 m s\u207b\u00b2",
-          "C. 4.9 m s\u207b\u00b2",
-          "D. 3.92 m s\u207b\u00b2"
-        ],
-        "source": null,
-        "explanation": "g \u221d M/R\u00b2. Here M_p = M_E/10 and R_p = R_E/2, so g_p = (M_E/10)/(R_E\u00b2/4) \u00d7 (GM_E/R_E\u00b2 factor) = (4/10)g_E = 0.4 \u00d7 9.8 \u2248 3.92 m s\u207b\u00b2.",
-        "time_estimate_seconds": 120,
-        "relevance_score": 0.531,
-        "reasoning": "Foundation-building question"
-      },
-      {
         "question_id": "PHY_GR_2024_49",
         "topic": "Gravitation",
-        "subtopic": null,
-        "difficulty_score": 3.0,
+        "subtopic": "Variation of weight with distance from Earth",
+        "difficulty_score": 3,
         "question_text": "An object of mass 100 kg falls from point A to B as shown in figure. The change in its weight, corrected to the nearest integer is (R_E is the radius of the earth):",
         "options": [
           "A. 49 N",
@@ -393,46 +357,82 @@
           "C. 5 N",
           "D. 10 N"
         ],
-        "source": null,
+        "source": "NEET 2024",
         "explanation": "Using g \u221d 1/r\u00b2 at the two positions and computing the difference in mg between A and B gives a change in weight of about 49 N.",
-        "time_estimate_seconds": 120,
-        "relevance_score": 0.501,
+        "time_estimate_seconds": 180,
+        "relevance_score": 0.576,
         "reasoning": "Foundation-building question"
       },
       {
-        "question_id": "PHY_GR_2020_60",
+        "question_id": "PHY_GR_2022_57",
         "topic": "Gravitation",
-        "subtopic": null,
-        "difficulty_score": 3.0,
-        "question_text": "A body weighs 72 N on the surface of the earth. What is the gravitational force on it, at a height equal to half the radius of the earth?",
+        "subtopic": "Ratio of Coulomb to gravitational constant",
+        "difficulty_score": 4,
+        "question_text": "The ratio of Coulomb\u2019s electrostatic force to the gravitational force between an electron and a proton separated by some distance is 2.4 \u00d7 10\u00b3\u2079. The ratio of the proportionality constant K = 1/(4\u03c0\u03b5\u2080) to the gravitational constant G is nearly (given e = 1.6 \u00d7 10\u207b\u00b9\u2079 C, m_e = 9.11 \u00d7 10\u207b\u00b3\u00b9 kg, m_p = 1.67 \u00d7 10\u207b\u00b2\u2077 kg):",
         "options": [
-          "A. 32 N",
-          "B. 30 N",
-          "C. 24 N",
-          "D. 48 N"
+          "A. 10",
+          "B. 10\u00b2\u2070",
+          "C. 10\u00b3\u2070",
+          "D. 10\u2074\u2070"
         ],
-        "source": null,
-        "explanation": "At height h = R/2, weight scales as W_h = W \u00d7 (R\u00b2 / (R + h)\u00b2) = 72 \u00d7 [R\u00b2 / (1.5R)\u00b2] = 72 \u00d7 (1 / 2.25) = 32 N.",
-        "time_estimate_seconds": 120,
-        "relevance_score": 0.481,
-        "reasoning": "Foundation-building question"
+        "source": "NEET 2022",
+        "explanation": "For the same separation r, F_e / F_g = (Ke\u00b2/r\u00b2) / (Gm_em_p/r\u00b2) = K e\u00b2 /(G m_e m_p) \u2248 2.4 \u00d7 10\u00b3\u2079. Solving gives K/G \u2248 10\u00b2\u2070.",
+        "time_estimate_seconds": 240,
+        "relevance_score": 0.567,
+        "reasoning": "Optimally calibrated difficulty (4/5)"
       },
       {
-        "question_id": "PHY_GR_2022_54",
-        "topic": "Gravitation",
-        "subtopic": null,
-        "difficulty_score": 3.0,
-        "question_text": "A body of mass 60 g experiences a gravitational force of 3.0 N when placed at a particular point. The magnitude of the gravitational field intensity at that point is:",
+        "question_id": "PHY_LM_2018_90",
+        "topic": "Laws of Motion",
+        "subtopic": "Block on accelerating wedge",
+        "difficulty_score": 4,
+        "question_text": "A block of mass m is placed on a smooth inclined wedge ABC of inclination \u03b8 as shown in the figure. The wedge is given an acceleration a towards the right. The relation between a and \u03b8 for the block to remain stationary on the wedge is\n[NEET 2018]\nOptions:\nA. a = g cosec \u03b8\nB. a = g sin \u03b8\nC. a = g cos \u03b8\nD. a = g tan \u03b8",
         "options": [
-          "A. 0.05 N/kg",
-          "B. 50 N/kg",
-          "C. 20 N/kg",
-          "D. 180 N/kg"
+          "A. a = g cosec \u03b8",
+          "B. a = g sin \u03b8",
+          "C. a = g cos \u03b8",
+          "D. a = g tan \u03b8"
         ],
-        "source": null,
-        "explanation": "Gravitational field intensity E = F/m. Here m = 0.06 kg and F = 3 N, so E = 3 / 0.06 = 50 N/kg.",
-        "time_estimate_seconds": 120,
-        "relevance_score": 0.454,
+        "source": "NEET 2018",
+        "explanation": "In the non-inertial frame of the wedge, a pseudo force ma acts horizontally opposite to acceleration. Resolving forces along the plane and setting net component to zero for the block to be at rest gives ma cos\u03b8 = mg sin\u03b8 \u21d2 a = g tan\u03b8.",
+        "time_estimate_seconds": 240,
+        "relevance_score": 0.566,
+        "reasoning": "Optimally calibrated difficulty (4/5)"
+      },
+      {
+        "question_id": "PHY_LM_2019_86",
+        "topic": "Laws of Motion",
+        "subtopic": "Rotating cylinder and friction",
+        "difficulty_score": 4,
+        "question_text": "A block of mass 10 kg is in contact against the inner wall of a hollow cylindrical drum of radius 1 m. The coefficient of friction between the block and the inner wall of the cylinder is 0.1. The minimum angular velocity needed for the cylinder to keep the block stationary when the cylinder is vertical and rotating about its axis, will be (g = 10 m s\u207b\u00b2)\n[NEET 2019]\nOptions:\nA. 10\u03c0 rad s\u207b\u00b9\nB. \u221a10 rad s\u207b\u00b9\nC. (10 / 2\u03c0) rad s\u207b\u00b9\nD. 10 rad s\u207b\u00b9",
+        "options": [
+          "A. 10\u03c0 rad s\u207b\u00b9",
+          "B. \u221a10 rad s\u207b\u00b9",
+          "C. 10/2\u03c0 rad s\u207b\u00b9",
+          "D. 10 rad s\u207b\u00b9"
+        ],
+        "source": "NEET 2019",
+        "explanation": "Normal reaction N = m\u03c9\u00b2r. Friction f = \u03bcN must balance weight mg at minimum \u03c9: \u03bc m \u03c9\u00b2 r = mg \u21d2 \u03c9\u00b2 = g/(\u03bcr) = 10/(0.1\u00d71) = 100 \u21d2 \u03c9 = 10 rad s\u207b\u00b9.",
+        "time_estimate_seconds": 240,
+        "relevance_score": 0.559,
+        "reasoning": "Optimally calibrated difficulty (4/5)"
+      },
+      {
+        "question_id": "PHY_GR_2021_59",
+        "topic": "Gravitation",
+        "subtopic": "Maximum height with v = k v_e",
+        "difficulty_score": 3,
+        "question_text": "A particle of mass m is projected with a velocity v = kV_e (k < 1) from the surface of the earth, where V_e is the escape velocity. The maximum height above the surface reached by the particle is:",
+        "options": [
+          "A. Rk / (1 \u2212 k\u00b2)",
+          "B. Rk / (1 + k\u00b2)",
+          "C. R 2k / (1 + k)",
+          "D. Rk\u00b2 / (1 \u2212 k\u00b2)"
+        ],
+        "source": "NEET 2021",
+        "explanation": "Using energy conservation between surface and maximum height (where kinetic energy is zero) and substituting V_e\u00b2 = 2GM/R gives h = Rk\u00b2 / (1 \u2212 k\u00b2).",
+        "time_estimate_seconds": 180,
+        "relevance_score": 0.544,
         "reasoning": "Foundation-building question"
       }
     ],
@@ -446,13 +446,13 @@
         "tackle_application_problems",
         "focus_on_variation_of_g_with_height_and_depth"
       ],
-      "estimated_session_duration_minutes": 10,
+      "estimated_session_duration_minutes": 18,
       "next_milestone": "Build confidence for NEET advanced problems"
     },
     "pipeline_metadata": {
-      "retrieval_latency_ms": 14.827966690063477,
-      "ranking_latency_ms": 0.2460479736328125,
-      "total_latency_ms": 214.829683303833,
+      "retrieval_latency_ms": 8.65316390991211,
+      "ranking_latency_ms": 0.22792816162109375,
+      "total_latency_ms": 199.15485382080078,
       "retriever_used": "vector_search",
       "ranker_used": "heuristic_scoring"
     },
@@ -461,28 +461,28 @@
   {
     "recommended_questions": [
       {
-        "question_id": "CHEM_SURF_2023_124",
-        "topic": "Surface Chemistry",
-        "subtopic": null,
-        "difficulty_score": 3.0,
-        "question_text": "Which of the following is a positively charged sol?\n[NEET 2023 mpr]\nOptions:\nA. Methylene blue sol\nB. Congo red sol\nC. Silver sol\nD. Sb\u2082S\u2083 sol",
+        "question_id": "CHEM_SOL_2016_120",
+        "topic": "Solutions",
+        "subtopic": "Ideal solutions \u2013 thermodynamic criteria",
+        "difficulty_score": 4,
+        "question_text": "Which one of the following is incorrect for an ideal solution?",
         "options": [
-          "A. Methylene blue sol",
-          "B. Congo red sol",
-          "C. Silver sol",
-          "D. Sb\u2082S\u2083 sol"
+          "A. \u0394Hmix = 0",
+          "B. \u0394Umix = 0",
+          "C. \u0394P = Pobserved \u2212 Pcalculated by Raoult\u2019s law = 0",
+          "D. \u0394Gmix = 0"
         ],
-        "source": null,
-        "explanation": "Methylene blue sol is a typical example of a positively charged colloidal sol.",
-        "time_estimate_seconds": 120,
-        "relevance_score": 0.526,
-        "reasoning": "Foundation-building question"
+        "source": "NEET 2016",
+        "explanation": "In an ideal solution, enthalpy and volume of mixing are zero (\u0394Hmix = 0, \u0394Vmix = 0) so \u0394Umix = 0, and vapour pressure obeys Raoult\u2019s law (\u0394P = 0). However mixing increases entropy, so \u0394Smix > 0 and therefore \u0394Gmix = \u0394Hmix \u2212 T\u0394Smix < 0, not zero. Thus D is incorrect.",
+        "time_estimate_seconds": 240,
+        "relevance_score": 0.574,
+        "reasoning": "Challenging question (4/5)"
       },
       {
         "question_id": "CHEM_SURF_2019_128",
         "topic": "Surface Chemistry",
-        "subtopic": null,
-        "difficulty_score": 3.0,
+        "subtopic": "Formation of charged AgI sol",
+        "difficulty_score": 3,
         "question_text": "Which mixture of the solutions will lead to the formation of negatively charged colloidal [AgI]I\u207b sol?\n[NEET 2019]\nOptions:\nA. 50 mL of 0.1 M AgNO\u2083 + 50 mL of 0.1 M KI\nB. 50 mL of 1 M AgNO\u2083 + 50 mL of 1.5 M KI\nC. 50 mL of 1 M AgNO\u2083 + 50 mL of 2 M KI\nD. 50 mL of 2 M AgNO\u2083 + 50 mL of 1.5 M KI",
         "options": [
           "A. 50 mL of 0.1 M AgNO\u2083 + 50 mL of 0.1 M KI",
@@ -490,35 +490,17 @@
           "C. 50 mL of 1 M AgNO\u2083 + 50 mL of 2 M KI",
           "D. 50 mL of 2 M AgNO\u2083 + 50 mL of 1.5 M KI"
         ],
-        "source": null,
+        "source": "NEET 2019",
         "explanation": "When KI is in large excess, I\u207b ions remain in the medium and get adsorbed on AgI particles to give a negatively charged [AgI]I\u207b sol. Option C has maximum KI (100 mmol) in excess.",
-        "time_estimate_seconds": 120,
-        "relevance_score": 0.469,
-        "reasoning": "Foundation-building question"
-      },
-      {
-        "question_id": "CHEM_SURF_2021_126",
-        "topic": "Surface Chemistry",
-        "subtopic": null,
-        "difficulty_score": 3.0,
-        "question_text": "The right option for the statement \"Tyndall effect is exhibited by\" is:\n[NEET 2021]\nOptions:\nA. NaCl solution\nB. Glucose solution\nC. Starch solution\nD. Urea solution",
-        "options": [
-          "A. NaCl solution",
-          "B. Glucose solution",
-          "C. Starch solution",
-          "D. Urea solution"
-        ],
-        "source": null,
-        "explanation": "Tyndall effect is shown only by colloidal solutions. Among the given, starch solution is colloidal; the others are true solutions.",
-        "time_estimate_seconds": 120,
-        "relevance_score": 0.443,
+        "time_estimate_seconds": 180,
+        "relevance_score": 0.519,
         "reasoning": "Foundation-building question"
       },
       {
         "question_id": "CHEM_SOL_2025_109",
         "topic": "Solutions",
-        "subtopic": null,
-        "difficulty_score": 3.0,
+        "subtopic": "Elevation of boiling point and van\u2019t Hoff factor",
+        "difficulty_score": 3,
         "question_text": "Which of the following aqueous solution will exhibit highest boiling point?\nA. 0.01 M Na2SO4\nB. 0.015 M C6H12O6 (glucose)\nC. 0.01 M urea\nD. 0.01 M KNO3",
         "options": [
           "A. 0.01 M Na2SO4",
@@ -526,28 +508,46 @@
           "C. 0.01 M Urea",
           "D. 0.01 M KNO3"
         ],
-        "source": null,
+        "source": "NEET 2025",
         "explanation": "Elevation in boiling point is proportional to i \u00d7 m. Na2SO4 dissociates into 3 ions (i = 3), so i \u00d7 m = 3 \u00d7 0.01 = 0.03, which is larger than for glucose (0.015), urea (0.01) and KNO3 (0.02). Hence 0.01 M Na2SO4 has the highest boiling point.",
-        "time_estimate_seconds": 120,
-        "relevance_score": 0.427,
+        "time_estimate_seconds": 180,
+        "relevance_score": 0.517,
         "reasoning": "Foundation-building question"
       },
       {
-        "question_id": "CHEM_SOL_2023_114",
+        "question_id": "CHEM_SOL_2025_107",
         "topic": "Solutions",
-        "subtopic": null,
-        "difficulty_score": 3.0,
-        "question_text": "Which amongst the following aqueous solutions of electrolytes will have minimum elevation in boiling point?\nA. 0.05 M NaCl\nB. 0.10 M KCl\nC. 0.10 M MgSO4\nD. 1.0 M NaCl",
+        "subtopic": "Raoult\u2019s law and deviations from ideality",
+        "difficulty_score": 3,
+        "question_text": "5 moles of liquid X and 10 moles of liquid Y make a solution having a vapour pressure of 70 torr. The vapour pressures of pure X and Y are 63 torr and 78 torr respectively. Which of the following is true regarding the described solution?",
         "options": [
-          "A. 0.05 M NaCl",
-          "B. 0.10 M KCl",
-          "C. 0.10 M MgSO4",
-          "D. 1.0 M NaCl"
+          "A. The solution is ideal.",
+          "B. The solution has volume greater than the sum of individual volumes.",
+          "C. The solution shows positive deviation.",
+          "D. The solution shows negative deviation."
         ],
-        "source": null,
-        "explanation": "Elevation in boiling point is proportional to i \u00d7 m. Among the given, 0.05 M NaCl has the smallest product (i \u2248 2, so 0.1), whereas the others have larger i \u00d7 m. Hence it shows minimum elevation in boiling point.",
-        "time_estimate_seconds": 120,
-        "relevance_score": 0.415,
+        "source": "NEET 2025",
+        "explanation": "For an ideal solution obeying Raoult\u2019s law, the total vapour pressure here would be 73 torr. The observed vapour pressure is 70 torr, which is lower than the ideal value, indicating stronger A\u2013B interactions and hence negative deviation from Raoult\u2019s law.",
+        "time_estimate_seconds": 180,
+        "relevance_score": 0.502,
+        "reasoning": "Foundation-building question"
+      },
+      {
+        "question_id": "CHEM_SOL_2014_121",
+        "topic": "Solutions",
+        "subtopic": "Freezing point depression and van\u2019t Hoff factor",
+        "difficulty_score": 3,
+        "question_text": "Of the following 0.10 m aqueous solutions, which one will exhibit the largest freezing point depression?\nA. KCl\nB. C6H12O6 (glucose)\nC. Al2(SO4)3\nD. K2SO4",
+        "options": [
+          "A. KCl",
+          "B. C6H12O6",
+          "C. Al2(SO4)3",
+          "D. K2SO4"
+        ],
+        "source": "NEET 2014",
+        "explanation": "\u0394Tf \u221d i \u00d7 m. For 0.10 m: glucose (i = 1), KCl (i \u2248 2), K2SO4 (i \u2248 3), Al2(SO4)3 (i \u2248 5). Thus Al2(SO4)3 produces the greatest number of ions and has the largest i \u00d7 m, so it gives the maximum depression in freezing point.",
+        "time_estimate_seconds": 180,
+        "relevance_score": 0.502,
         "reasoning": "Foundation-building question"
       }
     ],
@@ -558,13 +558,13 @@
         "practice_edge_cases",
         "attempt_multi_concept_questions"
       ],
-      "estimated_session_duration_minutes": 10,
+      "estimated_session_duration_minutes": 16,
       "next_milestone": "Master NEET Advanced level in Chemistry"
     },
     "pipeline_metadata": {
-      "retrieval_latency_ms": 12.718915939331055,
-      "ranking_latency_ms": 0.2281665802001953,
-      "total_latency_ms": 191.64800643920898,
+      "retrieval_latency_ms": 9.32621955871582,
+      "ranking_latency_ms": 0.2079010009765625,
+      "total_latency_ms": 202.99100875854492,
       "retriever_used": "vector_search",
       "ranker_used": "heuristic_scoring"
     },

@@ -188,20 +188,24 @@ class DataProcessor:
         subject = self.extract_subject_from_id(question_id)
         
         # Prepare metadata
+        # Create source field from exam_type and year
+        exam_type = item.get('exam_type', '').upper()
+        year = item.get('year', '')
+        source = f"{exam_type} {year}" if exam_type and year else None
+        
         payload = {
             "question_id": question_id,
             "subject": subject,
             "topic": item.get('topic'),
-            "sub_topic": item.get('sub_topic'),
-            "year": item.get('year'),
-            "difficulty": item.get('difficulty'),
-            "exam_type": item.get('exam_type'),
-            "time_estimate": item.get('time_estimate'),
+            "subtopic": item.get('sub_topic'),  # Changed from sub_topic to subtopic for consistency
+            "year": year,
+            "difficulty_score": item.get('difficulty'),  # Changed from difficulty to difficulty_score
+            "exam_type": exam_type.lower() if exam_type else None,
+            "time_estimate_seconds": int(item.get('time_estimate', 2)) * 60,  # Convert minutes to seconds
             "prerequisites": item.get('prerequisites'),
             "options": item.get('options'),
             "explanation": item.get('explanation'),
-            "source_pdf": item.get('source_pdf', ''),
-            "source_chapter": item.get('source_chapter', ''),
+            "source": source,  # NEW: Combined exam_type and year
             "question_text": item.get('question_text')
         }
         

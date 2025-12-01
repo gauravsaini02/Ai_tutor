@@ -62,7 +62,7 @@ The diagram above illustrates the complete request-response flow through four di
 #### Request Flow
 1. **Student/Client** sends a request containing their profile (grade, expertise level, weak topics) and chat history to the **FastAPI/Orchestrator**
 2. The orchestrator initializes the **Retrieval Pipeline** which coordinates the four stages in parallel/sequence
-3. Results flow back as a **JSON Response** containing 3 personalized question recommendations
+3. Results flow back as a **JSON Response** containing 5 personalized question recommendations
 
 #### Pipeline Stages
 
@@ -109,7 +109,7 @@ The diagram above illustrates the complete request-response flow through four di
 - **Component**: Groq LLM Re-ranker
 - **Purpose**: Provides deep contextual understanding for the top 10 candidates
 - **Process**: LLM acts as a "tutor" to evaluate why each question fits the specific student profile
-- **Output**: Final top 3 recommendations with human-readable reasoning
+- **Output**: Final top 5 recommendations with human-readable reasoning
 - **Performance**: ~100-200ms per batch (leverages Groq's LPU for speed)
 - **Latency Challenge**: 
   - **Target**: 100ms for LLM ranking
@@ -126,7 +126,7 @@ The diagram above illustrates the complete request-response flow through four di
 #### Return Path
 - Final recommendations flow back through the orchestrator
 - JSON response includes:
-  - Top 3 questions with full details
+  - Top 5 questions with full details
   - Reasoning for each recommendation
   - Identified knowledge gaps
   - Pipeline metadata (latency breakdown, cache status)
