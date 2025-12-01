@@ -90,96 +90,6 @@
         "time_estimate_seconds": 120,
         "relevance_score": 0.458,
         "reasoning": "Optimally calibrated difficulty (3.0/5)"
-      },
-      {
-        "question_id": "BIO_PR_2023_12",
-        "topic": "Photorespiration",
-        "subtopic": null,
-        "difficulty_score": 3.0,
-        "question_text": "Given below are two statements:\nStatement I: RuBisCO is the most abundant enzyme in the world.\nStatement II: Photorespiration does not occur in C4 plants.\nChoose the most appropriate answer.",
-        "options": [
-          "A. Statement I is correct but Statement II is incorrect",
-          "B. Statement I is incorrect but Statement II is correct",
-          "C. Both Statement I and Statement II are correct",
-          "D. Both Statement I and Statement II are incorrect"
-        ],
-        "source": null,
-        "explanation": "RuBisCO is the most abundant enzyme globally and C4 plants suppress photorespiration through CO2 concentration in bundle sheath cells. So both statements are correct.",
-        "time_estimate_seconds": 120,
-        "relevance_score": 0.447,
-        "reasoning": "Optimally calibrated difficulty (3.0/5)"
-      },
-      {
-        "question_id": "BIO_PH_2022_14",
-        "topic": "Photosynthesis",
-        "subtopic": null,
-        "difficulty_score": 3.0,
-        "question_text": "Identify the correct statements regarding chemiosmotic hypothesis:\n(a) Splitting of the water molecule takes place on the inner side of the membrane.\n(b) Protons accumulate within the lumen of the thylakoids.\n(c) Primary acceptor of electron transfers electrons to an electron carrier.\n(d) NADP reductase enzyme is located on the stroma side of the membrane.\n(e) Protons increase in number in stroma.\nChoose the correct answer.",
-        "options": [
-          "A. (b), (c) and (e)",
-          "B. (a), (b) and (e)",
-          "C. (a), (b) and (d)",
-          "D. (b), (c) and (d)"
-        ],
-        "source": null,
-        "explanation": "Correct statements are (a), (b) and (d). Protons accumulate in lumen, not in stroma.",
-        "time_estimate_seconds": 120,
-        "relevance_score": 0.439,
-        "reasoning": "Optimally calibrated difficulty (3.0/5)"
-      },
-      {
-        "question_id": "BIO_RP_2023_36",
-        "topic": "Respiration in Plants",
-        "subtopic": null,
-        "difficulty_score": 3.0,
-        "question_text": "How many times does decarboxylation occur during each TCA (Krebs) cycle?",
-        "options": [
-          "A. Thrice",
-          "B. Many",
-          "C. Once",
-          "D. Twice"
-        ],
-        "source": null,
-        "explanation": "In one turn of the TCA cycle, CO\u2082 is released when isocitrate is converted to \u03b1-ketoglutarate and again when \u03b1-ketoglutarate becomes succinyl-CoA. Hence there are two decarboxylation steps per cycle.",
-        "time_estimate_seconds": 120,
-        "relevance_score": 0.433,
-        "reasoning": "Optimally calibrated difficulty (3.0/5)"
-      },
-      {
-        "question_id": "BIO_RP_2024_33",
-        "topic": "Respiration in Plants",
-        "subtopic": null,
-        "difficulty_score": 3.0,
-        "question_text": "Identify the step in tricarboxylic acid (TCA) cycle which does NOT involve oxidation of substrate:",
-        "options": [
-          "A. Malic acid \u27f6 Oxaloacetic acid",
-          "B. Succinic acid \u27f6 Fumaric acid \u27f6 Malic acid",
-          "C. Succinyl-CoA \u27f6 Succinic acid",
-          "D. Isocitrate \u27f6 \u03b1-ketoglutaric acid"
-        ],
-        "source": null,
-        "explanation": "Succinyl-CoA to succinic acid is a substrate-level phosphorylation step where GTP is produced but no oxidation of the substrate occurs. All the other listed steps involve oxidation reactions.",
-        "time_estimate_seconds": 120,
-        "relevance_score": 0.428,
-        "reasoning": "Optimally calibrated difficulty (3.0/5)"
-      },
-      {
-        "question_id": "BIO_BC_2021_23",
-        "topic": "Biological Classification",
-        "subtopic": null,
-        "difficulty_score": 3.0,
-        "question_text": "Which of the following statements is correct?",
-        "options": [
-          "A. Cyanobacteria are a group of autotrophic organisms classified under kingdom Monera.",
-          "B. Bacteria are exclusively heterotrophic organisms.",
-          "C. Slime moulds are saprophytic organisms classified under kingdom Monera.",
-          "D. Mycoplasma have DNA, ribosome and cell wall."
-        ],
-        "source": null,
-        "explanation": "Cyanobacteria are photosynthetic (autotrophic) prokaryotes placed in kingdom Monera, so option A is correct. Bacteria can be autotrophic as well as heterotrophic, slime moulds belong to Protista, and Mycoplasma lack a cell wall.",
-        "time_estimate_seconds": 120,
-        "relevance_score": 0.417,
-        "reasoning": "Optimally calibrated difficulty (3.0/5)"
       }
     ],
     "tutor_context": {
@@ -193,13 +103,13 @@
         "tackle_application_problems",
         "focus_on_duration_of_each_phase_in_mitosis"
       ],
-      "estimated_session_duration_minutes": 20,
+      "estimated_session_duration_minutes": 10,
       "next_milestone": "Close knowledge gaps in duration of each phase in mitosis, Cell Cycle for NEET cutoff"
     },
     "pipeline_metadata": {
       "retrieval_latency_ms": 0.0,
-      "ranking_latency_ms": 0.2269744873046875,
-      "total_latency_ms": 214.88094329833984,
+      "ranking_latency_ms": 0.24199485778808594,
+      "total_latency_ms": 240.6291961669922,
       "retriever_used": "vector_search",
       "ranker_used": "heuristic_scoring"
     },
@@ -296,96 +206,6 @@
         "time_estimate_seconds": 120,
         "relevance_score": 0.413,
         "reasoning": "Foundation-building question"
-      },
-      {
-        "question_id": "BIO_PH_2024_05",
-        "topic": "Photosynthesis",
-        "subtopic": null,
-        "difficulty_score": 3.0,
-        "question_text": "Observe the given figure of the Calvin cycle. Identify the different stages labelled with alphabets A, B and C.",
-        "options": [
-          "A. A-Carboxylation, B-Regeneration, C-Reduction",
-          "B. A-Reduction, B-Decarboxylation, C-Regeneration",
-          "C. A-Carboxylation, B-Reduction, C-Regeneration",
-          "D. A-Reduction, B-Carboxylation, C-Regeneration"
-        ],
-        "source": null,
-        "explanation": "The Calvin cycle has three stages: A \u2014 Carboxylation, B \u2014 Reduction, C \u2014 Regeneration of RuBP.",
-        "time_estimate_seconds": 120,
-        "relevance_score": 0.399,
-        "reasoning": "Foundation-building question"
-      },
-      {
-        "question_id": "BIO_PH_2022_14",
-        "topic": "Photosynthesis",
-        "subtopic": null,
-        "difficulty_score": 3.0,
-        "question_text": "Identify the correct statements regarding chemiosmotic hypothesis:\n(a) Splitting of the water molecule takes place on the inner side of the membrane.\n(b) Protons accumulate within the lumen of the thylakoids.\n(c) Primary acceptor of electron transfers electrons to an electron carrier.\n(d) NADP reductase enzyme is located on the stroma side of the membrane.\n(e) Protons increase in number in stroma.\nChoose the correct answer.",
-        "options": [
-          "A. (b), (c) and (e)",
-          "B. (a), (b) and (e)",
-          "C. (a), (b) and (d)",
-          "D. (b), (c) and (d)"
-        ],
-        "source": null,
-        "explanation": "Correct statements are (a), (b) and (d). Protons accumulate in lumen, not in stroma.",
-        "time_estimate_seconds": 120,
-        "relevance_score": 0.391,
-        "reasoning": "Foundation-building question"
-      },
-      {
-        "question_id": "BIO_PH_2024_03",
-        "topic": "Photosynthesis",
-        "subtopic": null,
-        "difficulty_score": 3.0,
-        "question_text": "Which of the following are required for the light reaction of photosynthesis?",
-        "options": [
-          "A. A, C, D and E only",
-          "B. C, D and E only",
-          "C. A and B only",
-          "D. A, C and E only"
-        ],
-        "source": null,
-        "explanation": "Light reaction needs water, chlorophyll and light. CO2 is not required; O2 is released as a product.",
-        "time_estimate_seconds": 120,
-        "relevance_score": 0.386,
-        "reasoning": "Foundation-building question"
-      },
-      {
-        "question_id": "BIO_PH_2023_13",
-        "topic": "Photosynthesis",
-        "subtopic": null,
-        "difficulty_score": 3.0,
-        "question_text": "Which out of the following statements is incorrect?",
-        "options": [
-          "A. Grana lamellae have both PS I and PS II",
-          "B. Cyclic photophosphorylation involves both PS I and PS II",
-          "C. Both ATP and NADPH + H+ are synthesised during non-cyclic photophosphorylation",
-          "D. Stroma lamellae lack PS II and NADP reductase"
-        ],
-        "source": null,
-        "explanation": "Cyclic photophosphorylation involves only PSI \u2014 not PSII \u2014 making option B incorrect.",
-        "time_estimate_seconds": 120,
-        "relevance_score": 0.379,
-        "reasoning": "Foundation-building question"
-      },
-      {
-        "question_id": "BIO_PH_2024_06",
-        "topic": "Photosynthesis",
-        "subtopic": null,
-        "difficulty_score": 3.0,
-        "question_text": "How many molecules of ATP and NADPH are required for every molecule of CO2 fixed in the Calvin cycle?",
-        "options": [
-          "A. 2 molecules of ATP and 3 molecules of NADPH",
-          "B. 2 molecules of ATP and 2 molecules of NADPH",
-          "C. 3 molecules of ATP and 3 molecules of NADPH",
-          "D. 3 molecules of ATP and 2 molecules of NADPH"
-        ],
-        "source": null,
-        "explanation": "For fixation of 1 molecule of CO2 in the Calvin cycle, 3 molecules of ATP and 2 molecules of NADPH are required.",
-        "time_estimate_seconds": 120,
-        "relevance_score": 0.367,
-        "reasoning": "Foundation-building question"
       }
     ],
     "tutor_context": {
@@ -395,13 +215,13 @@
         "practice_edge_cases",
         "attempt_multi_concept_questions"
       ],
-      "estimated_session_duration_minutes": 20,
+      "estimated_session_duration_minutes": 10,
       "next_milestone": "Master NEET Advanced level in Biology"
     },
     "pipeline_metadata": {
       "retrieval_latency_ms": 0.0,
-      "ranking_latency_ms": 0.2009868621826172,
-      "total_latency_ms": 170.1037883758545,
+      "ranking_latency_ms": 0.5807876586914062,
+      "total_latency_ms": 230.13591766357422,
       "retriever_used": "vector_search",
       "ranker_used": "heuristic_scoring"
     },
@@ -498,96 +318,6 @@
         "time_estimate_seconds": 120,
         "relevance_score": 0.527,
         "reasoning": "Optimally calibrated difficulty (3.0/5)"
-      },
-      {
-        "question_id": "CHEM_SA_2017_102",
-        "topic": "Structure of Atom",
-        "subtopic": null,
-        "difficulty_score": 3.0,
-        "question_text": "Which one is the wrong statement?\nA. The uncertainty principle is \u0394E \u00d7 \u0394t \u2265 h / 4\u03c0.\nB. Half-filled and fully filled orbitals have greater stability due to greater exchange energy, greater symmetry and more balanced arrangement.\nC. The energy of 2s-orbital is less than the energy of 2p-orbital in case of hydrogen-like atoms.\nD. de Broglie\u2019s wavelength is given by \u03bb = h/mv, where m = mass of the particle, v = group velocity of the particle.",
-        "options": [
-          "A. A",
-          "B. B",
-          "C. C",
-          "D. D"
-        ],
-        "source": null,
-        "explanation": "For hydrogen-like species, energy depends only on n, so 2s and 2p have the same energy; statement C claiming 2s < 2p is wrong. The other statements are standard results.",
-        "time_estimate_seconds": 120,
-        "relevance_score": 0.517,
-        "reasoning": "Optimally calibrated difficulty (3.0/5)"
-      },
-      {
-        "question_id": "CHEM_SA_2016_103",
-        "topic": "Structure of Atom",
-        "subtopic": null,
-        "difficulty_score": 3.0,
-        "question_text": "How many electrons can fit in the orbital for which n = 3 and l = 1?",
-        "options": [
-          "A. 2",
-          "B. 6",
-          "C. 10",
-          "D. 14"
-        ],
-        "source": null,
-        "explanation": "n = 3, l = 1 corresponds to a 3p subshell. It has three p-orbitals, but the question refers to the set (3p subshell), which can hold a maximum of 6 electrons.",
-        "time_estimate_seconds": 120,
-        "relevance_score": 0.509,
-        "reasoning": "Optimally calibrated difficulty (3.0/5)"
-      },
-      {
-        "question_id": "CHEM_SA_2022_96",
-        "topic": "Structure of Atom",
-        "subtopic": null,
-        "difficulty_score": 3.0,
-        "question_text": "If radius of second Bohr orbit of He\u207a ion is 105.8 pm, what is the radius of third Bohr orbit of Li\u00b2\u207a ion?",
-        "options": [
-          "A. 158.7 pm",
-          "B. 15.87 pm",
-          "C. 1.587 pm",
-          "D. 158.7 \u00c5"
-        ],
-        "source": null,
-        "explanation": "For hydrogen-like species, r\u2099 \u221d n\u00b2/Z. Using r\u2082(He\u207a) = 105.8 pm and Z(He) = 2 gives Bohr radius a\u2080. For Li\u00b2\u207a, Z = 3 and n = 3, giving r\u2083(Li\u00b2\u207a) = 158.7 pm, matching option A.",
-        "time_estimate_seconds": 120,
-        "relevance_score": 0.503,
-        "reasoning": "Optimally calibrated difficulty (3.0/5)"
-      },
-      {
-        "question_id": "CHEM_SA_2021_97",
-        "topic": "Structure of Atom",
-        "subtopic": null,
-        "difficulty_score": 3.0,
-        "question_text": "A particular station of All India Radio, New Delhi broadcasts on a frequency of 1368 kHz. The wavelength of the electromagnetic radiation emitted by the transmitter is: [Speed of light c = 3.0 \u00d7 10\u2078 m s\u207b\u00b9]",
-        "options": [
-          "A. 219.3 m",
-          "B. 219.2 m",
-          "C. 2192 m",
-          "D. 21.92 cm"
-        ],
-        "source": null,
-        "explanation": "Wavelength \u03bb = c/\u03bd. With \u03bd = 1368 \u00d7 10\u00b3 s\u207b\u00b9, \u03bb = 3.0 \u00d7 10\u2078 / 1.368 \u00d7 10\u2076 \u2248 219.3 m.",
-        "time_estimate_seconds": 120,
-        "relevance_score": 0.496,
-        "reasoning": "Optimally calibrated difficulty (3.0/5)"
-      },
-      {
-        "question_id": "CHEM_SA_2016_105",
-        "topic": "Structure of Atom",
-        "subtopic": null,
-        "difficulty_score": 3.0,
-        "question_text": "Two electrons occupying the same orbital are distinguished by:",
-        "options": [
-          "A. azimuthal quantum number",
-          "B. spin quantum number",
-          "C. principal quantum number",
-          "D. magnetic quantum number"
-        ],
-        "source": null,
-        "explanation": "Electrons in the same orbital share n, l and m values; they differ only in spin quantum number ms, which can be +\u00bd or \u2212\u00bd.",
-        "time_estimate_seconds": 120,
-        "relevance_score": 0.491,
-        "reasoning": "Optimally calibrated difficulty (3.0/5)"
       }
     ],
     "tutor_context": {
@@ -601,13 +331,13 @@
         "tackle_application_problems",
         "focus_on_Bohr_radius_formula"
       ],
-      "estimated_session_duration_minutes": 20,
+      "estimated_session_duration_minutes": 10,
       "next_milestone": "Close knowledge gaps in Bohr radius formula, Structure of Atom for NEET cutoff"
     },
     "pipeline_metadata": {
       "retrieval_latency_ms": 0.0,
-      "ranking_latency_ms": 0.2410411834716797,
-      "total_latency_ms": 187.28399276733398,
+      "ranking_latency_ms": 0.4239082336425781,
+      "total_latency_ms": 181.96821212768555,
       "retriever_used": "vector_search",
       "ranker_used": "heuristic_scoring"
     },
@@ -704,96 +434,6 @@
         "time_estimate_seconds": 120,
         "relevance_score": 0.454,
         "reasoning": "Foundation-building question"
-      },
-      {
-        "question_id": "PHY_GR_2023_53",
-        "topic": "Gravitation",
-        "subtopic": null,
-        "difficulty_score": 3.0,
-        "question_text": "If R is the radius of the earth and g is the acceleration due to gravity on the earth\u2019s surface, then the mean density of the earth will be:",
-        "options": [
-          "A. \u03c0RG / 12g",
-          "B. 3\u03c0R / 4gG",
-          "C. 3g / 4\u03c0RG",
-          "D. 4\u03c0G / 3gR"
-        ],
-        "source": null,
-        "explanation": "Using g = GM/R\u00b2 and M = (4/3)\u03c0R\u00b3\u03c1 gives g = (4/3)\u03c0G\u03c1R \u21d2 \u03c1 = 3g / (4\u03c0GR). So option C matches.",
-        "time_estimate_seconds": 120,
-        "relevance_score": 0.446,
-        "reasoning": "Foundation-building question"
-      },
-      {
-        "question_id": "PHY_GR_2022_55",
-        "topic": "Gravitation",
-        "subtopic": null,
-        "difficulty_score": 3.0,
-        "question_text": "A gravitational field is present in a region and a mass is shifted from A to B through different paths as shown. If W\u2081, W\u2082 and W\u2083 represent the work done by the gravitational force along the respective paths, then:",
-        "options": [
-          "A. W\u2081 < W\u2082 < W\u2083",
-          "B. W\u2081 = W\u2082 = W\u2083",
-          "C. W\u2081 > W\u2082 > W\u2083",
-          "D. W\u2081 > W\u2083 > W\u2082"
-        ],
-        "source": null,
-        "explanation": "Gravitational force is conservative, so work done depends only on initial and final positions, not the path. Thus W\u2081 = W\u2082 = W\u2083.",
-        "time_estimate_seconds": 120,
-        "relevance_score": 0.437,
-        "reasoning": "Foundation-building question"
-      },
-      {
-        "question_id": "PHY_GR_2024_48",
-        "topic": "Gravitation",
-        "subtopic": null,
-        "difficulty_score": 3.0,
-        "question_text": "The escape velocity for earth is v. A planet having 9 times mass that of earth and radius 16 times that of earth has the escape velocity of:",
-        "options": [
-          "A. v/3",
-          "B. 2v/3",
-          "C. 3v/4",
-          "D. 9v/4"
-        ],
-        "source": null,
-        "explanation": "Escape velocity v_e \u221d \u221a(M/R). For the planet: v_p / v = \u221a[(9M / 16R) / (M/R)] = \u221a(9/16) = 3/4, so v_p = 3v/4.",
-        "time_estimate_seconds": 120,
-        "relevance_score": 0.429,
-        "reasoning": "Foundation-building question"
-      },
-      {
-        "question_id": "PHY_LM_2020_85",
-        "topic": "Laws of Motion",
-        "subtopic": null,
-        "difficulty_score": 3.0,
-        "question_text": "Two bodies of mass 4 kg and 6 kg are tied to the ends of a massless string. The string passes over a pulley which is frictionless. The acceleration of the system in terms of acceleration due to gravity (g) is:\n[NEET 2020]\nOptions:\nA. g/2\nB. g/5\nC. g/10\nD. g",
-        "options": [
-          "A. g/2",
-          "B. g/5",
-          "C. g/10",
-          "D. g"
-        ],
-        "source": null,
-        "explanation": "For masses m\u2081 and m\u2082 on a light string, a = (m\u2082 \u2212 m\u2081)g/(m\u2081 + m\u2082). With m\u2082 = 6, m\u2081 = 4, a = (6\u22124)g/(6+4) = 2g/10 = g/5.",
-        "time_estimate_seconds": 120,
-        "relevance_score": 0.425,
-        "reasoning": "Foundation-building question"
-      },
-      {
-        "question_id": "PHY_GR_2021_59",
-        "topic": "Gravitation",
-        "subtopic": null,
-        "difficulty_score": 3.0,
-        "question_text": "A particle of mass m is projected with a velocity v = kV_e (k < 1) from the surface of the earth, where V_e is the escape velocity. The maximum height above the surface reached by the particle is:",
-        "options": [
-          "A. Rk / (1 \u2212 k\u00b2)",
-          "B. Rk / (1 + k\u00b2)",
-          "C. R 2k / (1 + k)",
-          "D. Rk\u00b2 / (1 \u2212 k\u00b2)"
-        ],
-        "source": null,
-        "explanation": "Using energy conservation between surface and maximum height (where kinetic energy is zero) and substituting V_e\u00b2 = 2GM/R gives h = Rk\u00b2 / (1 \u2212 k\u00b2).",
-        "time_estimate_seconds": 120,
-        "relevance_score": 0.422,
-        "reasoning": "Foundation-building question"
       }
     ],
     "tutor_context": {
@@ -806,13 +446,13 @@
         "tackle_application_problems",
         "focus_on_variation_of_g_with_height_and_depth"
       ],
-      "estimated_session_duration_minutes": 20,
+      "estimated_session_duration_minutes": 10,
       "next_milestone": "Build confidence for NEET advanced problems"
     },
     "pipeline_metadata": {
       "retrieval_latency_ms": 0.0,
-      "ranking_latency_ms": 0.25081634521484375,
-      "total_latency_ms": 191.3752555847168,
+      "ranking_latency_ms": 0.31185150146484375,
+      "total_latency_ms": 181.11181259155273,
       "retriever_used": "vector_search",
       "ranker_used": "heuristic_scoring"
     },
@@ -909,96 +549,6 @@
         "time_estimate_seconds": 120,
         "relevance_score": 0.415,
         "reasoning": "Foundation-building question"
-      },
-      {
-        "question_id": "CHEM_SOL_2025_108",
-        "topic": "Solutions",
-        "subtopic": null,
-        "difficulty_score": 3.0,
-        "question_text": "Match List-I with List-II:\nList-I (Example)\nA. Humidity\nB. Alloys\nC. Amalgams\nD. Smoke\nList-II (Type of solution)\nI. Solid in solid\nII. Liquid in gas\nIII. Solid in gas\nIV. Liquid in solid\nChoose the correct answer from the options given below:",
-        "options": [
-          "A. A-III, B-I, C-IV, D-II",
-          "B. A-III, B-II, C-I, D-IV",
-          "C. A-II, B-IV, C-I, D-III",
-          "D. A-II, B-I, C-IV, D-III"
-        ],
-        "source": null,
-        "explanation": "Humidity is water vapour in air (liquid in gas, A-II). Alloys are solid solutions of metals (solid in solid, B-I). Dental amalgams are mercury in another metal (liquid in solid, C-IV). Smoke is solid particles dispersed in air (solid in gas, D-III).",
-        "time_estimate_seconds": 120,
-        "relevance_score": 0.397,
-        "reasoning": "Foundation-building question"
-      },
-      {
-        "question_id": "CHEM_SOL_2024_110",
-        "topic": "Solutions",
-        "subtopic": null,
-        "difficulty_score": 3.0,
-        "question_text": "Arrange the following compounds in increasing order of their solubilities in chloroform (CHCl3):\nNaCl, CH3OH, cyclohexane, CH3CN",
-        "options": [
-          "A. NaCl < CH3CN < CH3OH < cyclohexane",
-          "B. CH3OH < CH3CN < NaCl < cyclohexane",
-          "C. NaCl < CH3OH < CH3CN < cyclohexane",
-          "D. Cyclohexane < CH3CN < CH3OH < NaCl"
-        ],
-        "source": null,
-        "explanation": "Chloroform is an organic solvent and dissolves non-polar solutes best. Ionic NaCl is least soluble, then polar CH3CN, then hydrogen-bonding CH3OH, and non-polar cyclohexane is most soluble. So NaCl < CH3CN < CH3OH < cyclohexane.",
-        "time_estimate_seconds": 120,
-        "relevance_score": 0.39,
-        "reasoning": "Foundation-building question"
-      },
-      {
-        "question_id": "CHEM_SOL_2025_107",
-        "topic": "Solutions",
-        "subtopic": null,
-        "difficulty_score": 3.0,
-        "question_text": "5 moles of liquid X and 10 moles of liquid Y make a solution having a vapour pressure of 70 torr. The vapour pressures of pure X and Y are 63 torr and 78 torr respectively. Which of the following is true regarding the described solution?",
-        "options": [
-          "A. The solution is ideal.",
-          "B. The solution has volume greater than the sum of individual volumes.",
-          "C. The solution shows positive deviation.",
-          "D. The solution shows negative deviation."
-        ],
-        "source": null,
-        "explanation": "For an ideal solution obeying Raoult\u2019s law, the total vapour pressure here would be 73 torr. The observed vapour pressure is 70 torr, which is lower than the ideal value, indicating stronger A\u2013B interactions and hence negative deviation from Raoult\u2019s law.",
-        "time_estimate_seconds": 120,
-        "relevance_score": 0.386,
-        "reasoning": "Foundation-building question"
-      },
-      {
-        "question_id": "CHEM_SOL_2014_121",
-        "topic": "Solutions",
-        "subtopic": null,
-        "difficulty_score": 3.0,
-        "question_text": "Of the following 0.10 m aqueous solutions, which one will exhibit the largest freezing point depression?\nA. KCl\nB. C6H12O6 (glucose)\nC. Al2(SO4)3\nD. K2SO4",
-        "options": [
-          "A. KCl",
-          "B. C6H12O6",
-          "C. Al2(SO4)3",
-          "D. K2SO4"
-        ],
-        "source": null,
-        "explanation": "\u0394Tf \u221d i \u00d7 m. For 0.10 m: glucose (i = 1), KCl (i \u2248 2), K2SO4 (i \u2248 3), Al2(SO4)3 (i \u2248 5). Thus Al2(SO4)3 produces the greatest number of ions and has the largest i \u00d7 m, so it gives the maximum depression in freezing point.",
-        "time_estimate_seconds": 120,
-        "relevance_score": 0.382,
-        "reasoning": "Foundation-building question"
-      },
-      {
-        "question_id": "CHEM_SOL_2021_116",
-        "topic": "Solutions",
-        "subtopic": null,
-        "difficulty_score": 3.0,
-        "question_text": "The vapour pressure of a solution at 45\u00b0C with benzene to octane in molar ratio 3 : 2 is required. At 45\u00b0C, vapour pressures of pure benzene and pure octane are 280 mm Hg and 420 mm Hg, respectively. Assume ideal behaviour. The vapour pressure of the solution is:",
-        "options": [
-          "A. 160 mm Hg",
-          "B. 168 mm Hg",
-          "C. 336 mm Hg",
-          "D. 350 mm Hg"
-        ],
-        "source": null,
-        "explanation": "Mole fractions: x(benzene) = 3/5, x(octane) = 2/5. For an ideal solution, P = x1P1\u00b0 + x2P2\u00b0 = (3/5)\u00d7280 + (2/5)\u00d7420 = 168 + 168 = 336 mm Hg.",
-        "time_estimate_seconds": 120,
-        "relevance_score": 0.378,
-        "reasoning": "Foundation-building question"
       }
     ],
     "tutor_context": {
@@ -1008,13 +558,13 @@
         "practice_edge_cases",
         "attempt_multi_concept_questions"
       ],
-      "estimated_session_duration_minutes": 20,
+      "estimated_session_duration_minutes": 10,
       "next_milestone": "Master NEET Advanced level in Chemistry"
     },
     "pipeline_metadata": {
       "retrieval_latency_ms": 0.0,
-      "ranking_latency_ms": 1.0149478912353516,
-      "total_latency_ms": 439.1167163848877,
+      "ranking_latency_ms": 0.25177001953125,
+      "total_latency_ms": 181.83517456054688,
       "retriever_used": "vector_search",
       "ranker_used": "heuristic_scoring"
     },
