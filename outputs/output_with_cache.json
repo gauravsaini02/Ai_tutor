@@ -184,22 +184,22 @@
     ],
     "tutor_context": {
       "identified_gaps": [
-        "duration of each phase of mitosis",
+        "duration of each phase in mitosis",
         "Cell Cycle"
       ],
       "recommended_study_sequence": [
         "build_confidence",
         "strengthen_fundamentals",
         "tackle_application_problems",
-        "focus_on_duration_of_each_phase_of_mitosis"
+        "focus_on_duration_of_each_phase_in_mitosis"
       ],
       "estimated_session_duration_minutes": 20,
-      "next_milestone": "Close knowledge gaps in duration of each phase of mitosis, Cell Cycle for NEET cutoff"
+      "next_milestone": "Close knowledge gaps in duration of each phase in mitosis, Cell Cycle for NEET cutoff"
     },
     "pipeline_metadata": {
       "retrieval_latency_ms": 0.0,
-      "ranking_latency_ms": 0.3757476806640625,
-      "total_latency_ms": 199.56111907958984,
+      "ranking_latency_ms": 0.2269744873046875,
+      "total_latency_ms": 214.88094329833984,
       "retriever_used": "vector_search",
       "ranker_used": "heuristic_scoring"
     },
@@ -400,8 +400,8 @@
     },
     "pipeline_metadata": {
       "retrieval_latency_ms": 0.0,
-      "ranking_latency_ms": 0.225067138671875,
-      "total_latency_ms": 180.4940700531006,
+      "ranking_latency_ms": 0.2009868621826172,
+      "total_latency_ms": 170.1037883758545,
       "retriever_used": "vector_search",
       "ranker_used": "heuristic_scoring"
     },
@@ -606,8 +606,8 @@
     },
     "pipeline_metadata": {
       "retrieval_latency_ms": 0.0,
-      "ranking_latency_ms": 0.25010108947753906,
-      "total_latency_ms": 180.46903610229492,
+      "ranking_latency_ms": 0.2410411834716797,
+      "total_latency_ms": 187.28399276733398,
       "retriever_used": "vector_search",
       "ranker_used": "heuristic_scoring"
     },
@@ -811,8 +811,8 @@
     },
     "pipeline_metadata": {
       "retrieval_latency_ms": 0.0,
-      "ranking_latency_ms": 0.2548694610595703,
-      "total_latency_ms": 211.40599250793457,
+      "ranking_latency_ms": 0.25081634521484375,
+      "total_latency_ms": 191.3752555847168,
       "retriever_used": "vector_search",
       "ranker_used": "heuristic_scoring"
     },
@@ -1013,8 +1013,8 @@
     },
     "pipeline_metadata": {
       "retrieval_latency_ms": 0.0,
-      "ranking_latency_ms": 0.22602081298828125,
-      "total_latency_ms": 166.89205169677734,
+      "ranking_latency_ms": 1.0149478912353516,
+      "total_latency_ms": 439.1167163848877,
       "retriever_used": "vector_search",
       "ranker_used": "heuristic_scoring"
     },

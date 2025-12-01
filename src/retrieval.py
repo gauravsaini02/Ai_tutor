@@ -334,11 +334,18 @@ class RetrievalPipeline:
         self,
         user_profile: UserProfile,
         chat_history: List[ChatMessage],
-        recent_performance: Optional[RecentPerformance] = None
-    ) -> Tuple[List[RetrievalResult], float]:
-        """Stage 1: Candidate Generation (Vector Search) with Caching."""
+        recent_performance: Optional[RecentPerformance] = None,
+        performance_signals: Optional[Dict[str, Any]] = None
+    ) -> Tuple[List[RetrievalResult], float, Optional[Dict[str, Any]]]:
+        """Stage 1: Candidate Generation (Vector Search) with Caching.
         
-        # 1. Generate Cache Key
+        Returns: (candidates, latency_ms, cached_signals_or_None)
+        """
+        
+        # 1. Generate Cache Key (using last 3 messages for better context)
+        last_n_messages = chat_history[-3:] if len(chat_history) >= 3 else chat_history
+        last_msgs_text = " | ".join([msg.message for msg in last_n_messages])
+        
         cache_key = self.cache.generate_key(
             stage="stage1",
             grade=user_profile.grade,
@@ -346,18 +353,24 @@ class RetrievalPipeline:
             target=user_profile.exam_target,
             weak=sorted(user_profile.weak_topics),
             chat_len=len(chat_history),
-            last_msg=chat_history[-1].message if chat_history else ""
+            last_msg=last_msgs_text
         )
         
         # 2. Check Cache
         cached_data = await self.cache.get_lru(cache_key)
         if cached_data:
             logger.info("⚡ Cache Hit for Stage 1 Retrieval (LRU Promoted)")
+            
+            # Extract candidates and signals from cache
+            cached_candidates = cached_data.get("candidates", [])
+            cached_signals = cached_data.get("signals")
+            
             results = []
-            for item in cached_data:
+            for item in cached_candidates:
                 # Reconstruct RetrievalResult objects
                 results.append(RetrievalResult(**item))
-            return results, 0.0  # 0 latency for cache hit
+            
+            return results, 0.0, cached_signals  # Return cached signals if available
 
         # 3. Embed Query
         query_text = ChatHistoryParser.build_context_query(
@@ -383,16 +396,18 @@ class RetrievalPipeline:
         
         # 5. Vector Search
         start_time = time.time()
-        search_results = await self.qdrant_client.search(
+        search_results = await self.qdrant_client.query_points(
             collection_name=self.config.COLLECTION_NAME,
-            query_vector=query_vector,
+            query=query_vector,
             query_filter=search_filter,
             limit=self.config.CANDIDATE_LIMIT * 2  # Fetch more for diversity
         )
         
         # 6. Convert to RetrievalResult
         results = []
-        for hit in search_results:
+        # query_points returns QueryResponse with points attribute
+        points = search_results.points if hasattr(search_results, 'points') else search_results
+        for hit in points:
             payload = hit.payload
             results.append(RetrievalResult(
                 question_id=payload.get("question_id"),
@@ -415,13 +430,19 @@ class RetrievalPipeline:
             
         latency_ms = (time.time() - start_time) * 1000
         
-        # 7. Cache Results (Last 10 queries)
+        # 7. Cache Results (Last 10 queries) with signals
         if results:
             # Convert to dicts for JSON serialization
             results_dicts = [asdict(res) for res in results]
-            await self.cache.set_lru(cache_key, results_dicts, limit=10)
             
-        return results, latency_ms
+            # Store both candidates and signals in new cache format
+            cache_data = {
+                "candidates": results_dicts,
+                "signals": performance_signals  # Cache signals to avoid redundant LLM calls
+            }
+            await self.cache.set_lru(cache_key, cache_data, limit=10)
+            
+        return results, latency_ms, None  # No cached signals on cache miss
     
     def _calculate_candidate_score(
         self,
@@ -695,15 +716,21 @@ class RetrievalPipeline:
         """
         start_total = time.time()
         
-        # Stage 0: Detect Signals (Groq LLM)
+        # Stage 0: Detect Signals (Groq LLM) - Run first to cache with Stage 1
         signals_start = time.time()
         performance_signals = await self.detect_performance_signals_groq(chat_history)
         signals_latency = (time.time() - signals_start) * 1000
         
-        # Stage 1: Candidate Retrieval
-        candidates, retrieval_latency = await self._stage1_candidate_generation(
-            user_profile, chat_history, recent_performance
+        # Stage 1: Candidate Retrieval (may return cached signals)
+        candidates, retrieval_latency, cached_signals = await self._stage1_candidate_generation(
+            user_profile, chat_history, recent_performance, performance_signals
         )
+        
+        # Use cached signals if available (skip Stage 0 on cache hit)
+        if cached_signals is not None:
+            logger.info("⚡ Using cached performance signals (skipping Stage 0)")
+            performance_signals = cached_signals
+            signals_latency = 0.0  # No LLM call made
         
         # Stage 2: Intelligent Ranking (with SR)
         ranked_candidates, ranking_latency = self._stage2_intelligent_ranking(
